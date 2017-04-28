@@ -16,9 +16,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $brands = Brand::orderBy('brand')->get();
-        $areas  = Area::orderBy('area')->get();
-        View::share(['brands' => $brands, 'areas' => $areas]);
+        //$brands = Brand::orderBy('brand')->get();
+        //$areas  = Area::orderBy('area')->get();
+        //View::share(['brands' => $brands, 'areas' => $areas]);
     }
 
     /**
