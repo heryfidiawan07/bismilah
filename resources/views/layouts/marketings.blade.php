@@ -17,7 +17,7 @@
 				<td style="background-color: unset;">
 				<div class="col-sm-3 text-center">
 					<a id="aImg" href="">
-						<img id="img" src="https://lh3.googleusercontent.com/-fA4GNmqpiLo/WQBwGMc_1nI/AAAAAAAAAkQ/p2pkw2WDaJUj4pJciG3_2AeC1LW3gFNswCHM/s200/%255BUNSET%255D.jpg" class="img-responsive" width="250" height="250">
+						<img id="img" src="https://lh3.googleusercontent.com/-fA4GNmqpiLo/WQBwGMc_1nI/AAAAAAAAAkQ/p2pkw2WDaJUj4pJciG3_2AeC1LW3gFNswCHM/s200/%255BUNSET%255D" class="img-responsive" width="200" height="200">
 					</a>
 				</div>
 				<div class="col-sm-9">

@@ -1,5 +1,5 @@
 <blockquote style="margin-bottom: 0; border-radius: 0;">
-<hr>
+<br>
   <div class="row">
     <div class="col-md-6">
       <p>Berita mobil, Spesifikasi mobil, Profil mobil, Marketing mobil<br>
@@ -24,12 +24,14 @@
           <li class="fotli">
             <a href="/spesifikasi">Spesifikasi</a>
           </li>
+        @if (Auth::guest())
           <li class="fotli">
             <a href="/login">Login</a>
           </li>
           <li class="fotli">
             <a href="/register">Register</a>
           </li>
+        @endif
       </div>
       <div class="text-center">
         <li class="fotli">

@@ -1,19 +1,6 @@
 <?php
-//Karir
+//Syarat
 Route::get('/syarat-dan-ketentuan', 'HomeController@syarat');
-//Karir
-Route::get('/karir', 'UserController@karir');
-Route::post('/karir', 'UserController@createKarir');
-Route::post('/karir/{id}/edit', 'UserController@updateKarir');
-Route::post('/pembayaran/{id}', 'UserController@pembayaran');
-Route::post('/cek/sales/{brand}', 'UserController@cekArea');
-//admin show pembayaran
-Route::get('/admin/checkout', 'MarketingController@indexPembayaran');
-Route::get('/admin/pembayaran/{id}/show', 'MarketingController@showPembayaran');
-Route::get('/admin/pembayaran/delete/{id}', 'MarketingController@deletePembayaran');
-//Kritik dan saran
-Route::get('/kritik-dan-saran', 'AdminController@createKritik');
-Route::post('/kritik-dan-saran', 'AdminController@storeKritik');
 //Memeber
 Route::get('/member', 'UserController@member');
 Route::get('/member/{slug}', 'UserController@profil');
@@ -33,6 +20,19 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index');
 Route::get('/admin', 'AdminController@index');
+//Karir
+Route::get('/karir', 'UserController@karir');
+Route::post('/karir', 'UserController@createKarir');
+Route::post('/karir/{id}/edit', 'UserController@updateKarir');
+Route::post('/pembayaran/{id}', 'UserController@pembayaran');
+Route::post('/cek/sales/{brand}', 'UserController@cekArea');
+//admin show pembayaran
+Route::get('/admin/checkout', 'MarketingController@indexPembayaran');
+Route::get('/admin/pembayaran/{id}/show', 'MarketingController@showPembayaran');
+Route::get('/admin/pembayaran/delete/{id}', 'MarketingController@deletePembayaran');
+//Kritik dan saran
+Route::get('/kritik-dan-saran', 'AdminController@createKritik');
+Route::post('/kritik-dan-saran', 'AdminController@storeKritik');
 //Kritik dan saran admin
 Route::get('/admin/kritik-dan-saran', 'AdminController@indexKritik');
 Route::get('/admin/kritik-dan-saran/{title}/{id}', 'AdminController@showKritik');
@@ -56,6 +56,11 @@ Route::post('/admin/mobils', 'MobilController@store');
 Route::get('/admin/mobil/{id}/edit', 'MobilController@edit');
 Route::post('/admin/mobil/{id}/edit', 'MobilController@update');
 Route::get('/admin/mobil/{id}/delete', 'MobilController@destroy');
+//Tipe Panel
+Route::get('/admin/series', 'TipeController@create');
+Route::post('/admin/series', 'TipeController@store');
+Route::get('/admin/series/{id}/edit', 'TipeController@edit');
+Route::post('/admin/series/{id}/edit', 'TipeController@update');
 //Marketing Amdin
 Route::get('/admin/marketings', 'MarketingController@index');
 Route::post('/admin/marketings', 'MarketingController@store');

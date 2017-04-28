@@ -21,13 +21,8 @@ class CreateMobilsTable extends Migration
             $table->string('belakang')->nullable();
             $table->string('model');
             $table->string('slug');
-            $table->string('tipe');
-            $table->string('harga');
-            $table->string('transmisi');
-            $table->string('cc');
-            $table->string('bakar');
             $table->timestamps();
-
+            
             $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
         });
     }

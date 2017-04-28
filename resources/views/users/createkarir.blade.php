@@ -26,12 +26,12 @@ Daftar jadi marketing
 		          </label>
 		          <a type="button" href="#" data-toggle="collapse" data-target="#brandArea" class="form-control text-center" style="text-decoration: none; color: black;">Pilih brand dan wilayah</a>
 		          <div id="brandArea" class="collapse">
-		          	<div class="col-sm-6">
+		          	<div class="col-sm-6 alert alert-success">
 		          		@foreach($brands as $brand)
 		          			<input type="radio" name="brand_id" value="{{$brand->id}}" data-id="{{$brand->id}}" data-url="/cek/sales/" class="brands">{{$brand->brand}}<br>
 		          		@endforeach
 		          	</div>
-		          	<div class="col-sm-6">
+		          	<div class="col-sm-6 alert alert-warning">
 		          		@foreach($areas as $area)
 		          			<span class="hasil_{{$area->id}}"><input type="radio" name="area_id" value="{{$area->id}}" class="areas_{{$area->id}}">{{$area->area}}</span> <br>
 		          		@endforeach
@@ -106,7 +106,7 @@ Daftar jadi marketing
 												<td><p>A/N</p></td><td><p><b>Heri Fidiawan</b></p></td>
 											</tr>
 											<tr>
-												<td><p>Nominal</p></td><td><p><b>RP 100.000</b></p></td>
+												<td><p>Nominal</p></td><td><p><b>Rp 100.000</b></p></td>
 											</tr>
 										</table>
 			          	</div>

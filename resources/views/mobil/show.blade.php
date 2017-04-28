@@ -28,21 +28,17 @@
 	</div>
 	<div class="col-md-6">
 		<table class="table" id="profil">
-			<tr>
-				<td><p id="tbl">Tipe</p></td><td><p id="tbl" class="animated bounceInRight">{{$mobil->tipe}}</p></td>
+			<tr class="tipe">
+				<th>Tipe</th><th>Harga</th><th>Transmisi</th><th>CC</th>
 			</tr>
+		@foreach($types as $type)
 			<tr>
-				<td><p id="tbl">Harga</p></td><td><p id="tbl" class="animated bounceInRight">RP {{$mobil->harga}}</p></td>
+				<td><p id="tbl" class="animated bounceInRight">{{$type->tipe}}</p></td>
+				<td><p id="tbl" class="animated bounceInRight">Rp <u>{{$type->harga}}</u></p></td>
+				<td><p id="tbl" class="animated bounceInRight">{{$type->transmisi}}</p></td>
+				<td><p id="tbl" class="animated bounceInRight">{{$type->cc}}</p></td>
 			</tr>
-			<tr>
-				<td><p id="tbl">Transmisi</p></td><td><p id="tbl" class="animated bounceInRight">{{$mobil->transmisi}}</p></td>
-			</tr>
-			<tr>
-				<td><p id="tbl">CC</p></td><td><p id="tbl" class="animated bounceInRight">{{$mobil->cc}}</p></td>
-			</tr>
-			<tr>
-				<td><p id="tbl">Bahan bakar</p></td><td><p id="tbl" class="animated bounceInRight">{{$mobil->bakar}}</p></td>
-			</tr>
+		@endforeach
 		</table>
 	</div>
 </div>

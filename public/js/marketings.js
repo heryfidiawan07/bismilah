@@ -17,7 +17,7 @@ $(document).ready(function(){
                 if (data.name == undefined || data.iklan == 0) {
                     //alert('kosong');
                     $('#table').addClass('table table-hover animated flipInX');
-                    $("#img").attr('src','http://www.aspirehire.co.uk/aspirehire-co-uk/_img/profile.svg');
+                    $("#img").attr('src','https://lh3.googleusercontent.com/-fA4GNmqpiLo/WQBwGMc_1nI/AAAAAAAAAkQ/p2pkw2WDaJUj4pJciG3_2AeC1LW3gFNswCHM/s200/%255BUNSET%255D');
                     $("#name").html('Tidak di temukan');
                     $("#pt").html('Tidak di temukan');
                     $("#alamat").html('Tidak di temukan');

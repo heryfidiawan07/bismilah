@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,7 +33,7 @@
     <div id="app">
         @include('layouts.nav')
         @include('layouts.brandmodal')
-        <div class="container" style="min-height: 458px;">
+        <div class="container" style="min-height: 484px;">
             @yield('content')
         </div>
         @include('layouts.footer')

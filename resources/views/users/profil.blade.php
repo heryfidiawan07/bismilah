@@ -6,11 +6,11 @@
         <div class="panel panel-default">
         <div class="panel-body">
             <span class="pull-left">
-                <img width="150px" src="{{$user->avatar()}}" class="img-responsive">
+                <img width="150" src="{{$user->avatar()}}" class="img-responsive">
             </span>
-            <span class="pull-left" style="margin-left: 20px;">
-                <h4 class="media-heading"><b>{{$user->name}}</b></h4>
-                <p>Joined :  {{$user->created_at->diffForHumans()}} </p>
+            <span class="pull-left" style="margin-left: 10px;">
+                <h5><b>{{$user->name}}</b></h5>
+                <p>Joined-{{$user->created_at->diffForHumans()}}</p>
             </span>
         </div>
         </div>

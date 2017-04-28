@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+@section('url') http://kampusmobil.com/ @stop
+@section('title') Semua tantang mobil. @stop
+@section('description')
+	Berita mobil, Spesifikasi mobil, Profil mobil, Marketing mobil dan Forum diskusi.
+@stop
+@section('image') http://kampusmobil.com/largekampusmobil.png @stop
+
 @section('content')
 <div class="row">
     <h4 class="text-center"><b>Artikel</b></h4><hr>

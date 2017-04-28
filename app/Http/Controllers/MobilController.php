@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Tipe;
 use App\Mobil;
 use App\Brand;
 use App\Marketing;
@@ -16,8 +17,11 @@ class MobilController extends Controller
 
 
     public function index($slug){
-        $brand      = Brand::whereSlug($slug)->first();
-        $mobils     = Mobil::where('brand_id',$brand->id)->latest()->paginate(4);
+        $brand  = Brand::whereSlug($slug)->first();
+        if (!$brand) {
+            return view('errors.404');
+        }
+        $mobils = Mobil::where('brand_id',$brand->id)->latest()->paginate(6);
         return view('mobil.index', compact('mobils','brand'));
     }
 
@@ -34,20 +38,16 @@ class MobilController extends Controller
                     'samping' => $request->samping,
                     'belakang' => $request->belakang,
                     'model' => $request->model,
-                    'tipe' => $request->tipe,
-                    'slug' => str_slug($request->model.'-'.$request->tipe),
-                    'harga' => $request->harga,
-                    'transmisi' => $request->transmisi,
-                    'cc' => $request->cc,
-                    'bakar' => $request->bakar,
+                    'slug' => str_slug($request->model),
                 ]);
         return back();
     }
 
     public function show($brand, $slugModel){
-        $mobil      = Mobil::whereSlug($slugModel)->first();
-        $brand      = Brand::whereSlug($brand)->first();
-        return view('mobil.show', compact('mobil','marketings','brand'));
+        $mobil  = Mobil::whereSlug($slugModel)->first();
+        $brand  = Brand::whereSlug($brand)->first();
+        $types  = Tipe::where('mobil_id',$mobil->id)->get();
+        return view('mobil.show', compact('mobil','marketings','brand','types'));
     }
 
     public function edit($id){
@@ -64,15 +64,10 @@ class MobilController extends Controller
                     'samping' => $request->samping,
                     'belakang' => $request->belakang,
                     'model' => $request->model,
-                    'tipe' => $request->tipe,
-                    'slug' => str_slug($request->model.'-'.$request->tipe),
-                    'harga' => $request->harga,
-                    'transmisi' => $request->transmisi,
-                    'cc' => $request->cc,
-                    'bakar' => $request->bakar,
+                    'slug' => str_slug($request->model),
                 ]);
         $brand = Brand::whereId($mobil->brand_id)->first();
-        return redirect('/'.$brand->slug);
+        return redirect("/{$brand->slug}");
     }
     
     public function destroy($id){

@@ -47,6 +47,9 @@ class ForumController extends Controller
     public function show($brand, $slug){
         $brand      = Brand::whereSlug($brand)->first();
         $thread     = Forum::whereSlug($slug)->first();
+        if (!$thread) {
+            return view('errors.404');
+        }
         $comments   = $thread->comments()->latest()->paginate(5);
         if ($thread && $brand) {
             return view('forums.show', compact('thread','comments','brand'));

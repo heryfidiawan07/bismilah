@@ -30,7 +30,6 @@ class AdminController extends Controller
     	$this->validate($request, [
                 'title' => 'required|min:3|max:255',
                 'body' => 'required|min:3',
-                //'g-recaptcha-response' => 'required|captcha',
             ]);
         $kritik = Kritik::create([
 	    		'title' => $request->title,

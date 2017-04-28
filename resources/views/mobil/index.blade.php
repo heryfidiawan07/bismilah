@@ -2,25 +2,17 @@
 
 @section('content')
 <div class="row">
+<h2 class="text-center"><b>{{$brand->brand}}</b></h2>
 @if($mobils->count())
 	@foreach($mobils as $mobil)
-	<div class="col-md-6">
-		<h4 class="text-center">{{$brand->brand}}</h4>
-		<div class="panel panel-default">
-		<div class="panel-body">
-			<div class="col-sm-6">
-				<a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}">
-					<img src="{{$mobil->depan}}" class="img-responsive pull-left" alt="{{$mobil->depan}}" id="imgH">
-				</a>
-			</div>
-			<div class="col-sm-6">
-				<a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}">
-					<h4>{{$mobil->model}} <small>{{$mobil->tipe}}</small></h4>
-				</a>
-				<a href="/{{$mobil->brand->slug}}" class="thumbnail text-center"><b>{{$mobil->brand->brand}}</b></a>
-			</div>
-		</div>
-		</div>
+	<div class="col-md-4">
+	<div class="text-center">
+		<h3><a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}"><b>{{$mobil->model}}</b></a></h3>
+	</div>
+		<hr>
+			<a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}">
+				<img src="{{$mobil->depan}}" class="img-responsive pull-left" alt="{{$mobil->depan}}" id="imgH">
+			</a>
 	</div>
 	@endforeach
 	@else

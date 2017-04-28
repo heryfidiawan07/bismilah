@@ -48,44 +48,6 @@
 			              <span class="help-block"> {{$errors->first('model')}} </span>
 			          @endif
 			      </div>
-			      <div class="form-group {{ $errors->has('tipe') ? ' has-error' : '' }} ">
-			          <label for="tipe">Tipe</label>
-			          <input type="text" name="tipe" class="form-control" value="{{old('tipe')}}" placeholder="tipe">
-			          @if($errors->has('tipe'))
-			              <span class="help-block"> {{$errors->first('tipe')}} </span>
-			          @endif
-			      </div>
-			      <div class="form-group {{ $errors->has('harga') ? ' has-error' : '' }} ">
-			          <label for="harga">Harga</label>
-			          <input type="text" name="harga" class="form-control" value="{{old('harga')}}" placeholder="harga">
-			          @if($errors->has('harga'))
-			              <span class="help-block"> {{$errors->first('harga')}} </span>
-			          @endif
-			      </div>
-			      <div class="form-group {{ $errors->has('transmisi') ? ' has-error' : '' }} ">
-			          <label for="transmisi">Transmisi</label>
-			          <select name="transmisi" class="form-control">
-			          	<option value="Manual">Manual</option>
-			          	<option value="Matic">Matic</option>
-			          </select>
-			          @if($errors->has('transmisi'))
-			              <span class="help-block"> {{$errors->first('transmisi')}} </span>
-			          @endif
-			      </div>
-			      <div class="form-group {{ $errors->has('cc') ? ' has-error' : '' }} ">
-			          <label for="cc">CC</label>
-			          <input type="text" name="cc" class="form-control" value="{{old('cc')}}" placeholder="cc">
-			          @if($errors->has('cc'))
-			              <span class="help-block"> {{$errors->first('cc')}} </span>
-			          @endif
-			      </div>
-			      <div class="form-group {{ $errors->has('bakar') ? ' has-error' : '' }} ">
-			          <label for="bakar">Bahan bakar</label>
-			          <input type="text" name="bakar" class="form-control" value="{{old('bakar')}}" placeholder="bahan bakar">
-			          @if($errors->has('bakar'))
-			              <span class="help-block"> {{$errors->first('bakar')}} </span>
-			          @endif
-			      </div>
 			      <div class="form-group">
 			        <input type="submit" class="btn btn-primary btn-sm" value="post">
 			    </div>
@@ -101,21 +63,7 @@
 				<table class="table table-hover">
 					@foreach($mobils as $mobil)
 						<tr><td><img src="{{$mobil->depan}}" class="img-responsive" width="300"></td></tr>
-						<tr>
-							<td><p>Tipe</p></td><td><p class="animated bounceInRight">{{$mobil->tipe}}</p></td>
-						</tr>
-						<tr>
-							<td><p>Harga</p></td><td><p class="animated bounceInRight">RP {{$mobil->harga}}</p></td>
-						</tr>
-						<tr>
-							<td><p>Transmisi</p></td><td><p class="animated bounceInRight">{{$mobil->transmisi}}</p></td>
-						</tr>
-						<tr>
-							<td><p>CC</p></td><td><p class="animated bounceInRight">{{$mobil->cc}}</p></td>
-						</tr>
-						<tr>
-							<td><p>Bahan bakar</p></td><td><p class="animated bounceInRight">{{$mobil->bakar}}</p></td>
-						</tr>
+						<tr><td>{{$mobil->model}}</td></tr>
 						<tr><td>
 							<a href="/{{$mobil->brand->slug}}" class="thumbnail text-center">
 								<b>{{$mobil->brand->brand}}</b>
