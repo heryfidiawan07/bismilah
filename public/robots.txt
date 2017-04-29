@@ -14,3 +14,6 @@ Allow: /forum-mobil
 Allow: /spesifikasi
 Allow: /articles
 Allow: /kampus-mobil
+Allow: /Harga-mobil
+Allow: /Promo-mobil
+Allow: /Discount-mobil
