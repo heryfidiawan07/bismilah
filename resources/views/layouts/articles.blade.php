@@ -4,13 +4,13 @@
 		<div class="panel panel-default">
 		<div class="panel-body">
 			<div class="col-sm-5">
-				<a href="/{{$article->brand->slug}}/{{$article->slug}}">
+				<a href="/articles/{{$article->brand->slug}}/{{$article->slug}}">
 					<img src="{{$article->img}}" class="img-responsive" alt="{{$article->brand->brand}}" id="imgH">
 				</a>
 			</div>
 			<div class="col-sm-7">
-				<a href="/{{$article->brand->slug}}/{{$article->slug}}"><h5>{{$article->title}}</h5></a>
-				<a href="/{{$article->brand->slug}}" class="thumbnail text-center"><b>{{$article->brand->brand}}</b></a>
+				<a href="/articles/{{$article->brand->slug}}/{{$article->slug}}"><h5>{{$article->title}}</h5></a>
+				<a href="/articles/{{$article->brand->slug}}" class="thumbnail text-center"><b>{{$article->brand->brand}}</b></a>
       </div>
       <div class="pull-right">
 				@if(Auth::check())

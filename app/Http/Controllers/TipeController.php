@@ -16,6 +16,13 @@ class TipeController extends Controller
     }
 
     public function store(Request $request){
+      $this->validate($request, [
+                'mobil_id' => 'required',
+                'tipe' => 'required',
+                'harga' => 'required',
+                'transmisi' => 'required',
+                'cc' => 'required',
+            ]);
     	Tipe::create([
     			'mobil_id' => $request->mobil_id,
     			'tipe' => $request->tipe,
@@ -33,6 +40,12 @@ class TipeController extends Controller
     }
     
     public function update(Request $request, $id){
+      $this->validate($request, [
+                'tipe' => 'required',
+                'harga' => 'required',
+                'transmisi' => 'required',
+                'cc' => 'required',
+            ]);
     	$tipe  = Tipe::find($id);
     	$mobil = Mobil::whereId($tipe->mobil_id)->first();
       $tipe->update([

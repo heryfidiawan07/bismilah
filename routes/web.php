@@ -89,12 +89,14 @@ Route::get('/forum/{id}/edit', 'ForumController@edit');
 Route::post('/forum/{id}/edit', 'ForumController@update');
 Route::get('/forum/{brand}/{slug}', 'ForumController@show');
 Route::get('/forum/{brand}', 'ForumController@brand');
-//Article show
-Route::get('/articles', 'ArticleController@index');
-Route::get('/{brand}/{slug}', 'ArticleController@show');
 //Spesifikasi show
 Route::get('/spesifikasi', 'SpekController@index');
 Route::get('/spesifikasi/{model}/{title}', 'SpekController@show');
+Route::get('/spesifikasi/{model}', 'SpekController@model');
+//Article show
+Route::get('/articles', 'ArticleController@index');
+Route::get('/articles/{brand}/{slug}', 'ArticleController@show');
+Route::get('/articles/{brand}', 'ArticleController@brand');
 //Comment
 Route::post('/comment/{slug}', 'CommentController@store');
 Route::post('/comment/{id}/edit', 'CommentController@update');

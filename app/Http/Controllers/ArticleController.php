@@ -20,6 +20,12 @@ class ArticleController extends Controller
     	return view('articles.index', compact('articles'));
     }
 
+    public function brand($brand){
+        $brand      = Brand::whereSlug($brand)->first();
+        $articles   = Article::where('brand_id',$brand->id)->latest()->paginate(4);
+        return view('articles.index', compact('articles'));
+    }
+
     public function create(){
 		$brands		  = Brand::all();
 		return view('articles.create', compact('brands'));

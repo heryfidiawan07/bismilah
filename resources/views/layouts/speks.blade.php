@@ -5,12 +5,12 @@
 		<div class="panel-body">
 			<div class="col-sm-5">
 				<a href="/spesifikasi/{{$spek->mobil->model}}/{{$spek->slug}}">
-					<img src="https://lh3.googleusercontent.com/-WL0ZJvL2woo/WQBwHGJsPdI/AAAAAAAAAkg/sehLYuEPH5MnOCIo06PD-mx6V2xLa8SQwCHM/s200/%255BUNSET%255D" class="img-responsive" alt="spesification" id="imgH">
+					<img src="https://lh3.googleusercontent.com/-WL0ZJvL2woo/WQBwHGJsPdI/AAAAAAAAAkg/sehLYuEPH5MnOCIo06PD-mx6V2xLa8SQwCHM/s200/%255BUNSET%255D" class="img-responsive" alt="spesification" id="imgS">
 				</a>
 			</div>
 			<div class="col-sm-7">
-				<a href="/spesifikasi/{{$spek->mobil->model}}/{{$spek->slug}}"><h5>{{$spek->title}}</h5></a>
-				<a href="#" class="thumbnail text-center"><b>{{$spek->mobil->model}}</b></a>
+				<a href="/spesifikasi/{{$spek->mobil->model}}/{{$spek->slug}}"><b>{{$spek->title}}</b></a>
+				<a href="/spesifikasi/{{$spek->mobil->model}}" class="thumbnail text-center"><b>{{$spek->mobil->model}}</b></a>
       </div>
       <div class="pull-right">
 				@if(Auth::check())

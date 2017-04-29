@@ -32,6 +32,13 @@ class MobilController extends Controller
     }
 
     public function store(Request $request){
+        $this->validate($request, [
+                'brand_id' => 'required',
+                'depan' => 'required',
+                'samping' => 'required',
+                'belakang' => 'required',
+                'model' => 'required',
+            ]);
         Mobil::create([
                     'brand_id' => $request->brand_id,
                     'depan' => $request->depan,
@@ -57,6 +64,12 @@ class MobilController extends Controller
     }
     
     public function update(Request $request, $id){
+        $this->validate($request, [
+                'depan' => 'required',
+                'samping' => 'required',
+                'belakang' => 'required',
+                'model' => 'required',
+            ]);
         $mobil = Mobil::find($id);
         $mobil->update([
                     'brand_id' => $request->brand_id,

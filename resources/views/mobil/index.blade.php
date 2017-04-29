@@ -12,7 +12,7 @@
 		</div>
 		<hr>
 			<a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}">
-				<img src="{{$mobil->depan}}" class="img-responsive" alt="{{$mobil->depan}}" id="imgH">
+				<img src="{{$mobil->depan}}" class="img-responsive" alt="{{$mobil->depan}}" id="imgM">
 			</a>
 	</div>
 	@endforeach
