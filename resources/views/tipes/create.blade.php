@@ -83,9 +83,11 @@
 					<tr>
 						<td>
 							<a href="/admin/series/{{$tipe->id}}/edit" class="btn btn-sm btn-warning">edit</a>
+						</td>
+						<td>
 							<button data-toggle="collapse" data-target="#tipe_{{$tipe->id}}" class="btn btn-success btn-sm pull-right">Remove ?</button>
 							<div id="tipe_{{$tipe->id}}" class="collapse">
-								<a href="/admin/series/{{$tipe->id}}/delete" class="btn btn-sm btn-danger pull-right">delete</a>
+								<a href="/admin/series/{{$tipe->id}}/delete" class="btn btn-sm btn-danger">delete</a>
 							</div>
 						</td>
 					</tr>

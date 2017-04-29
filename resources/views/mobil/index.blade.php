@@ -3,15 +3,16 @@
 @section('content')
 <div class="row">
 <h2 class="text-center"><b>{{$brand->brand}}</b></h2>
+<hr>
 @if($mobils->count())
 	@foreach($mobils as $mobil)
 	<div class="col-md-4">
-	<div class="text-center">
-		<h3><a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}"><b>{{$mobil->model}}</b></a></h3>
-	</div>
+		<div class="text-center">
+			<h4><a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}"><b>{{$mobil->model}}</b></a></h4>
+		</div>
 		<hr>
 			<a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}">
-				<img src="{{$mobil->depan}}" class="img-responsive pull-left" alt="{{$mobil->depan}}" id="imgH">
+				<img src="{{$mobil->depan}}" class="img-responsive" alt="{{$mobil->depan}}" id="imgH">
 			</a>
 	</div>
 	@endforeach

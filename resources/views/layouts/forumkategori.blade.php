@@ -1,30 +1,26 @@
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#fModal">
-  Forum Kategori
-</button>
-
+<a href="#" type="button" class="" data-toggle="modal" data-target="#forumModal">
+    Forum Kategori
+</a>
 <!-- Modal -->
-<div class="modal fade" id="fModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal right fade" id="forumModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
+
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Kategori forum
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	          <span aria-hidden="true">&times;</span>
-	        </button>
-        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#60; close</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="color: white;">Kategori Forum</h4>
       </div>
+
       <div class="modal-body">
         <table class="table" id="modal-table">
-					@foreach($brands as $brand)
-						<tr><td>
-							<a href="/forum/{{$brand->slug}}" style="display: block; color: black;">{{$brand->brand}}</a>
-						</td></tr>
-					@endforeach
-				</table>
+          @foreach($brands as $brand)
+            <tr><td>
+              <a href="/forum/{{$brand->slug}}" style="display: block; color: black;">{{$brand->brand}}</a>
+            </td></tr>
+          @endforeach
+        </table>
       </div>
-      <div class="modal-footer">
-        <button style="color: black !important;" type="button" class="btn btn-default" data-dismiss="modal"><b>Close</b></button>
-      </div>
-    </div>
-  </div>
-</div>
+
+    </div><!-- modal-content -->
+  </div><!-- modal-dialog -->
+</div><!-- modal -->

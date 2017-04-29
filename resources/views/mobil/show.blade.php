@@ -4,8 +4,8 @@
 <div class="row">
 	<h3 class="text-center animated flipInX"><b>{{$mobil->brand->brand}} {{$mobil->model}}</b></h3>
 	<hr>
-	<div class="col-md-6">
-		<div id="myCarousel" class="carousel slide pull-left" data-ride="carousel" style="margin-bottom: 50px;">
+	<div class="col-md-5">
+		<div id="myCarousel" class="carousel slide pull-left" data-ride="carousel">
 		  <!-- Indicators -->
 		  <ol class="carousel-indicators">
 		    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -26,7 +26,7 @@
 		  </div>
 		</div>
 	</div>
-	<div class="col-md-6">
+	<div class="col-md-7">
 		<table class="table" id="profil">
 			<tr class="tipe">
 				<th>Tipe</th><th>Harga</th><th>Transmisi</th><th>CC</th>
@@ -40,6 +40,7 @@
 			</tr>
 		@endforeach
 		</table>
+		<div class="text-center"><a href="/spesifikasi/" class="btn btn-success">Spesifikasi lengkap</a></div>
 	</div>
 </div>
 @include('layouts.marketings')
