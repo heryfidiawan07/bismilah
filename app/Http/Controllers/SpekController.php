@@ -21,6 +21,12 @@ class SpekController extends Controller
     	return view('speks.index', compact('speks'));
     }
 
+    public function model($model){
+        $mobil = Mobil::where('slug',$model)->first();
+        $speks = Spek::where('mobil_id',$mobil->id)->latest()->paginate(4);
+        return view('speks.index', compact('speks'));    
+    }
+            
     public function create(){
 		$mobils		  = Mobil::all();
 		return view('speks.create', compact('mobils'));
@@ -73,12 +79,6 @@ class SpekController extends Controller
     	return redirect('/spesifikasi');
     }
     
-    public function model($model){
-        $mobil = Mobil::where('model',$model)->first();
-        $speks = Spek::where('mobil_id',$mobil->id)->latest()->paginate(4);
-        return view('speks.index', compact('speks'));    
-    }
-            
     public function destroy($id){
     	$spek = Spek::find($id);
     	$spek->delete();
