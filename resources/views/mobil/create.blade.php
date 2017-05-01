@@ -62,7 +62,6 @@
 				<h4 class="text-center">Profil Mobil</h4>
 				<table class="table table-hover">
 					@foreach($mobils as $mobil)
-						<tr><td><img src="{{$mobil->depan}}" class="img-responsive" width="300"></td></tr>
 						<tr><td>{{$mobil->model}}</td></tr>
 						<tr><td>
 							<a href="/{{$mobil->brand->slug}}" class="thumbnail text-center">

@@ -8,6 +8,9 @@
 @section('image') http://kampusmobil.com/largekampusmobil.png @stop
 
 @section('content')
+
+@include('showBrand.mobils')
+
 <div class="row">
     <h4 class="text-center"><b>Artikel</b></h4><hr>
     @include('layouts.articles')
@@ -16,11 +19,6 @@
 <div class="row">
     <h4 class="text-center"><b>Forum</b></h4><hr>
     @include('layouts.forums')
-</div>
-
-<div class="row">
-    <h4 class="text-center"><b>Spesifikasi</b></h4><hr>
-    @include('layouts.speks')
 </div>
 
 <div class="row">

@@ -6,6 +6,7 @@ use App\Area;
 use App\Spek;
 use App\Brand;
 use App\Forum;
+use App\Mobil;
 use App\Article;
 use App\Marketing;
 use Illuminate\Http\Request;
@@ -24,11 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {   
-        $articles  = Article::latest()->paginate(4);
-        $speks     = Spek::latest()->paginate(4);
+        $articles  = Article::latest()->paginate(2);
         $threads   = Forum::latest()->paginate(3);
+        $mobils    = Mobil::all();
         
-        return view('home', compact('articles','threads','speks'));
+        return view('home', compact('articles','threads','mobils'));
     }
 
     public function cari($brand, $area){

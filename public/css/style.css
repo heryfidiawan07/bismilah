@@ -1,3 +1,9 @@
+.scroll {
+  width: auto; overflow-x: scroll; white-space:nowrap;
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
 .file {
   visibility: hidden;
   position: absolute;
@@ -40,6 +46,7 @@ img { margin: 0 auto; display: block; max-width: 100%; }
 .fotli a {
 	text-decoration: none;
 	color: #000000;
+  font-size: 11px;
 }
 .admin {
   display: inline-block;
@@ -52,7 +59,7 @@ img { margin: 0 auto; display: block; max-width: 100%; }
   width: 200px;
 }
 blockquote {
-	font-size: 12px !important;
+	font-size: 11px !important;
 	color: #000000;
 	font-weight: bold;
 }
