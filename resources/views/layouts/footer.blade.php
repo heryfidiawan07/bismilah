@@ -24,6 +24,9 @@
           <li class="fotli">
             <a href="/spesifikasi">Spesifikasi</a>
           </li>
+          <li class="fotli">
+            <a href="/member">Member</a>
+          </li>
         @if (Auth::guest())
           <li class="fotli">
             <a href="/login">Login</a>
@@ -34,9 +37,6 @@
         @endif
       </div>
       <div class="text-center">
-        <li class="fotli">
-          <a href="/member">Member</a>
-        </li>
         <li class="fotli">
           <a href="/kritik-dan-saran">Kritik dan saran</a>
         </li>

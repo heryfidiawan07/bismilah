@@ -42,10 +42,7 @@
 	border: none;
 }
 .modal-header {
-  background-image:
-  linear-gradient(
-    #004e92, #999999
-  );
+  background-color: grey;
 	border-bottom: none;
 }
 .btn-demo:focus {

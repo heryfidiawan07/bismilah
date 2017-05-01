@@ -1,7 +1,25 @@
 .scroll {
   width: auto; overflow-x: scroll; white-space:nowrap;
 }
+.line {
+  display: inline-block;
+}
+.line a {
+  padding: 10px 30px;
+}
+.line a:hover {
+  background-color: black;
+}
 ::-webkit-scrollbar { 
+    display: none; 
+}
+::-moz-scrollbar { 
+    display: none; 
+}
+::-o-scrollbar { 
+    display: none; 
+}
+::-ms-scrollbar { 
     display: none; 
 }
 .file {
