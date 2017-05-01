@@ -7,16 +7,9 @@
 		<form action="" method="post">
       {{csrf_field()}}
         <div class="form-group {{ $errors->has('mobil_id') ? ' has-error' : '' }} ">
-            <label for="mobil_id">Mobil Model</label>
-            <select name="mobil_id" class="form-control">
-              <option value="{{$tipe->mobil_id}}">{{$tipe->mobil->model}}</option>
-              @foreach($mobils as $mobil)
-                <option value=" {{$mobil->id}} ">{{$mobil->model}}</option>
-              @endforeach
-            </select>
-            @if($errors->has('mobil_id'))
-                <span class="help-block"> {{$errors->first('mobil_id')}} </span>
-            @endif
+            <label for="mobil_id">Model</label>
+            <input type="text" name="mobil_id" value="{{$tipe->mobil->id}}" style="display: none;">
+            <input class="form-control" value="{{$tipe->mobil->model}}" disabled>
         </div>
         <div class="form-group {{ $errors->has('tipe') ? ' has-error' : '' }} ">
             <label for="tipe">Tipe</label>

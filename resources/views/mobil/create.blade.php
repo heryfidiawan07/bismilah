@@ -72,6 +72,7 @@
 							<td>
 								<a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}" class="btn btn-sm btn-primary">lihat</a>
 								<a href="/admin/mobil/{{$mobil->id}}/edit" class="btn btn-sm btn-warning">edit</a>
+								<a href="/admin/series/{{$mobil->slug}}" class="btn btn-sm btn-danger">series</a>
 								<button data-toggle="collapse" data-target="#rem_{{$mobil->id}}" class="btn btn-success btn-sm pull-right">Remove ?</button>
 								<div id="rem_{{$mobil->id}}" class="collapse">
 									<a href="/admin/mobil/{{$mobil->id}}/delete" class="btn btn-sm btn-danger pull-right">delete</a>

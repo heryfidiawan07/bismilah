@@ -28,9 +28,6 @@
             <a class="btn btn-success btn-lg" href="/admin/checkout">Marketing CheckOut</a>
         </li>
         <li class="admin">
-            <a class="btn btn-danger btn-lg" href="/admin/series">Series panel</a>
-        </li>
-        <li class="admin">
             <a class="btn btn-warning btn-lg" href="/admin/users">Users panel</a>
         </li>
     </div>

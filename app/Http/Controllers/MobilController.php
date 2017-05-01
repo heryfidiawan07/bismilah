@@ -26,7 +26,7 @@ class MobilController extends Controller
     }
 
     public function create(){
-        $mobils = Mobil::get();
+        $mobils = Mobil::latest()->get();
         $brands = Brand::orderBy('brand')->get();
         return view('mobil.create', compact('brands','mobils'));
     }

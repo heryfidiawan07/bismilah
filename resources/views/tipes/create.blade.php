@@ -10,15 +10,8 @@
 					{{csrf_field()}}
 			      <div class="form-group {{ $errors->has('mobil_id') ? ' has-error' : '' }} ">
 			          <label for="mobil_id">Model</label>
-			          <select name="mobil_id" class="form-control">
-			          	<option value="">Pilih Model</option>
-			          	@foreach($mobils as $mobil)
-			          		<option value=" {{$mobil->id}} ">{{$mobil->model}}</option>
-			          	@endforeach
-			          </select>
-			          @if($errors->has('mobil_id'))
-			              <span class="help-block"> {{$errors->first('mobil_id')}} </span>
-			          @endif
+			          <input type="text" name="mobil_id" value="{{$mobil->id}}" style="display: none;">
+			          <input class="form-control" value="{{$mobil->model}}" disabled>
 			      </div>
 			      <div class="form-group {{ $errors->has('tipe') ? ' has-error' : '' }} ">
 			          <label for="tipe">Tipe</label>
@@ -72,17 +65,9 @@
 						<td><p>Tipe</p></td><td><p class="animated bounceInRight">{{$tipe->tipe}}</p></td>
 					</tr>
 					<tr>
-						<td><p>Harga</p></td><td><p class="animated bounceInRight">Rp {{$tipe->harga}}</p></td>
-					</tr>
-					<tr>
-						<td><p>Transmisi</p></td><td><p class="animated bounceInRight">{{$tipe->transmisi}}</p></td>
-					</tr>
-					<tr>
-						<td><p>CC</p></td><td><p class="animated bounceInRight">{{$tipe->cc}}</p></td>
-					</tr>
-					<tr>
 						<td>
 							<a href="/admin/series/{{$tipe->id}}/edit" class="btn btn-sm btn-warning">edit</a>
+							<a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}" class="btn btn-sm btn-primary">lihat</a>
 						</td>
 						<td>
 							<button data-toggle="collapse" data-target="#tipe_{{$tipe->id}}" class="btn btn-success btn-sm pull-right">Remove ?</button>

@@ -57,8 +57,8 @@ Route::get('/admin/mobil/{id}/edit', 'MobilController@edit');
 Route::post('/admin/mobil/{id}/edit', 'MobilController@update');
 Route::get('/admin/mobil/{id}/delete', 'MobilController@destroy');
 //Tipe Panel
-Route::get('/admin/series', 'TipeController@create');
-Route::post('/admin/series', 'TipeController@store');
+Route::get('/admin/series/{model}', 'TipeController@create');
+Route::post('/admin/series/{model}', 'TipeController@store');
 Route::get('/admin/series/{id}/edit', 'TipeController@edit');
 Route::post('/admin/series/{id}/edit', 'TipeController@update');
 //Marketing Amdin

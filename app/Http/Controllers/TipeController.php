@@ -8,11 +8,16 @@ use App\Brand;
 use Illuminate\Http\Request;
 
 class TipeController extends Controller
-{
-    public function create(){
-    	$mobils = Mobil::orderBy('model')->get();
-    	$tipes  = Tipe::all();
-      return view('tipes.create', compact('mobils','tipes'));
+{   
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
+    public function create($model){
+    	$mobil  = Mobil::whereSlug($model)->first();
+    	$tipes  = Tipe::where('mobil_id',$mobil->id)->latest()->get();
+      return view('tipes.create', compact('mobil','tipes'));
     }
 
     public function store(Request $request){
@@ -34,9 +39,8 @@ class TipeController extends Controller
     }
 
     public function edit($id){
-        $mobils = Mobil::all();
         $tipe   = Tipe::whereId($id)->first();
-        return view('tipes.edit', compact('mobils','tipe'));
+        return view('tipes.edit', compact('tipe'));
     }
     
     public function update(Request $request, $id){
@@ -47,7 +51,6 @@ class TipeController extends Controller
                 'cc' => 'required',
             ]);
     	$tipe  = Tipe::find($id);
-    	$mobil = Mobil::whereId($tipe->mobil_id)->first();
       $tipe->update([
                   'mobil_id' => $request->mobil_id,
                   'tipe' => $request->tipe,
@@ -55,8 +58,7 @@ class TipeController extends Controller
                   'transmisi' => $request->transmisi,
                   'cc' => $request->cc,
               ]);
-      $brand = Brand::whereId($mobil->brand_id)->first();
-      return redirect('/admin/series');
+      return redirect("/admin/series/{$tipe->mobil->slug}");
     }
     
 }

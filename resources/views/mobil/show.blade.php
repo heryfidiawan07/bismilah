@@ -4,7 +4,7 @@
 <div class="row">
 	<h3 class="text-center animated flipInX"><b>{{$mobil->brand->brand}} {{$mobil->model}}</b></h3>
 	<hr>
-	<div class="col-md-5">
+	<div class="col-md-12">
 		<div id="myCarousel" class="carousel slide pull-left" data-ride="carousel" style="margin-bottom: 10px;">
 		  <!-- Indicators -->
 		  <ol class="carousel-indicators">
@@ -26,7 +26,7 @@
 		  </div>
 		</div>
 	</div>
-	<div class="col-md-7">
+	<div class="col-md-12">
 		<table class="table" id="profil">
 			<tr class="tipe">
 				<th>Tipe</th><th>Harga</th><th>Transmisi</th><th>CC</th>
