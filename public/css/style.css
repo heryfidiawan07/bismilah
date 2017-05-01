@@ -5,10 +5,10 @@
   display: inline-block;
 }
 .line a {
-  padding: 10px 30px;
+  margin: 10px 20px;
 }
 .line a:hover {
-  background-color: black;
+  color: black;
 }
 ::-webkit-scrollbar { 
     display: none; 
@@ -131,7 +131,6 @@ body {
 }
 #mobil {
   width: 100%;
-  max-width: 100%;
   height: 200px;
 }
 #profil {
