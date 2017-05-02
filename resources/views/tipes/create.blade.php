@@ -3,6 +3,9 @@
 @section('content')
 <div class="row">
 	<div class="col-md-6">
+	<div class="text-center">
+		<a class="btn btn-danger" href="/admin/mobils">Mobils Panel</a>
+	</div>
 		<div class="panel panel-default">
 			<h4 class="text-center">Create Type Model</h4>
 			<div class="panel-body"><hr>

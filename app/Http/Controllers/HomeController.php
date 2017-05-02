@@ -27,9 +27,8 @@ class HomeController extends Controller
     {   
         $articles  = Article::latest()->paginate(2);
         $threads   = Forum::latest()->paginate(3);
-        $mobils    = Mobil::all();
         
-        return view('home', compact('articles','threads','mobils'));
+        return view('home', compact('articles','threads'));
     }
 
     public function cari($brand, $area){

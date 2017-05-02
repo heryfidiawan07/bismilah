@@ -10,7 +10,7 @@
             </span>
             <span class="pull-left" style="margin-left: 10px;">
                 <h5><b>{{$user->name}}</b></h5>
-                <p>Joined-{{$user->created_at->diffForHumans()}}</p>
+                <p><small>Joined-{{$user->created_at->diffForHumans()}}</small></p>
             </span>
         </div>
         </div>

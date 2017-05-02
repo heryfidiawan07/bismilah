@@ -13,7 +13,7 @@
             <a href="/member/{{$member->slug}}">
               <p>{{$member->name}}</p>
             </a>
-            <p>Joined :  <small>{{$member->created_at->diffForHumans()}}</small> </p>
+            <p><small>Joined : {{$member->created_at->diffForHumans()}}</small> </p>
   				</div>
         </div>
 	    </div>

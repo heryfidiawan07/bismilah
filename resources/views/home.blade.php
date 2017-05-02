@@ -12,7 +12,7 @@
 @include('showBrand.mobils')
 
 <div class="row">
-    <h4 class="text-center"><b>Artikel</b></h4><hr>
+    <h4 class="text-center"><b>Berita</b></h4><hr>
     @include('layouts.articles')
 </div>
 
