@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
-@section('url') http://kampusmobil.com/spesifikasi/{{$spek->mobil->model}}/{{$spek->slug}} @stop
+@section('url') http://kampusmobil.com/spesifikasi/{{$spek->mobil->slug}}/{{$spek->slug}} @stop
 @section('title') {{$spek->title}} @stop
-@section('description') {{ str_limit(strip_tags($spek->speks), $limit = 150, $end = '...') }} @stop
+@section('description') {{ str_limit(strip_tags($spek->speks), $limit = 250, $end = '...') }} @stop
+@section('image') http://kampusmobil.com/largekampusmobil.png @stop
 
 @section('content')
 <div class="row">

@@ -1,5 +1,15 @@
 @extends('layouts.app')
 
+@section('url') http://kampusmobil.com/{{$brand->slug}} @stop
+@section('title') Harga dan spesifikasi lengkap {{$brand->brand}} terbaru @stop
+@section('description')
+	Harga dan spesifikasi lengkap {{$brand->brand}} terbaru
+	@foreach($mobils as $mobil)
+		{{$mobil->model}}
+	@endforeach
+@stop
+@section('image') http://kampusmobil.com/largekampusmobil.png @stop
+
 @section('content')
 <div class="row">
 <h2 class="text-center"><b>{{$brand->brand}}</b></h2>

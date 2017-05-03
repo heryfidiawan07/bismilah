@@ -9,8 +9,8 @@
 				</a>
 			</div>
 			<div class="col-sm-7">
-				<a href="/spesifikasi/{{$spek->mobil->model}}/{{$spek->slug}}"><b>{{$spek->title}}</b></a>
-				<a href="/spesifikasi/{{$spek->mobil->model}}" class="thumbnail text-center"><b>{{$spek->mobil->model}}</b></a>
+				<a href="/spesifikasi/{{$spek->mobil->slug}}/{{$spek->slug}}"><b>{{$spek->title}}</b></a>
+				<a href="/spesifikasi/{{$spek->mobil->slug}}" class="thumbnail text-center"><b>{{$spek->mobil->model}}</b></a>
       </div>
       <div class="pull-right">
 				@if(Auth::check())

@@ -1,6 +1,9 @@
 User-agent: *
 Disallow: /admin
 Allow: /honda
+Allow: /kia
+Allow: /suzuki
+Allow: /chevrolet
 Allow: /toyota
 Allow: /mitsubishi
 Allow: /nissan
@@ -11,9 +14,12 @@ Allow: /mazda
 Allow: /marketings
 Allow: /karir
 Allow: /forum-mobil
-Allow: /spesifikasi
+Allow: /spesifikasi/mobil
 Allow: /articles
-Allow: /kampus-mobil
-Allow: /Harga-mobil
-Allow: /Promo-mobil
-Allow: /Discount-mobil
+Allow: /kampusmobil
+Allow: /harga-mobil
+Allow: /promo-mobil
+Allow: /discount-mobil
+Allow: /profil-mobil
+Allow: /credit-mobil
+Allow: /dealer-resmi-mobil

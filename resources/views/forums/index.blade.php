@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+@section('url') http://kampusmobil.com/forum @stop
+@section('title') Bahas semua tentang mobil di forum diskusi mobil atau cari marketing mobil di daerah anda @stop
+@section('description')
+	Berita mobil terbaru, Forum diskusi mobil, Spesifikasi mobil atau mau tukar tambah mobil bekas anda ?
+@stop
+@section('image') http://kampusmobil.com/largekampusmobil.png @stop
+
 @section('content')
 @include('layouts.forumkategori')
 <div class="row">

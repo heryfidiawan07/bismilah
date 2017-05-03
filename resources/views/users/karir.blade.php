@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+@section('url') http://kampusmobil.com/karir @stop
+@section('title') Solusi cerdas jadi marketing mobil @stop
+@section('description')
+	Kampus mobil memberikan layanan marketing karir untuk anda. Disini anda dapat mempromosikan kelebihan anda dan perusahaan anda tentunya.
+@stop
+@section('image') http://kampusmobil.com/largekampusmobil.png @stop
+
 @section('content')
 	<div class="row">
 		<div class="col-md-10">

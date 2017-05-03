@@ -2,7 +2,7 @@
 
 @section('url') http://kampusmobil.com/forum/{{$thread->brand->slug}}/{{$thread->slug}} @stop
 @section('title') {{$thread->title}} @stop
-@section('description') {{ str_limit(strip_tags($thread->body), $limit = 150, $end = '...') }} @stop
+@section('description') {{ str_limit(strip_tags($thread->body), $limit = 250, $end = '...') }} @stop
 @section('image') {{$thread->img}} @stop
 
 @section('content')

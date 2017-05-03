@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+@section('url') http://kampusmobil.com/spesifikasi @stop
+@section('title') Cari tau spesifikasi mobil anda disini, Forum diskusi mobil atau cari marketing mobil di daerah anda @stop
+@section('description')
+	Berita mobil terbaru, Forum diskusi mobil, Spesifikasi mobil atau mau tukar tambah mobil bekas anda, ada marketingnya juga loo !!
+@stop
+@section('image') http://kampusmobil.com/largekampusmobil.png @stop
+
 @section('content')
 <div class="row">
 	<h4 class="text-center"><b>Spesifikasi</b>

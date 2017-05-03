@@ -2,7 +2,7 @@
 
 @section('url') http://kampusmobil.com/{{$article->brand->slug}}/{{$article->slug}} @stop
 @section('title') {{$article->title}} @stop
-@section('description') {{ str_limit(strip_tags($article->body), $limit = 150, $end = '...') }} @stop
+@section('description') {{ str_limit(strip_tags($article->body), $limit = 250, $end = '...') }} @stop
 @section('image') {{$article->img}} @stop
 
 @section('content')

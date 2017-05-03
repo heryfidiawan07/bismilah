@@ -1,5 +1,15 @@
 @extends('layouts.app')
 
+@section('url') http://kampusmobil.com/profil/{{$mobil->brand->slug}}/{{$mobil->slug}} @stop
+@section('title') Harga dan spesifikasi lengkap {{$mobil->brand->brand}} {{$mobil->model}} terbaru @stop
+@section('description')
+	Harga dan spesifikasi lengkap {{$mobil->brand->brand}} {{$mobil->model}} terbaru
+	@foreach($types as $type)
+		{{$type->tipe}} {{$type->harga}} {{$type->transmisi}} {{$type->cc}}
+	@endforeach
+@stop
+@section('image') http://kampusmobil.com/{{$mobil->depan}} @stop
+
 @section('content')
 <div class="row">
 	<h3 class="text-center animated flipInX"><b>{{$mobil->brand->brand}} {{$mobil->model}}</b></h3>

@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+@section('url') http://kampusmobil.com/marketing/{{$sales->slug}} @stop
+@section('title') {{$sales->name}} {{$sales->pt}} @stop
+@section('description')
+	{{$sales->brand->brand}} {{$sales->alamat}} {{$sales->tentang}} {{$sales->area->area}}
+@stop
+@section('image') http://kampusmobil.com/marketingImg/{{$sales->img}} @stop
+
 @section('content')
 <div class="row">
 	<div class="col-md-10">
