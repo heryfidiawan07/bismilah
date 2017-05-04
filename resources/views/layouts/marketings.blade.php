@@ -1,7 +1,5 @@
 <div class="row">
 	<div class="col-md-12">
-		<h4 class="text-center"><b>Marketing</b></h4>
-		<hr>
 			<div class="form-inline">
 	        <label for="area_id"><h5 class="btn btn-warning" style="margin-bottom: 20px;"><b>Cari marketing di kota anda</b></h5></label>
 	        <select name="area_id" class="form-control" id="area" style="margin-bottom: 10px;">

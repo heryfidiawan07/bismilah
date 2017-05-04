@@ -3,12 +3,12 @@
 	<div class="col-md-6">
 		<div class="panel panel-default">
 		<div class="panel-body">
-			<div class="col-sm-5">
+			<div class="col-sm-6">
 				<a href="/articles/{{$article->brand->slug}}/{{$article->slug}}">
 					<img src="{{$article->img}}" class="img-responsive" alt="{{$article->brand->brand}}" id="imgH">
 				</a>
 			</div>
-			<div class="col-sm-7">
+			<div class="col-sm-6">
 				<a href="/articles/{{$article->brand->slug}}/{{$article->slug}}"><h5>{{$article->title}}</h5></a>
 				<a href="/articles/{{$article->brand->slug}}" class="thumbnail text-center"><b>{{$article->brand->brand}}</b></a>
       </div>

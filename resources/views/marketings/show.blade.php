@@ -23,8 +23,8 @@
 						<p class="animated bounceInDown">{{$sales->pt}}</p>
 						<p class="animated bounceInDown">{{$sales->alamat}}</p>
 						<p class="animated bounceInDown">
-							<a href="tel://+62{{$sales->hp1}}" class="btn btn-primary">0{{$sales->hp1}}</a>
-							<a href="tel://+62{{$sales->hp2}}" class="btn btn-success">0{{$sales->hp2}}</a>
+							<a href="tel://+62{{$sales->hp1}}" class="btn btn-primary fa fa-phone"> 0{{$sales->hp1}}</a>
+							<a href="tel://+62{{$sales->hp2}}" class="btn btn-success fa fa-whatsapp"> 0{{$sales->hp2}}</a>
 						</p>
 						<p class="animated bounceInDown">{!!nl2br($sales->tentang)!!}</p>
 						<p class="animated bounceInDown">{{$sales->area->area}}</p>

@@ -27,7 +27,7 @@ $(document).ready(function(){
                     $("#hp1").attr("href","#");
                     $("#hp2").html('Tidak di temukan');
                     $("#hp2").attr("href","#");
-                    $("#prof").attr("href","");
+                    $("#prof").attr("href","#");
                 }
                 if (data.iklan == 1) {
                     //console.log(data.name);

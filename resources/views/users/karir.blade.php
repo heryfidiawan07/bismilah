@@ -51,7 +51,7 @@
 			
 			@if(!Auth::user())
 				<div class="alert alert-warning">
-					<h4 class="text-center">Maaf anda harus <a href="/login">login</a> untuk mendaftar jadi marketing</h4>
+					<h4 class="text-center">Maaf anda harus <a href="/login">login</a> untuk daftar jadi marketing</h4>
 				</div>
 			@endif
 

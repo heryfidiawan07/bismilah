@@ -65,7 +65,7 @@ class UserController extends Controller
                 'alamat' => 'required',
                 'hp1' => 'required',
                 'hp2' => 'required',
-                'tentang' => 'required|max:100',
+                'tentang' => 'required|max:500',
             ]);
         $user = Auth::user();
         $time = date('Y-m-d_H-i-s');

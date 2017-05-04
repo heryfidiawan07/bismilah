@@ -20,8 +20,8 @@ class CreateMarketingsTable extends Migration
             $table->string('img');
             $table->string('pt');
             $table->string('alamat');
-            $table->integer('hp1');
-            $table->integer('hp2')->nullable();
+            $table->string('hp1');
+            $table->string('hp2')->nullable();
             $table->string('tentang')->nullable();
             $table->integer('brand_id')->unsigned();
             $table->integer('area_id')->unsigned();

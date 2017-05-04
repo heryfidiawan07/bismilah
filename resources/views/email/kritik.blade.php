@@ -94,7 +94,7 @@ $style = [
                     <?php
                       $actionColor = 'button--red';
                     ?>
-                    <a href="http://kampusmobil.com/marketing/admin/kritik-dan-saran/{{$kritik->title}}/{{$kritik->id}}"
+                    <a href="http://kampusmobil.com/admin/kritik-dan-saran/{{$kritik->title}}/{{$kritik->id}}"
                       style="{{ $fontFamily }} {{ $style['button'] }} {{ $style[$actionColor] }}"
                       class="button"
                       target="_blank">

@@ -22,7 +22,7 @@ Daftar jadi marketing
 				{{csrf_field()}}
 		      <div class="form-group {{ $errors->has('area_id') ? ' has-error' : '' }} ">
 		          <label for="area_id">Pilih brand dan wilayah - 
-		          	<a href="/kritik-dan-saran" class="btn btn-primary btn-xs">Ajaukan permintaan ke admin</a>
+		          	<a href="/kritik-dan-saran" class="btn btn-primary btn-xs">Ajaukan permintaan</a>
 		          </label>
 		          <a type="button" href="#" data-toggle="collapse" data-target="#brandArea" class="form-control text-center" style="text-decoration: none; color: black;">Pilih brand dan wilayah</a>
 		          <div id="brandArea" class="collapse">

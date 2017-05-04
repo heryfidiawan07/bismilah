@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use File;
 use Auth;
 use Image;
 use App\User;
@@ -127,7 +128,9 @@ class MarketingController extends Controller
         if (File::exists($path)) {
             File::delete($path);
             $marketings->save();
+            $marketings->delete();
         }
+        $marketings->delete();
         return back();
     }
 

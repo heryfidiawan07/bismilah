@@ -1,4 +1,4 @@
-<h3 class="text-center"><b>Marketing</b></h3><hr>
+
 	<div class="form-inline">
       <label for="area_id"><h5 class="btn btn-warning" style="margin-bottom: 20px;"><b>Cari marketing di kota anda</b></h5></label>
       <select name="brand_id" class="form-control" id="brand" style="margin-bottom: 10px;">
