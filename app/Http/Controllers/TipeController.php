@@ -26,7 +26,6 @@ class TipeController extends Controller
                 'tipe' => 'required',
                 'harga' => 'required',
                 'transmisi' => 'required',
-                'cc' => 'required',
             ]);
     	Tipe::create([
     			'mobil_id' => $request->mobil_id,
@@ -48,7 +47,6 @@ class TipeController extends Controller
                 'tipe' => 'required',
                 'harga' => 'required',
                 'transmisi' => 'required',
-                'cc' => 'required',
             ]);
     	$tipe  = Tipe::find($id);
       $tipe->update([

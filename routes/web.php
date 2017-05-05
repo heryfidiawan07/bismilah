@@ -1,4 +1,40 @@
 <?php
+
+use Illuminate\Support\Facades\Input;
+Route::post('/kirim-tukar-tambah', function() {
+    $data = [
+    	'email' => Input::get('email'), 
+    	'alamat' => Input::get('alamat'), 
+    	'hp1' => Input::get('hp1'), 
+    	'hp2' => Input::get('hp2'), 
+    	'pesan' => Input::get('pesan')
+    ];
+    $rules = array(
+        'email'   => 'required|email',
+        'alamat'  => 'required|min:5',
+        'hp1'     => 'required|min:11',
+        'hp2'     => 'required|min:11',
+        'pesan'   => 'required|max:500',
+        'g-recaptcha-response' => 'required|captcha',
+    );
+    $validation = Validator::make(Input::all(), $rules);
+    if ($validation->fails()) {
+        return Redirect::to('/')->withInput()->withErrors($validation);
+    } else { 
+        Mail::raw(
+        	'Email : '.$data['email'].'------------------------------------'.
+        	'Alamat : '.$data['alamat'].'------------------------------------'.
+        	'HP : '.$data['hp1'].'------------------------------------'.
+        	'WA : '.$data['hp2'].'------------------------------------'.
+        	'Pesan : '.$data['pesan'], function($message) {
+		      $message->to('heryfidiawan07@gmail.com');
+              $message->subject('Ada yang mau tukar tambah BOSS');
+              $message->from('kampusmobil@gmail.com');
+    		});
+    return Redirect::to('/')->withInput()->with('success', 'Pesan anda akan kami proses.');
+    }
+});
+
 //Syarat
 Route::get('/syarat-dan-ketentuan', 'HomeController@syarat');
 //Memeber

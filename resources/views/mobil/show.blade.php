@@ -39,14 +39,13 @@
 	<div class="col-md-12">
 		<table class="table" id="profil">
 			<tr class="tipe">
-				<th>Tipe</th><th>Harga</th><th>Transmisi</th><th>CC</th>
+				<th>Tipe</th><th>Harga</th><th>Transmisi</th>
 			</tr>
 		@foreach($types as $type)
 			<tr>
 				<td><p id="tbl" class="animated bounceInRight">{{$type->tipe}}</p></td>
-				<td><p id="tbl" class="animated bounceInRight">Rp <u>{{$type->harga}}</u></p></td>
+				<td><p id="tbl" class="animated bounceInRight">Rp {{$type->harga}}</p></td>
 				<td><p id="tbl" class="animated bounceInRight">{{$type->transmisi}}</p></td>
-				<td><p id="tbl" class="animated bounceInRight">{{$type->cc}}</p></td>
 			</tr>
 		@endforeach
 		</table>

@@ -74,7 +74,7 @@ class UserController extends Controller
             $ex = $file->getClientOriginalExtension();
             $fileName = $user->id.'_'.$time.'_kampusmobil.'.$ex;
             $path     = $file->getRealPath();
-            $img      = Image::make($path)->resize(300, 250);
+            $img      = Image::make($path)->resize(250, 200);
             $img->save(public_path("marketingImg/". $fileName));
         }
         $slug = str_slug($request->name);
@@ -112,7 +112,7 @@ class UserController extends Controller
         if (!empty($file)) {
             $fileName = $marketing->img;
             $path     = $file->getRealPath();
-            $img      = Image::make($path)->resize(300, 250);
+            $img      = Image::make($path)->resize(250, 200);
             $img->save(public_path("marketingImg/". $fileName));
         }else {
             $fileName = $marketing->img;

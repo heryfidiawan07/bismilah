@@ -30,7 +30,7 @@
 				<p><b id="name">Nama ?</b></p>
 				<p id="pt">PT ?</p>
 				<p id="alamat">Alamat ?</p>
-				<p id="tentang">Promo ?</p>
+				<p id="tentang">Promo dan discount ?</p>
 				<p>
 					<a id="hp1" href="" class="btn btn-primary btn-sm fa fa-phone"></a>
 				 	<a id="hp2" href="" class="btn btn-success btn-sm fa fa-whatsapp"></a>

@@ -49,7 +49,7 @@ class MarketingController extends Controller
             $ex = $file->getClientOriginalExtension();
             $fileName = $user.'_'.$time.'_kampusmobil.'.$ex;
             $path     = $file->getRealPath();
-            $img      = Image::make($path)->resize(300, 250);
+            $img      = Image::make($path)->resize(250, 200);
             $img->save(public_path("marketingImg/". $fileName));
         }
     	Marketing::create([
@@ -97,7 +97,7 @@ class MarketingController extends Controller
             $ex = $file->getClientOriginalExtension();
             $fileName = $user.'_'.$time.'_kampusmobil.'.$ex;
             $path     = $file->getRealPath();
-            $img      = Image::make($path)->resize(300, 250);
+            $img      = Image::make($path)->resize(250, 200);
             $img->save(public_path("marketingImg/". $fileName));
         }else {
             $fileName = $marketing->img;

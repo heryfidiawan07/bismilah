@@ -58,7 +58,7 @@
 	<div class="col-md-6">
 		<div class="panel panel-default">
 		<div class="panel-body" style="overflow: scroll; max-height: 800px; font-weight: bold;">
-			<h4 class="text-center">Mobil Model Series</h4>
+			<h4 class="text-center">Mobil Model Series - <a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}" class="btn btn-sm btn-primary">lihat</a></h4>
 			<table class="table table-hover">
 				@foreach($tipes as $tipe)
 					<tr class="danger">
@@ -70,7 +70,6 @@
 					<tr>
 						<td>
 							<a href="/admin/series/{{$tipe->id}}/edit" class="btn btn-sm btn-warning">edit</a>
-							<a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}" class="btn btn-sm btn-primary">lihat</a>
 						</td>
 						<td>
 							<button data-toggle="collapse" data-target="#tipe_{{$tipe->id}}" class="btn btn-success btn-sm pull-right">Remove ?</button>

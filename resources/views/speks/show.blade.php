@@ -3,7 +3,7 @@
 @section('url') http://kampusmobil.com/spesifikasi/{{$spek->mobil->slug}}/{{$spek->slug}} @stop
 @section('title') {{$spek->title}} @stop
 @section('description') {{ str_limit(strip_tags($spek->speks), $limit = 250, $end = '...') }} @stop
-@section('image') http://kampusmobil.com/largekampusmobil.png @stop
+@section('image') https://lh3.googleusercontent.com/-WL0ZJvL2woo/WQBwHGJsPdI/AAAAAAAAAkg/sehLYuEPH5MnOCIo06PD-mx6V2xLa8SQwCHM/s200/%255BUNSET%255D @stop
 
 @section('content')
 <div class="row">

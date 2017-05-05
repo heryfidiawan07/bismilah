@@ -15,9 +15,7 @@
 		<table class="table table-hover">
 			<tr>
 				<td>
-					<a href="{{$sales->img}}">
-						<img src="{{asset('/marketingImg/'.$sales->img )}}" class="img-thumbnail pull-left" width="350" height="350" style="margin-right: 15px;">
-					</a>
+					<img src="{{asset('/marketingImg/'.$sales->img )}}" class="img-thumbnail pull-left" width="350" height="350" style="margin-right: 15px;">
 					<div class="pull-left">
 						<h4 class="animated bounceInDown"><b>{{$sales->name}}</b></h4>
 						<p class="animated bounceInDown">{{$sales->pt}}</p>
@@ -27,7 +25,7 @@
 							<a href="tel://+62{{$sales->hp2}}" class="btn btn-success fa fa-whatsapp"> 0{{$sales->hp2}}</a>
 						</p>
 						<p class="animated bounceInDown">{!!nl2br($sales->tentang)!!}</p>
-						<p class="animated bounceInDown">{{$sales->area->area}}</p>
+						<div class="well"><p class="animated bounceInDown ">{{$sales->area->area}}</p></div>
 						<a href="/{{$sales->brand->slug}}" class="thumbnail text-center animated bounceInDown"><b>{{$sales->brand->brand}}</b></a>
 					</div>
 				</td>

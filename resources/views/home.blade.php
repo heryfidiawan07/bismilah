@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('url') http://kampusmobil.com/ @stop
-@section('title') Dealer Mobil, Harga Mobil, Semua tentang mobil. @stop
+@section('title') Mengulas berita mobil, spesifikasi, harga mobil dan bisa langsung menghubungi marketing terdekat. @stop
 @section('description')
 	Berita mobil, Spesifikasi mobil, Profil mobil, Marketing mobil, Forum diskusi, Harga Promo dan discount terbaru.
 @stop

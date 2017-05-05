@@ -20,11 +20,14 @@
     <meta name="description"   content="@yield('description')" />
     <meta name="image"         content="@yield('image')" />
 
+    <meta property="fb:app_id"        content="283238748770550" />
     <meta property="og:url"           content="@yield('url')" />
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="@yield('title')" />
     <meta property="og:description"   content="@yield('description')" />
     <meta property="og:image"         content="@yield('image')" />
+    <meta property="og:image:width"   content="600" />
+    <meta property="og:image:height"  content="315" />
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
@@ -60,6 +63,7 @@
         @include('layouts.brandmodal')
         <div class="container" style="min-height: 484px;">
             @yield('content')
+            @include('users.tukartambah')
         </div>
         @include('layouts.footer')
     </div>
