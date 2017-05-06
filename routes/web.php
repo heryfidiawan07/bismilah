@@ -31,7 +31,7 @@ Route::post('/kirim-tukar-tambah', function() {
               $message->subject('Ada yang mau tukar tambah BOSS');
               $message->from('kampusmobil@gmail.com');
     		});
-    return Redirect::to('/')->withInput()->with('success', 'Pesan anda akan kami proses.');
+    return Redirect::to('/')->withInput()->with('success', 'Terimakasih, pesan anda akan segera kami proses.');
     }
 });
 

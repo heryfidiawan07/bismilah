@@ -22,14 +22,15 @@ class AdminController extends Controller
     }
 
     public function createKritik(){
-        $user = Auth::user();
-    	return view('kritik.create', compact('user'));
+    	return view('kritik.create');
     }
 
     public function storeKritik(Request $request){
     	$this->validate($request, [
                 'title' => 'required|min:3|max:255',
-                'body' => 'required|min:3',
+                'email' => 'required',
+                'body' => 'required|min:3|max:500',
+                'g-recaptcha-response' => 'required|captcha',
             ]);
         $kritik = Kritik::create([
 	    		'title' => $request->title,

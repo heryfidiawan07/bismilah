@@ -1,6 +1,6 @@
 @if(Session::has('success'))
 	<div class="alert alert-success">
-	    <h2>{{ Session::get('success') }}</h2>
+	    <p class="animated bounceInUp">{{ Session::get('success') }}</p>
 	</div>
 @endif
 <div class="text-center">

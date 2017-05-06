@@ -61,7 +61,7 @@
     <div id="app">
         @include('layouts.nav')
         @include('layouts.brandmodal')
-        <div class="container" style="min-height: 484px;">
+        <div class="container" style="min-height: 495px;">
             @yield('content')
             @include('users.tukartambah')
         </div>
