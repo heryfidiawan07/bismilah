@@ -28,7 +28,7 @@ class SpekController extends Controller
     }
             
     public function create(){
-		$mobils		  = Mobil::all();
+		$mobils = Mobil::orderBy('brand_id')->get();
 		return view('speks.create', compact('mobils'));
     }
 
@@ -48,10 +48,10 @@ class SpekController extends Controller
     }
 
     public function show($model, $title){
-        $mobils    = Mobil::whereModel($model)->first();
+        $mobils    = Mobil::whereSlug($model)->first();
         $brand     = Brand::whereId($mobils->brand_id)->first();
-    	$spek  	   = Spek::where('mobil_id',$mobils->id)->first();
-        if ($spek && $mobils) {
+    	$spek  	   = Spek::where([['mobil_id',$mobils->id],['slug',$title]])->first();
+        if ($spek) {
             return view('speks.show', compact('spek','brand'));
         }
             return redirect('/spesifikasi');

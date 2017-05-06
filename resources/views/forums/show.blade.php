@@ -105,4 +105,5 @@
 	<script type="text/javascript" src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 	<script type="text/javascript" src="/js/mcef.js"></script>
 	<script src="/js/marketings.js"></script>
+	<script src="/js/img.js"></script>
 @stop

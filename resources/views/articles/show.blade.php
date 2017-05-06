@@ -13,10 +13,12 @@
 			<h4 class="text-center"><b>{{$article->title}}</b></h4>
 			<hr class="garis">
 			<a href="{{$article->img}}">
-				<img src="{{$article->img}}" class="img-responsive" alt="{{$article->brand->brand}}" style="max-width: 100%; max-height: 400px;">
+				<img src="{{$article->img}}" class="img-responsive" alt="{{$article->brand->brand}}" style="max-width: 100%;">
 			</a>
 			<br>
-			{!! $article->body !!}
+			<div id="articleShow">
+				{!! $article->body !!}
+			</div>
 			<hr>
 			<p class="pull-left">
 				<a href="/{{$article->brand->slug}}" class="thumbnail text-center"><b>{{$article->brand->brand}}</b></a>

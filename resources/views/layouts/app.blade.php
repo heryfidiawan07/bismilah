@@ -63,8 +63,9 @@
         @include('layouts.brandmodal')
         <div class="container" style="min-height: 495px;">
             @yield('content')
-            @include('users.tukartambah')
         </div>
+        @include('users.tukartambah')
+        <br>
         @include('layouts.footer')
     </div>
     <!-- Scripts -->
