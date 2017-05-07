@@ -41,7 +41,7 @@ class ForumController extends Controller
     		'body' => Purifier::clean($request->body),
     		'brand_id' => $request->brand_id,
     	]);
-    	return redirect("/forum/{$brand->brand}/{$slug}");
+    	return redirect("/forum/{$brand->slug}/{$slug}");
     }
 
     public function show($brand, $slug){
@@ -78,7 +78,7 @@ class ForumController extends Controller
     	    		'body' => Purifier::clean($request->body),
     	    		'brand_id' => $request->brand_id,
     	    	]);
-    	return redirect("/forum/{$brand->brand}/{$slug}");
+    	return redirect("/forum/{$brand->slug}/{$slug}");
     }
 
     public function brand($brand){
