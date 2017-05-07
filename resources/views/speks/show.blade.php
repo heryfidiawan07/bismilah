@@ -17,7 +17,7 @@
 			</div>
 			<hr>
 			<p class="pull-left">
-				<a href="/{{$spek->mobil->model}}" class="thumbnail text-center"><b>{{$spek->mobil->model}}</b></a>
+				<a href="/profil/{{$brand->slug}}/{{$spek->mobil->slug}}" class="thumbnail text-center"><b>{{$spek->mobil->model}}</b></a>
 			</p>
 			<p class="pull-right">
 				@if(Auth::check())

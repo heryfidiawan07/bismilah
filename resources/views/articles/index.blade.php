@@ -1,11 +1,10 @@
 @extends('layouts.app')
 
-@section('url') http://kampusmobil.com/articles @stop
-@section('title') Info mobil diskusi mobil atau cari marketing mobil di daerah anda. @stop
+@section('title') Berita seputar mobil dari brand-brand terkenal di Indonesia. @stop
 @section('description')
 	Berita mobil terbaru, Forum diskusi mobil, Spesifikasi mobil atau mau tukar tambah mobil 
 	@foreach($articles as $article)
-		{{$article->brand->brand}}
+		{{$article->brand->slug}}
 	@endforeach
 	bekas anda ?
 @stop

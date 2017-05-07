@@ -13,7 +13,7 @@ class SpekController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('admin', ['except'=>['show','index']]);
+        $this->middleware('admin', ['except'=>['show','index','model']]);
     }
 
     public function index(){

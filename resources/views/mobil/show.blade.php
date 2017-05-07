@@ -3,9 +3,9 @@
 @section('url') http://kampusmobil.com/profil/{{$mobil->brand->slug}}/{{$mobil->slug}} @stop
 @section('title') Harga dan spesifikasi lengkap {{$mobil->brand->brand}} {{$mobil->model}} terbaru @stop
 @section('description')
-	Harga dan spesifikasi lengkap {{$mobil->brand->brand}} {{$mobil->model}} terbaru
+	Harga dan spesifikasi lengkap {{$mobil->brand->slug}} {{$mobil->slug}} terbaru
 	@foreach($types as $type)
-		{{$type->tipe}} {{$type->harga}} {{$type->transmisi}} {{$type->cc}}
+		{{$type->tipe}} {{$type->harga}} {{$type->transmisi}}
 	@endforeach
 @stop
 @section('image') http://kampusmobil.com/{{$mobil->depan}} @stop

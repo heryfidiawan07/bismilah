@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('url') http://kampusmobil.com/{{$brand->slug}} @stop
-@section('title') Harga dan spesifikasi lengkap {{$brand->brand}} terbaru @stop
+@section('title') Harga terbaru dan spesifikasi lengkap {{$brand->slug}} terbaru @stop
 @section('description')
-	Harga dan spesifikasi lengkap {{$brand->brand}} terbaru
+	Harga dan spesifikasi lengkap {{$brand->brand}} terbaru, 
 	@foreach($mobils as $mobil)
-		{{$mobil->model}}
+		{{$mobil->slug}}
 	@endforeach
 @stop
 @section('image') http://kampusmobil.com/largekampusmobil.png @stop

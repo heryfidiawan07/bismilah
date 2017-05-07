@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
-@section('url') http://kampusmobil.com/spesifikasi @stop
-@section('title') Cari tau spesifikasi mobil anda disini, Forum diskusi mobil atau cari marketing mobil di daerah anda. @stop
+@section('title') Spesifikasi lengkap mobil dari brand-brand terkenal di Indonesia. @stop
 @section('description')
-	Berita mobil terbaru, Forum diskusi mobil, Spesifikasi mobil atau mau tukar tambah mobil bekas anda, ada marketingnya juga loo !!
+	Spesifikasi lengkap mobil @foreach($speks as $spek) {{$spek->mobil->slug}} @endforeach , Forum diskusi dan marketing mobil.
 @stop
 @section('image') https://lh3.googleusercontent.com/-WL0ZJvL2woo/WQBwHGJsPdI/AAAAAAAAAkg/sehLYuEPH5MnOCIo06PD-mx6V2xLa8SQwCHM/s200/%255BUNSET%255D @stop
 
