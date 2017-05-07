@@ -12,7 +12,9 @@
 		<div class="panel-body" id="show">
 			<h4 class="text-center"><b>{{$spek->title}}</b></h4>
 			<br>
+			<div id="spekShow">
 				{!! $spek->speks !!}
+			</div>
 			<hr>
 			<p class="pull-left">
 				<a href="/{{$spek->mobil->model}}" class="thumbnail text-center"><b>{{$spek->mobil->model}}</b></a>
@@ -39,4 +41,5 @@
 @section('js')
 	<script src="/js/marketings.js"></script>
 	<script src="/js/img.js"></script>
+	<script src="/js/table.js"></script>
 @stop

@@ -4,6 +4,9 @@ hr.garis {
   box-shadow: 0 10px 10px -10px #8c8b8b inset;
 }
 img { margin: 0 auto; display: block;}
+.scrollTab {
+  width: auto; overflow-x: scroll; white-space:nowrap; max-height: 500px;
+}
 .scrollImg {
   width: auto; overflow-x: scroll; white-space:nowrap; max-height: 500px;
 }
