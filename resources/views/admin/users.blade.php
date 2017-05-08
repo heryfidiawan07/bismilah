@@ -19,7 +19,7 @@
           <button data-toggle="collapse" data-target="#member_{{$member->id}}" class="btn btn-success btn-xs">option ?</button>
             <div id="member_{{$member->id}}" class="collapse">
               <br>
-              <a href="/admin/users/{{$member->id}}/delete" class="btn btn-danger">delete</a>
+              <a href="/admin/users/{{$member->id}}/delete" class="btn btn-danger btn-xs">delete</a>
             </div>
         </div>
 	    </div>

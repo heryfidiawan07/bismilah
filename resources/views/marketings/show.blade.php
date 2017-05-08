@@ -12,7 +12,7 @@
 	<div class="col-md-10">
 		<div class="panel panel-default">
 			<div class="panel-body" id="show">
-				<h4 class="text-center"><b>Marketing</b></h4>
+				<h4 class="text-center"><b>Marketing Executive</b></h4>
 				@include('layouts.flash')
 				<table class="table table-hover">
 					<tr>
@@ -22,11 +22,13 @@
 								<h4 class="animated bounceInDown"><b>{{$sales->name}}</b></h4>
 								<p class="animated bounceInDown">{{$sales->pt}}</p>
 								<p class="animated bounceInDown">{{$sales->alamat}}</p>
+								<p class="animated bounceInDown">{!!nl2br($sales->tentang)!!}</p>
+								<p>Info lebih lanjut hubungi kontak di bawah :</p>
 								<p class="animated bounceInDown">
 									<a href="tel://+62{{$sales->hp1}}" class="btn btn-primary fa fa-phone"> 0{{$sales->hp1}}</a>
 									<a href="tel://+62{{$sales->hp2}}" class="btn btn-success fa fa-whatsapp"> 0{{$sales->hp2}}</a>
 								</p>
-								<p class="animated bounceInDown">{!!nl2br($sales->tentang)!!}</p>
+								<a href="mailto:{{$sales->user->email}}" class="btn btn-danger fa fa-envelope"> {{$sales->user->email}}</a>
 								<p class="well animated bounceInDown">{{$sales->area->area}}</p>
 								<a href="/{{$sales->brand->slug}}" class="thumbnail text-center animated bounceInDown"><b>{{$sales->brand->brand}}</b></a>
 							</div>
@@ -43,13 +45,14 @@
 		<div class="panel panel-default">
 			<div class="panel-body" id="show">
 				@foreach($mobils as $mobil)
-					<div class="col-md-4">
+					<div class="col-xs-4">
 						<a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}">
-							<img src="{{$mobil->depan}}" class="img-responsive" alt="{{$mobil->depan}}" width="100">
+							<img src="{{$mobil->depan}}" class="img-responsive" alt="{{$mobil->depan}}" style="width: 150px; height: 100px;">
 						</a>
 						<div class="text-center">
-							<p><a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}"><b>Lihat prace list {{$mobil->model}}</b></a></p>
+							<p><a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}"><b>prace list {{$mobil->model}}</b></a></p>
 						</div>
+						<hr>
 					</div>
 				@endforeach
 			</div>
