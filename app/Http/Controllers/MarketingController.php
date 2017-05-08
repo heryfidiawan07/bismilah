@@ -8,6 +8,8 @@ use Image;
 use App\User;
 use App\Area;
 use App\Brand;
+use App\Mobil;
+use App\Tipe;
 use App\Marketing;
 use App\Pembayaran;
 use Illuminate\Http\Request;
@@ -142,8 +144,13 @@ class MarketingController extends Controller
     }
 
     public function show($slug){
-        $sales = Marketing::whereSlug($slug)->first();
-        return view('marketings.show', compact('sales'));
+        $sales = Marketing::where([['slug',$slug],['iklan',1]])->first();
+        if ($sales) {
+            $mobils = Mobil::where('brand_id',$sales->brand_id)->get();
+            return view('marketings.show', compact('sales','mobils'));
+        }
+        return redirect('/');
+        
     }
 
     public function indexPembayaran(){
