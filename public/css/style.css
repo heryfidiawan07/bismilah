@@ -5,10 +5,10 @@ hr.garis {
 }
 img { margin: 0 auto; display: block;}
 .scrollTab {
-  width: auto; overflow-x: scroll; white-space:nowrap; max-height: 500px;
+  width: auto; overflow-x: scroll; white-space:nowrap; height: auto;
 }
 .scrollImg {
-  width: auto; overflow-x: scroll; white-space:nowrap; max-height: 500px;
+  width: auto; overflow-x: scroll; white-space:nowrap; height: auto;
 }
 .scroll {
   width: auto; overflow-x: scroll; white-space:nowrap; font-family: 'Rationale', sans-serif;
