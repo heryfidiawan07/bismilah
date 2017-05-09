@@ -63,6 +63,16 @@ class AdminController extends Controller
         return view('admin.users', compact('members'));
     }
 
+    public function usersEdit(Request $request, $id){
+        $members = User::find($id);
+        $members->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'status' => $request->status,
+            ]);
+        return back();
+    }
+
     public function usersDelete($id){
         $user = User::find($id);
         $user->delete();

@@ -51,7 +51,7 @@
 							<form action="/comment/{{$comment->id}}/edit" method="post">
 							{{csrf_field()}}
 								<div class="form-group {{ $errors->has('body') ? ' has-error' : '' }} ">
-				          <textarea name="body" rows="4" class="form-control">{{$comment->body}}</textarea>
+				          <textarea name="body" rows="4" class="form-control comment">{{$comment->body}}</textarea>
 				          @if($errors->has('body'))
 				            <span class="help-block"> {{$errors->first('body')}} </span>
 				          @endif
@@ -77,7 +77,7 @@
 				<form action="/comment/{{$thread->slug}}" method="post">
 					{{csrf_field()}}
 		        <div class="form-group {{ $errors->has('body') ? ' has-error' : '' }} ">
-		          <textarea name="body" rows="5" class="form-control">{{old('body')}}</textarea>
+		          <textarea name="body" rows="5" class="form-control comment">{{old('body')}}</textarea>
 		          @if($errors->has('body'))
 		              <span class="help-block"> {{$errors->first('body')}} </span>
 		          @endif
@@ -105,5 +105,5 @@
 	<script type="text/javascript" src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 	<script type="text/javascript" src="/js/mcef.js"></script>
 	<script src="/js/marketings.js"></script>
-	<script src="/js/img.js"></script>
+	<script src="/js/imgf.js"></script>
 @stop

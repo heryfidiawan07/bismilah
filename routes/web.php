@@ -85,6 +85,7 @@ Route::post('/admin/area/{id}/edit', 'AreaController@update');
 Route::get('/admin/area/{id}/delete', 'AreaController@destroy');
 //User Admin
 Route::get('/admin/users', 'AdminController@users');
+Route::post('/admin/users/{id}/edit', 'AdminController@usersEdit');
 Route::get('/admin/users/{id}/delete', 'AdminController@usersDelete');
 //Mobil Admin
 Route::get('/admin/mobils', 'MobilController@create');

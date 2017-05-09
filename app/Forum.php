@@ -25,5 +25,10 @@ class Forum extends Model
     public function comments(){
     	return $this->hasMany(Comment::class);
     }
+
+    public function jmlCom(){
+        return $this->comments->count();
+    }
+    
     
 }

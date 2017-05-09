@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: 'textarea',
+  selector: '.comment',
   menubar: false,
   theme: 'modern',
   image_description: false,

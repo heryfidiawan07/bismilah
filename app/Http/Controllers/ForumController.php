@@ -18,7 +18,7 @@ class ForumController extends Controller
     }
 
     public function index(){
-    	$threads   = Forum::latest()->paginate(6);
+    	$threads   = Forum::latest()->paginate(3);
     	return view('forums.index', compact('threads'));
     }
 
