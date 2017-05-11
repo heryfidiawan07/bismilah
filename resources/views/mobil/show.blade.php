@@ -39,17 +39,28 @@
 	<div class="col-md-12">
 		<table class="table" id="profil">
 			<tr class="tipe">
-				<th>Tipe</th><th>Harga</th><th>Transmisi</th>
+				<th>Tipe</th><th>Harga</th>
 			</tr>
 		@foreach($types as $type)
 			<tr>
 				<td><p id="tbl" class="animated bounceInRight">{{$type->tipe}}</p></td>
 				<td><p id="tbl" class="animated bounceInRight">Rp {{$type->harga}}</p></td>
-				<td><p id="tbl" class="animated bounceInRight">{{$type->transmisi}}</p></td>
 			</tr>
 		@endforeach
 		</table>
-		<div class="text-center"><a href="/spesifikasi/{{$mobil->slug}}" class="btn btn-success">Spesifikasi lengkap</a></div>
+		<div class="text-center"><i>OTR Jakarta, Harga dapat berubah sewaktu-waktu.<br> Untuk informasi lebih lanjut hubungi marketing terdekat.</i></div>
+		<br>
+		<div class="panel panel-default">
+			<div class="panel-body" id="show">
+				<div class="social-buttons">
+					<b>Share : </b>
+					<a href="https://www.facebook.com/sharer/sharer.php?u=http://kampusmobil.com/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}" target="_blank" class="fa fa-facebook"></a>
+					<a href="https://twitter.com/intent/tweet?url=http://kampusmobil.com/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}" target="_blank" class="fa fa-twitter"></a>
+					<a href="https://plus.google.com/share?url=http://kampusmobil.com/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}" target="_blank" class="fa fa-google"></a>
+				</div>
+			</div>
+		</div>
+		<div class="text-center"><a href="/spesifikasi/{{$mobil->slug}}" class="btn btn-success">Lihat spesifikasi</a></div>
 	</div>
 </div>
 @include('layouts.marketings')

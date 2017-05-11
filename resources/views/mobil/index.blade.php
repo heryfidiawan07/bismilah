@@ -8,7 +8,7 @@
 		{{$mobil->slug}}
 	@endforeach
 @stop
-@section('image') http://kampusmobil.com/largekampusmobil.png @stop
+@section('image') http://kampusmobil.com/brands/{{$brand->slug}}.png @stop
 
 @section('content')
 <div class="row">
@@ -31,6 +31,18 @@
 	@endif
 </div>
 <div class="row"><div class="text-center">{{$mobils->links()}}</div></div>
+
+<div class="panel panel-default">
+	<div class="panel-body" id="show">
+		<div class="social-buttons">
+			<b>Share : </b>
+			<a href="https://www.facebook.com/sharer/sharer.php?u=http://kampusmobil.com/{{$brand->slug}}" target="_blank" class="fa fa-facebook"></a>
+			<a href="https://twitter.com/intent/tweet?url=http://kampusmobil.com/{{$brand->slug}}" target="_blank" class="fa fa-twitter"></a>
+			<a href="https://plus.google.com/share?url=http://kampusmobil.com/{{$brand->slug}}" target="_blank" class="fa fa-google"></a>
+		</div>
+	</div>
+</div>
+
 <div class="row">
 	<div class="col-md-12">
 		<div class="panel panel-default">

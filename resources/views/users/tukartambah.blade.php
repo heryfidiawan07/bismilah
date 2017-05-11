@@ -34,7 +34,7 @@
 	      </div>
 	      <div class="form-group {{ $errors->has('alamat') ? ' has-error' : '' }} ">
 	          <label for="alamat">Alamat</label>
-	          <input type="text" name="alamat" class="form-control" value="{{old('alamat')}}" placeholder="Alamat anda sekarang">
+	          <input type="text" name="alamat" class="form-control" value="{{old('alamat')}}" placeholder="alamat">
 	          @if($errors->has('alamat'))
 	              <span class="help-block"> {{$errors->first('alamat')}} </span>
 	          @endif

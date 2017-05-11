@@ -92,8 +92,10 @@ Daftar jadi marketing
 		          	<div class="panel-body" style="background-color: #f2f2f2;">
 			          	<div class="col-sm-6">
 			          		<p><h4 class="text-center">Bank Transfer</h4><br>
+			          			<b>** Promo dari kampusmobil,  Rp 0 bagi anda yang mendaftar dibulan ini. **</b>
+			          			<br>
 			          			Setelah melakukan pembayaran upload bukti pembayaran, team kami akan segera memproses akun anda secepatnya.<br><br>
-			          			<small><i style="color: orange;">Note : Tombol upload bukti pembayaran akan terlihat ketika anda berhasil mendaftar sebagai marketing.</i></small>
+			          			<small><i style="color: red;">Note : Tombol upload bukti pembayaran akan terlihat ketika anda berhasil mendaftar sebagai marketing.</i></small>
 			          		</p>
 			          	</div>
 			          	<div class="col-sm-6 alert alert-success">
@@ -106,7 +108,7 @@ Daftar jadi marketing
 												<td><p>A/N</p></td><td><p><b>Heri Fidiawan</b></p></td>
 											</tr>
 											<tr>
-												<td><p>Nominal</p></td><td><p><b>Rp 100.000</b></p></td>
+												<td><p>Nominal</p></td><td><p><b>Rp - </b></p></td>
 											</tr>
 										</table>
 			          	</div>

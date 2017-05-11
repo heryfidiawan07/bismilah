@@ -14,8 +14,8 @@
 		          @endif
 		      </div>
 		      <div class="form-group {{ $errors->has('body') ? ' has-error' : '' }} ">
-		          <label for="body">Body</label>
-		          <textarea name="body" rows="10" class="form-control">{{old('body')}}</textarea>
+		          <label for="body">Deskripsi</label>
+		          <textarea name="body" rows="10" class="form-control comment">{{old('body')}}</textarea>
 		          @if($errors->has('body'))
 		              <span class="help-block"> {{$errors->first('body')}} </span>
 		          @endif

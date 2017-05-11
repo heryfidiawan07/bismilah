@@ -1,6 +1,9 @@
+.social a {
+  font-size: 12px;
+}
 .fa {
   margin-bottom: 5px;
-  padding: 10px;
+  padding: 5px;
   width: auto;
   text-align: center;
   text-decoration: none !important;

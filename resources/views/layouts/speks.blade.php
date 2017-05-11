@@ -10,6 +10,7 @@
 			</div>
 			<div class="col-sm-7">
 				<a href="/spesifikasi/{{$spek->mobil->slug}}/{{$spek->slug}}"><b>{{$spek->title}}</b></a>
+				<br><br>
 				<a href="/spesifikasi/{{$spek->mobil->slug}}" class="thumbnail text-center"><b>{{$spek->mobil->model}}</b></a>
       </div>
       <div class="pull-right">

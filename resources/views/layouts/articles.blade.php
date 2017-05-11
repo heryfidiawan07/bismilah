@@ -10,6 +10,7 @@
 			</div>
 			<div class="col-sm-6">
 				<a href="/articles/{{$article->brand->slug}}/{{$article->slug}}"><h5>{{$article->title}}</h5></a>
+				<br>
 				<a href="/articles/{{$article->brand->slug}}" class="thumbnail text-center"><b>{{$article->brand->brand}}</b></a>
       </div>
       <div class="pull-right">
