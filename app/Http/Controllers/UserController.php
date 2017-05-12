@@ -65,7 +65,7 @@ class UserController extends Controller
                 'alamat' => 'required',
                 'hp1' => 'required',
                 'hp2' => 'required',
-                'tentang' => 'required|max:500',
+                'tentang' => 'required|max:255',
             ]);
         $user = Auth::user();
         $time = date('Y-m-d_H-i-s');
@@ -93,7 +93,7 @@ class UserController extends Controller
                 ]);
         Mail::to('heryfidiawan07@gmail.com')->send(new marketingKarir($marketing));
         $request->session()->flash('status', 'Berhasil, Menunggu konfirmasi admin');
-        return redirect("/marketing/{$slug}");
+        return back();
     }
 
     public function updateKarir(Request $request, $id){
@@ -103,7 +103,7 @@ class UserController extends Controller
                 'alamat' => 'required',
                 'hp1' => 'required',
                 'hp2' => 'required',
-                'tentang' => 'required|max:100',
+                'tentang' => 'required|max:255',
             ]);
         $marketing = Marketing::whereId($id)->first();
         $user = Auth::user();
@@ -138,7 +138,7 @@ class UserController extends Controller
                     'user_id' => $user->id,
                 ]);
         $request->session()->flash('status', 'Profil anda berhasil di update');
-        return redirect("/marketing/{$slug}");
+        return back();
     }
     
     public function cekArea($brand){

@@ -94,7 +94,7 @@ $style = [
                     <?php
                       $actionColor = 'button--green';
                     ?>
-                    <a href="http://kampusmobil.com/marketing/{{$marketing->slug}}"
+                    <a href="http://kampusmobil.com//admin/marketings"
                       style="{{ $fontFamily }} {{ $style['button'] }} {{ $style[$actionColor] }}"
                       class="button"
                       target="_blank">
@@ -120,7 +120,7 @@ $style = [
 	                  </p>
 	                  <p style="{{ $style['paragraph-sub'] }}">
                       <a style="{{ $style['anchor'] }}" href="http://kampusmobil.com/marketing/{{$marketing->slug}}" target="_blank">
-                        http://kampusmobil.com/marketing/{{$marketing->slug}}
+                        http://kampusmobil.com//admin/marketings
                       </a>
 	                  </p>
                   </td>

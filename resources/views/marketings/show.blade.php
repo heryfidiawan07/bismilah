@@ -13,7 +13,6 @@
 		<div class="panel panel-default">
 			<div class="panel-body" id="show">
 				<h4 class="text-center"><b>Marketing Executive</b></h4>
-				@include('layouts.flash')
 				<table class="table table-hover">
 					<tr>
 						<td>
@@ -45,7 +44,7 @@
 		<div class="panel panel-default">
 			<div class="panel-body" id="show">
 				@foreach($mobils as $mobil)
-					<div class="col-xs-4">
+					<div class="col-sm-4">
 						<a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}">
 							<img src="{{$mobil->depan}}" class="img-responsive" alt="{{$mobil->depan}}" style="width: 150px; height: 100px;">
 						</a>
