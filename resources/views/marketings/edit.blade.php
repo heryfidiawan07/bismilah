@@ -93,7 +93,7 @@
           <select name="user_id" class="form-control">
             <option value="{{$sales->user->id}}">{{$sales->user->name}}</option>
             @foreach($users as $user)
-              <option value=" {{$user->id}} ">{{$user->name}}</option>
+              <option value="{{$user->id}}">{{$user->name}}</option>
             @endforeach
           </select>
           @if($errors->has('user_id'))

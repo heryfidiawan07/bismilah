@@ -52,7 +52,7 @@
 			
 			@if(!Auth::user())
 				<div class="alert alert-warning">
-					<h4 class="text-center">Maaf anda harus <a href="/login">login</a> untuk daftar jadi marketing</h4>
+					<h4 class="text-center">Untuk terdaftar jadi member marketing anda harus <a href="/login">register / login</a> terlebih dahulu.</h4>
 				</div>
 			@endif
 

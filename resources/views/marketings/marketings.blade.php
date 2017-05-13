@@ -84,7 +84,7 @@
 			          <select name="user_id" class="form-control">
 			          	<option value="">Pilih User</option>
 			          	@foreach($users as $user)
-			          		<option value=" {{$user->id}} ">{{$user->name}}</option>
+			          		<option value="{{$user->id}}">{{$user->name}}</option>
 			          	@endforeach
 			          </select>
 			          @if($errors->has('user_id'))
@@ -94,7 +94,6 @@
 			      <div class="form-group {{ $errors->has('iklan') ? ' has-error' : '' }} ">
 			          <label for="iklan">Iklan</label>
 			          <select name="iklan" class="form-control">
-			          	<option value="">Status iklan</option>
 			          		<option value="0">0</option>
 			          		<option value="1">1</option>
 			          </select>

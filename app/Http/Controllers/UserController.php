@@ -21,7 +21,7 @@ class UserController extends Controller
     }
 
     public function member(){
-        $members = User::paginate(15);
+        $members = User::paginate(12);
         return view('users.member', compact('members'));
     }
 
@@ -68,13 +68,13 @@ class UserController extends Controller
                 'tentang' => 'required|max:255',
             ]);
         $user = Auth::user();
-        $time = date('Y-m-d_H-i-s');
+        $time = date('Y-m-d-H-i-s');
         $file = $request->file('img');
         if (!empty($file)) {
             $ex = $file->getClientOriginalExtension();
-            $fileName = $user->id.'_'.$time.'_kampusmobil.'.$ex;
+            $fileName = $user->id.'-'.$time.'-kampusmobil.'.$ex;
             $path     = $file->getRealPath();
-            $img      = Image::make($path)->resize(250, 200);
+            $img      = Image::make($path)->resize(300, 250);
             $img->save(public_path("marketingImg/". $fileName));
         }
         $slug = str_slug($request->name);
@@ -107,12 +107,11 @@ class UserController extends Controller
             ]);
         $marketing = Marketing::whereId($id)->first();
         $user = Auth::user();
-        $time = date('Y-m-d_H-i-s');
         $file = $request->file('img');
         if (!empty($file)) {
             $fileName = $marketing->img;
             $path     = $file->getRealPath();
-            $img      = Image::make($path)->resize(250, 200);
+            $img      = Image::make($path)->resize(300, 250);
             $img->save(public_path("marketingImg/". $fileName));
         }else {
             $fileName = $marketing->img;

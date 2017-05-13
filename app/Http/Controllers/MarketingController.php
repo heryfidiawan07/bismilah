@@ -44,14 +44,13 @@ class MarketingController extends Controller
                 'tentang' => 'required|max:100',
                 'user_id' => 'required',
             ]);
-        $user   = $request->user_id;
-        $time = date('Y-m-d_H-i-s');
+        $time = date('Y-m-d-H-i-s');
         $file = $request->file('img');
         if (!empty($file)) {
             $ex = $file->getClientOriginalExtension();
-            $fileName = $user.'_'.$time.'_kampusmobil.'.$ex;
+            $fileName = $request->user_id.'-'.$time.'-kampusmobil.'.$ex;
             $path     = $file->getRealPath();
-            $img      = Image::make($path)->resize(250, 200);
+            $img      = Image::make($path)->resize(300, 250);
             $img->save(public_path("marketingImg/". $fileName));
         }
     	Marketing::create([
@@ -93,13 +92,12 @@ class MarketingController extends Controller
                 'user_id' => 'required',
             ]);
         $user   = $request->user_id;
-        $time = date('Y-m-d_H-i-s');
         $file = $request->file('img');
         if (!empty($file)) {
             $ex = $file->getClientOriginalExtension();
-            $fileName = $user.'_'.$time.'_kampusmobil.'.$ex;
+            $fileName = $marketing->img;
             $path     = $file->getRealPath();
-            $img      = Image::make($path)->resize(250, 200);
+            $img      = Image::make($path)->resize(300, 250);
             $img->save(public_path("marketingImg/". $fileName));
         }else {
             $fileName = $marketing->img;
