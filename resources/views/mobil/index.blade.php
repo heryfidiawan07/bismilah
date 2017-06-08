@@ -18,7 +18,7 @@
 	@foreach($mobils as $mobil)
 	<div class="col-md-4">
 		<a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}">
-			<img src="{{$mobil->depan}}" class="img-responsive" alt="{{$mobil->depan}}" id="imgM">
+			<img src="{{$mobil->depan}}" class="img-responsive" alt="{{$mobil->slug}}" id="imgM">
 		</a>
 		<div class="text-center">
 			<h4><a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}"><b>{{$mobil->model}}</b></a></h4>
