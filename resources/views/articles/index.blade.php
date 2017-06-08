@@ -20,7 +20,13 @@
 		<hr>
 	@include('layouts.articles')
 </div>
-<div class="row"><div class="text-center">{{$articles->links()}}</div></div>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="text-center"><small>{{$articles->links()}}</small></div>		
+	</div>
+</div>
+
 <div class="row">
 	<div class="col-md-12">
 		<div class="panel panel-default">

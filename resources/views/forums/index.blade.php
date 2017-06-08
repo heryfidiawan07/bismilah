@@ -21,7 +21,13 @@
 	<hr>
 	@include('layouts.forums')
 </div>
-<div class="row"><div class="text-center">{{$threads->links()}}</div></div>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="text-center"><small>{{$threads->links()}}</small></div>
+	</div>
+</div>
+
 <div class="row">
 	<div class="col-md-12">
 		<div class="panel panel-default">

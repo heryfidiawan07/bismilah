@@ -6,7 +6,11 @@
 	Harga terbaru, Paket kredit, Prace list, Promo dan discount {{$sales->brand->brand}} terbaru {{$sales->pt}} {{$sales->alamat}} {{$sales->tentang}}
 @stop
 @section('image') http://kampusmobil.com/marketingImg/{{$sales->img}} @stop
-
+@section('event')
+	<script>
+		fbq('track', 'InitiateCheckout');
+	</script>
+@stop
 @section('content')
 <div class="row">
 	<div class="col-md-10">
@@ -49,7 +53,7 @@
 							<img src="{{$mobil->depan}}" class="img-responsive" alt="{{$mobil->depan}}" style="width: 150px; height: 100px;">
 						</a>
 						<div class="text-center">
-							<p><a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}"><b>prace list {{$mobil->model}}</b></a></p>
+							<p><a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}"><b>Harga {{$mobil->model}}</b></a></p>
 						</div>
 						<hr>
 					</div>

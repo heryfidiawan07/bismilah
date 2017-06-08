@@ -18,7 +18,11 @@
 	</h4>
 	@include('layouts.speks')
 </div>
-<div class="row"><div class="text-center">{{$speks->links()}}</div></div>
+<div class="row">
+	<div class="col-md-12">
+		<div class="text-center"><small>{{$speks->links()}}</small></div>
+	</div>
+</div>
 
 <div class="row">
 	<div class="col-md-12">
