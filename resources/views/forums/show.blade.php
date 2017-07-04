@@ -31,7 +31,7 @@
 		          <a href="/forum/{{$thread->id}}/edit" class="btn btn-xs btn-success">edit</a> - 
 		        @endif
 		      @endif
-						by - <a href="/member/{{$thread->user->slug}}">{{$thread->user->name}}</a> - <small>{{$thread->user->created_at->diffForHumans()}}</small>
+						by - <a href="/member/{{$thread->user->slug}}">{{$thread->user->name}}</a> - <small>{{$thread->created_at->diffForHumans()}}</small>
 				</p>			
 		</div>
 		</div>

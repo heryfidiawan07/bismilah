@@ -10,15 +10,14 @@
 @section('content')
 @include('layouts.forumkategori')
 <div class="row">
-	<h4 class="text-center"><b>Forum</b>
 		@if(Auth::user())
 			<a href="/forum/create" class="btn btn-sm btn-success pull-right">Tulis !</a>
 		@endif
 	</h4>
+	<br>
 		@if(!Auth::user())
 			<div class="alert alert-warning"><a href="/login"> login </a>sebelum dapat bertanya di forum</div>
 		@endif
-	<hr>
 	@include('layouts.forums')
 </div>
 

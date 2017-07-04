@@ -17,7 +17,6 @@
 				<a href="/admin/article/create" class="btn btn-sm btn-success pull-right">Admin create</a>
 			@endif
 	  @endif
-		<hr>
 	@include('layouts.articles')
 </div>
 
