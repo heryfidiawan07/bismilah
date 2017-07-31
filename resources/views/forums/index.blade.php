@@ -12,6 +12,7 @@
 <div class="row">
 		@if(Auth::user())
 			<a href="/forum/create" class="btn btn-sm btn-success pull-right">Tulis !</a>
+			<br>
 		@endif
 	</h4>
 	<br>

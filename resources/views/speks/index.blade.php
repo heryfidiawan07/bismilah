@@ -11,6 +11,7 @@
 		@if(Auth::check())
       @if(Auth::user()->admin())
 				<a href="/admin/spesifikasi/create" class="btn btn-sm btn-success pull-right">Admin create</a>
+				<br><hr>
 			@endif
 	  @endif
 	</h4>

@@ -15,6 +15,7 @@
 		@if(Auth::check())
       @if(Auth::user()->admin())
 				<a href="/admin/article/create" class="btn btn-sm btn-success pull-right">Admin create</a>
+				<br><hr>
 			@endif
 	  @endif
 	@include('layouts.articles')
