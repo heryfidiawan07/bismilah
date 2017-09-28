@@ -16,7 +16,7 @@ Edit Iklan Anda
       </div>
 
       <div class="modal-body">
-		  	<h4 class="panel-heading text-center">Edit marketings</h4>
+		  	<h4 class="panel-heading text-center">Edit marketing</h4>
 				<form action="/karir/{{$sales->id}}/edit" method="post" enctype="multipart/form-data">
 					{{csrf_field()}}
 		      <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }} ">

@@ -25,8 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {   
-        $articles  = Article::latest()->paginate(2);
-        $threads   = Forum::latest()->paginate(3);
+        $articles  = Article::latest()->paginate(6);
+        $threads   = Forum::latest()->paginate(9);
         
         return view('home', compact('articles','threads'));
     }

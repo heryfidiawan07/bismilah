@@ -29,7 +29,7 @@
 								<p>Info lebih lanjut hubungi kontak di bawah :</p>
 								<p class="animated bounceInDown">
 									<a href="tel://+62{{$sales->hp1}}" class="btn btn-primary fa fa-phone"> 0{{$sales->hp1}}</a>
-									<a href="tel://+62{{$sales->hp2}}" class="btn btn-success fa fa-whatsapp"> 0{{$sales->hp2}}</a>
+									<a href="https://api.whatsapp.com/send?phone=62{{$sales->hp2}}&text=Kampus%20Mobil%20Marketing%20{{$sales->brand->brand}}" class="btn btn-success fa fa-whatsapp"> 0{{$sales->hp2}}</a>
 								</p>
 								<a href="mailto:{{$sales->user->email}}" class="btn btn-danger fa fa-envelope"> {{$sales->user->email}}</a>
 								<p class="well animated bounceInDown">{{$sales->area->area}}</p>

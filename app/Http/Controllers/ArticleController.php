@@ -16,13 +16,13 @@ class ArticleController extends Controller
     }
 
     public function index(){
-    	$articles   = Article::latest()->paginate(4);
+    	$articles   = Article::latest()->paginate(8);
     	return view('articles.index', compact('articles'));
     }
 
     public function brand($brand){
         $brand      = Brand::whereSlug($brand)->first();
-        $articles   = Article::where('brand_id',$brand->id)->latest()->paginate(4);
+        $articles   = Article::where('brand_id',$brand->id)->latest()->paginate(8);
         return view('articles.index', compact('articles'));
     }
 

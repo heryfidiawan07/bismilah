@@ -5,7 +5,7 @@
 @endif
 <div class="text-center">
 	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#tukarTambah">
-	Mau tukar tambah mobil anda ?
+	Kirim Pesan !
 	</button>
 </div>
 <!-- Modal -->
@@ -14,7 +14,7 @@
   <div class="modal-content">
     
     <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">Tukar tambah mobil anda
+      <h5 class="modal-title" id="exampleModalLabel">Isi data anda
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -41,14 +41,14 @@
 	      </div>
 	      <div class="form-group {{ $errors->has('hp1') ? ' has-error' : '' }} ">
 	          <label for="hp1">Hp</label>
-	          <input type="text" name="hp1" class="form-control" value="{{old('hp1')}}" placeholder="CALL / SMS">
+	          <input type="text" name="hp1" class="form-control" value="{{old('hp1')}}" placeholder="call / sms">
 	          @if($errors->has('hp1'))
 	              <span class="help-block"> {{$errors->first('hp1')}} </span>
 	          @endif
 	      </div>
 	      <div class="form-group {{ $errors->has('hp2') ? ' has-error' : '' }} ">
 	          <label for="hp2">Whatsapp</label>
-	          <input type="text" name="hp2" class="form-control" value="{{old('hp2')}}" placeholder="Whatsapp">
+	          <input type="text" name="hp2" class="form-control" value="{{old('hp2')}}" placeholder="whatsapp">
 	          @if($errors->has('hp2'))
 	              <span class="help-block"> {{$errors->first('hp2')}} </span>
 	          @endif

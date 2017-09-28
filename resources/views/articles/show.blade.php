@@ -13,7 +13,7 @@
 			<h4 class="text-center"><b>{{$article->title}}</b></h4>
 			<hr class="garis">
 			<a href="{{$article->img}}">
-				<img src="{{$article->img}}" class="img-responsive" alt="{{$article->brand->brand}}" style="width: 80%; max-height: 400px;">
+				<img src="{{$article->img}}" class="img-responsive" alt="{{$article->brand->brand}}" style="width: 100%; max-height: 400px;">
 			</a>
 			<br>
 			<div id="articleShow">

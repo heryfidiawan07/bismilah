@@ -18,7 +18,7 @@ class ForumController extends Controller
     }
 
     public function index(){
-    	$threads   = Forum::latest()->paginate(3);
+    	$threads   = Forum::latest()->paginate(9);
     	return view('forums.index', compact('threads'));
     }
 
@@ -84,7 +84,7 @@ class ForumController extends Controller
     public function brand($brand){
         $brand      = Brand::whereSlug($brand)->first();
         if ($brand) {
-            $threads   = Forum::where('brand_id',$brand->id)->latest()->paginate(5);
+            $threads   = Forum::where('brand_id',$brand->id)->latest()->paginate(9);
             return view('forums.index', compact('threads'));
         }
             return redirect('/forum');

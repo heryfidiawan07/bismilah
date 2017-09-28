@@ -19,20 +19,20 @@
 				<br>
 				{!!$thread->body!!}
 				<hr>
-				<p class="pull-left">
+				<p>
 					<a href="/{{$thread->brand->slug}}" class="thumbnail text-center"><b>{{$thread->brand->brand}}</b></a>
 				</p>
 				<a href="/member/{{$thread->user->slug}}">
-					<img src="{{$thread->user->avatar()}}" class="img-circle pull-right">
+					<img src="{{$thread->user->avatar()}}" class="img-circle pull-left">
 				</a>
-				<p class="pull-right" style="margin-top: 10px; margin-right: 10px;">
-					@if(Auth::check())
-	          @if(Auth::user()->id == $thread->user_id)
-		          <a href="/forum/{{$thread->id}}/edit" class="btn btn-xs btn-success">edit</a> - 
-		        @endif
-		      @endif
-						by - <a href="/member/{{$thread->user->slug}}">{{$thread->user->name}}</a> - <small>{{$thread->created_at->diffForHumans()}}</small>
-				</p>			
+				<p class="pull-left" style="margin-top: 10px; margin-left: 10px;">
+					<a href="/member/{{$thread->user->slug}}">{{$thread->user->name}}</a> - <small>{{$thread->created_at->diffForHumans()}}</small>
+				</p>
+				@if(Auth::check())
+          @if(Auth::user()->id == $thread->user_id)
+	          <a href="/forum/{{$thread->id}}/edit" class="btn btn-xs btn-success pull-right">edit</a>
+	        @endif
+		    @endif
 		</div>
 		</div>
 
@@ -66,7 +66,7 @@
 				<a href="/member/{{$comment->user->slug}}">
 					<img src="{{$comment->user->avatar()}}" class="img-circle pull-left">
 				</a>
-				<p class="pull-left" style="margin-top: 5px; margin-left: 10px;">
+				<p class="pull-left" style="margin-top: 8px; margin-left: 10px;">
 					<a href="/member/{{$comment->user->slug}}">{{$comment->user->name}}</a> - <small>{{$comment->created_at->diffForHumans()}}</small>
 				</p>
 				<br><hr>

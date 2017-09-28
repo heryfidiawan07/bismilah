@@ -61,7 +61,6 @@ select { border-radius: unset !important; }
 .container .btn { color: white !important;}
 .container .panel {
   text-decoration: none;
-  font-family: 'Rationale', sans-serif;
   letter-spacing: 0.7px;
 }
 .container-fluid a { color: #ffffff !important; text-decoration: none; font-weight: bold; font-family: 'Rationale', sans-serif; letter-spacing: 1px;}
