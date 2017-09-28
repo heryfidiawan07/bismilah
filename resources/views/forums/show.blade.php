@@ -30,7 +30,7 @@
 				</p>
 				@if(Auth::check())
           @if(Auth::user()->id == $thread->user_id)
-	          <a href="/forum/{{$thread->id}}/edit" class="btn btn-xs btn-success pull-right">edit</a>
+	          <a style="margin-top: 10px; margin-left: 10px;" href="/forum/{{$thread->id}}/edit" class="btn btn-xs btn-success pull-right">edit</a>
 	        @endif
 		    @endif
 		</div>
