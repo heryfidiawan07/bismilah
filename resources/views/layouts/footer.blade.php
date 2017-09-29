@@ -30,6 +30,8 @@
           <li class="fotli">
             <a href="/member">Member</a>
           </li>
+      </div>
+      <div class="text-center">
         @if (Auth::guest())
           <li class="fotli">
             <a href="/login">Login</a>

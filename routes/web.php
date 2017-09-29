@@ -110,6 +110,12 @@ Route::post('/admin/article/create', 'ArticleController@store');
 Route::get('/admin/article/{id}/edit', 'ArticleController@edit');
 Route::post('/admin/article/{id}/edit', 'ArticleController@update');
 Route::get('/admin/article/{id}/delete', 'ArticleController@destroy');
+//Video Amdin
+Route::get('/admin/video/create', 'VideoController@create');
+Route::post('/admin/video/create', 'VideoController@store');
+Route::get('/admin/video/{id}/edit', 'VideoController@edit');
+Route::post('/admin/video/{id}/edit', 'VideoController@update');
+Route::get('/admin/video/{id}/delete', 'VideoController@destroy');
 //Spesifikasi Amdin
 Route::get('/admin/spesifikasi/create', 'SpekController@create');
 Route::post('/admin/spesifikasi/create', 'SpekController@store');
@@ -134,12 +140,6 @@ Route::get('/spesifikasi/{model}', 'SpekController@model');
 Route::get('/articles', 'ArticleController@index');
 Route::get('/articles/{brand}/{slug}', 'ArticleController@show');
 Route::get('/articles/{brand}', 'ArticleController@brand');
-//Video Amdin
-Route::get('/admin/video/create', 'VideoController@create');
-Route::post('/admin/video/create', 'VideoController@store');
-Route::get('/admin/video/{id}/edit', 'VideoController@edit');
-Route::post('/admin/video/{id}/edit', 'VideoController@update');
-Route::get('/admin/video/{id}/delete', 'VideoController@destroy');
 //Video Show
 Route::get('/videos', 'VideoController@index');
 Route::get('/videos/{brand}/{slug}', 'VideoController@show');
