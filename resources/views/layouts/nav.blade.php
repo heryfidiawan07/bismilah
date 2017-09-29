@@ -37,8 +37,9 @@
                     @endif
                 @endif
                 <li><a href="{{ url('/') }}">Home</a></li>
-                <li><a href="{{ url('/spesifikasi') }}">Spesifikasi</a></li>
                 <li><a href="{{ url('/articles') }}">Berita</a></li>
+                <li><a href="{{ url('/videos') }}">Videos</a></li>
+                <li><a href="{{ url('/spesifikasi') }}">Spesifikasi</a></li>
                 <li><a href="{{ url('/forum') }}">Forum</a></li>
                 @if(Auth::check())
                     <li><a href="{{ url('/member') }}/{{Auth::user()->slug}}">Profil</a></li>

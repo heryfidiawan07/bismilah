@@ -30,6 +30,9 @@
         <li class="admin">
             <a class="btn btn-warning btn-lg" href="/admin/users">Users panel</a>
         </li>
+        <li class="admin">
+            <a class="btn btn-info btn-lg" href="/videos">Videos panel</a>
+        </li>
     </div>
 </div>
 @endsection

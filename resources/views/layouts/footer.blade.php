@@ -19,6 +19,9 @@
             <a href="/articles">Berita</a>
           </li>
           <li class="fotli">
+            <a href="/videos">Videos</a>
+          </li>
+          <li class="fotli">
             <a href="/forum">Forum</a>
           </li>
           <li class="fotli">

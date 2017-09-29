@@ -134,6 +134,16 @@ Route::get('/spesifikasi/{model}', 'SpekController@model');
 Route::get('/articles', 'ArticleController@index');
 Route::get('/articles/{brand}/{slug}', 'ArticleController@show');
 Route::get('/articles/{brand}', 'ArticleController@brand');
+//Video Amdin
+Route::get('/admin/video/create', 'VideoController@create');
+Route::post('/admin/video/create', 'VideoController@store');
+Route::get('/admin/video/{id}/edit', 'VideoController@edit');
+Route::post('/admin/video/{id}/edit', 'VideoController@update');
+Route::get('/admin/video/{id}/delete', 'VideoController@destroy');
+//Video Show
+Route::get('/videos', 'VideoController@index');
+Route::get('/videos/{brand}/{slug}', 'VideoController@show');
+Route::get('/videos/{brand}', 'VideoController@brand');
 //Comment
 Route::post('/comment/{slug}', 'CommentController@store');
 Route::post('/comment/{id}/edit', 'CommentController@update');
@@ -146,4 +156,3 @@ Route::get('/area/{brand}/{area}', 'MarketingController@area');
 Route::post('/area/{brand}/{area}', 'MarketingController@area');
 //Cari Marketing di home and welcome
 Route::post('/cari/{brand}/{area}', 'HomeController@cari');
-

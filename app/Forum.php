@@ -30,5 +30,4 @@ class Forum extends Model
         return $this->comments->count();
     }
     
-    
 }
