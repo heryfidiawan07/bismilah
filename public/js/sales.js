@@ -41,7 +41,7 @@ $(document).ready(function(){
                     $("#hp1").html("0"+data.hp1);
                     $("#hp1").attr("href","tel://+62"+data.hp1);
                     $("#hp2").html("0"+data.hp2);
-                    $("#hp2").attr("href","tel://+62"+data.hp2);
+                    $("#hp2").attr("href","https://api.whatsapp.com/send?phone=62"+data.hp2+"&text=Kampus%20Mobil%20Marketing");
                     $("#prof").attr("href","/marketing/"+data.slug);
                 }
             }
