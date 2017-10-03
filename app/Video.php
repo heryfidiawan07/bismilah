@@ -2,15 +2,15 @@
 
 namespace App;
 
-use App\Brand;
+use App\Mobil;
 use Illuminate\Database\Eloquent\Model;
 
 class Video extends Model
 {
-    protected $fillable = ['title','slug','link','brand_id'];
+    protected $fillable = ['title','slug','link','mobil_id'];
 
-    public function brand(){
-    	return $this->belongsTo(Brand::class);
+    public function mobil(){
+    	return $this->belongsTo(Mobil::class);
     }
     
 }

@@ -24,7 +24,7 @@ class SpekController extends Controller
     public function model($model){
         $mobil = Mobil::where('slug',$model)->first();
         $speks = Spek::where('mobil_id',$mobil->id)->latest()->paginate(4);
-        return view('speks.index', compact('speks'));    
+        return view('speks.index', compact('speks'));
     }
             
     public function create(){

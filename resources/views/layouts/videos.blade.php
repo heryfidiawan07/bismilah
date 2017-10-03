@@ -2,18 +2,18 @@
 	@foreach($videos as $video)
 	<div class="col-md-6">
 		<div class="panel panel-default">
-		<div class="panel-body">
+		<div class="panel-body index">
 			<div class="col-sm-6">
-				<a href="/videos/{{$video->brand->slug}}/{{$video->slug}}">
+				<a href="/videos/{{$video->mobil->slug}}/{{$video->slug}}">
 					<div class="embed-responsive embed-responsive-16by9">
 						<iframe class="embed-responsive-item" src="{{$video->link}}" frameborder="0" allowfullscreen></iframe>
 					</div>
 				</a>
 			</div>
 			<div class="col-sm-6">
-				<a href="/videos/{{$video->brand->slug}}/{{$video->slug}}"><h5>{{$video->title}}</h5></a>
+				<a href="/videos/{{$video->mobil->slug}}/{{$video->slug}}"><h5>{{$video->title}}</h5></a>
 				<br>
-				<a href="/videos/{{$video->brand->slug}}" class="thumbnail text-center"><b>{{$video->brand->brand}}</b></a>
+				<a href="/videos/{{$video->mobil->slug}}" class="thumbnail text-center"><b>{{$video->mobil->slug}}</b></a>
       </div>
       <div class="pull-right">
 				@if(Auth::check())

@@ -20,16 +20,16 @@
               <span class="help-block"> {{$errors->first('link')}} </span>
           @endif
       </div>
-      <div class="form-group {{ $errors->has('brand_id') ? ' has-error' : '' }} ">
-          <label for="brand_id">Brand</label>
-          <select name="brand_id" class="form-control">
-          	<option value="">Pilih Brand</option>
-          	@foreach($brands as $brand)
-          		<option value=" {{$brand->id}} ">{{$brand->brand}}</option>
+      <div class="form-group {{ $errors->has('mobil_id') ? ' has-error' : '' }} ">
+          <label for="mobil_id">Tipe</label>
+          <select name="mobil_id" class="form-control">
+          	<option value="">Pilih Tipe</option>
+          	@foreach($mobils as $mobil)
+          		<option value=" {{$mobil->id}} ">{{$mobil->model}}</option>
           	@endforeach
           </select>
-          @if($errors->has('brand_id'))
-              <span class="help-block"> {{$errors->first('brand_id')}} </span>
+          @if($errors->has('mobil_id'))
+              <span class="help-block"> {{$errors->first('mobil_id')}} </span>
           @endif
       </div>
 	    <div class="form-group">

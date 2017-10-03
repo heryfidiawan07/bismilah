@@ -2,7 +2,7 @@
 	@foreach($speks as $spek)
 	<div class="col-md-6">
 		<div class="panel panel-default">
-		<div class="panel-body">
+		<div class="panel-body index">
 			<div class="col-sm-5">
 				<a href="/spesifikasi/{{$spek->mobil->slug}}/{{$spek->slug}}">
 					<img src="https://lh3.googleusercontent.com/-WL0ZJvL2woo/WQBwHGJsPdI/AAAAAAAAAkg/sehLYuEPH5MnOCIo06PD-mx6V2xLa8SQwCHM/s200/%255BUNSET%255D" class="img-responsive" alt="spesification" id="imgS">

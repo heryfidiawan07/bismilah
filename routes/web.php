@@ -142,8 +142,8 @@ Route::get('/articles/{brand}/{slug}', 'ArticleController@show');
 Route::get('/articles/{brand}', 'ArticleController@brand');
 //Video Show
 Route::get('/videos', 'VideoController@index');
-Route::get('/videos/{brand}/{slug}', 'VideoController@show');
-Route::get('/videos/{brand}', 'VideoController@brand');
+Route::get('/videos/{model}/{slug}', 'VideoController@show');
+Route::get('/videos/{model}', 'VideoController@model');
 //Comment
 Route::post('/comment/{slug}', 'CommentController@store');
 Route::post('/comment/{id}/edit', 'CommentController@update');

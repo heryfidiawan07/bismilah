@@ -2,7 +2,7 @@
 	@foreach($articles as $article)
 	<div class="col-md-6">
 		<div class="panel panel-default">
-		<div class="panel-body">
+		<div class="panel-body index">
 			<div class="col-sm-6">
 				<a href="/articles/{{$article->brand->slug}}/{{$article->slug}}">
 					<img src="{{$article->img}}" class="img-responsive" alt="{{$article->brand->brand}}" id="imgH">

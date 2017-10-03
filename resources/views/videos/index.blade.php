@@ -4,7 +4,7 @@
 @section('description')
 	Video review mobil terbaru, Forum diskusi mobil, Spesifikasi mobil atau mau minta penawaran discount
 	@foreach($videos as $video)
-		{{$video->brand->slug}}
+		{{$video->mobil->slug}}
 	@endforeach
 @stop
 @section('image') https://seeklogo.com/images/Y/youtube-logo-FF3BEE4378-seeklogo.com.png @stop

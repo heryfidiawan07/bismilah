@@ -13,13 +13,13 @@
             <a class="btn btn-info btn-lg" href="/admin/marketings">Marketings Panel</a>
         </li>
         <li class="admin">
-            <a class="btn btn-warning btn-lg" href="/articles">Articles Panel</a>
+            <a class="btn btn-warning btn-lg" href="/admin/article/create">Articles Panel</a>
         </li>
         <li class="admin">
             <a class="btn btn-danger btn-lg" href="/admin/mobils">Mobils Panel</a>
         </li>
         <li class="admin">
-            <a class="btn btn-primary btn-lg" href="/spesifikasi">Speks Panel</a>
+            <a class="btn btn-primary btn-lg" href="/admin/spesifikasi/create">Spesifikasi Panel</a>
         </li>
         <li class="admin">
             <a class="btn btn-danger btn-lg" href="/admin/kritik-dan-saran/">Kritik dan saran</a>
@@ -31,7 +31,7 @@
             <a class="btn btn-warning btn-lg" href="/admin/users">Users panel</a>
         </li>
         <li class="admin">
-            <a class="btn btn-info btn-lg" href="/videos">Videos panel</a>
+            <a class="btn btn-info btn-lg" href="/admin/video/create">Videos panel</a>
         </li>
     </div>
 </div>

@@ -18,10 +18,10 @@ class CreateVideosTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->string('link');
-            $table->integer('brand_id')->unsigned();
+            $table->integer('mobil_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
+            $table->foreign('mobil_id')->references('id')->on('mobils')->onDelete('cascade');
         });
     }
 

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('url') http://kampusmobil.com/videos/{{$video->brand->slug}}/{{$video->slug}} @stop
+@section('url') http://kampusmobil.com/videos/{{$video->mobil->slug}}/{{$video->slug}} @stop
 @section('title') {{$video->title}} @stop
 @section('description') {{ str_limit(strip_tags($video->body), $limit = 250, $end = '...') }} @stop
 @section('image') {{$video->link}}/0.jpg @stop
@@ -17,7 +17,7 @@
 				</div>
 			<hr>
 			<p class="pull-left">
-				<a href="/{{$video->brand->slug}}" class="thumbnail text-center"><b>{{$video->brand->brand}}</b></a>
+				<a href="/{{$video->mobil->slug}}" class="thumbnail text-center"><b>{{$video->mobil->slug}}</b></a>
 			</p>
 			<p class="pull-right">
 				@if(Auth::check())
