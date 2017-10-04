@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Purifier;
-use App\Forum;
-use App\Comment;
+use App\Video;
+use App\Vcomment;
 use Illuminate\Http\Request;
 
-class CommentController extends Controller
-{		
-	public function __construct()
+class VcommentController extends Controller
+{
+    public function __construct()
     {
         $this->middleware('auth');
     }
@@ -19,10 +19,10 @@ class CommentController extends Controller
         $this->validate($request, [
                 'body' => 'required|min:3',
             ]);
-    	$thread = Forum::whereSlug($slug)->first();
-    	Comment::create([
+    	$thread = Video::whereSlug($slug)->first();
+    	Vcomment::create([
     		'body' => Purifier::clean($request->body),
-    		'forum_id' => $thread->id,
+    		'video_id' => $thread->id,
     		'user_id'  => Auth::user()->id,
     	]);
     	return back();
@@ -32,11 +32,11 @@ class CommentController extends Controller
         $this->validate($request, [
                 'body' => 'required|min:3',
             ]);
-		$comments = Comment::whereId($id)->first();
+		$comments = Vcomment::whereId($id)->first();
 		$comments->update([
 			'body' => Purifier::clean($request->body),
 		]);
 		return back();
     }
-    
+
 }

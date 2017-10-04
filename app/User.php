@@ -4,6 +4,7 @@ namespace App;
 
 use App\Forum;
 use App\Comments;
+use App\Vcomments;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -42,6 +43,10 @@ class User extends Authenticatable
     
     public function comments(){
         return $this->hasMany(Comment::class);
+    }
+
+    public function vcomments(){
+        return $this->hasMany(Vcomment::class);
     }
 
     public function getFb(){

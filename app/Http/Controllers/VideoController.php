@@ -6,13 +6,14 @@ use Auth;
 use App\Brand;
 use App\Mobil;
 use App\Video;
+use App\Vcomment;
 use Illuminate\Http\Request;
 
 class VideoController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('admin', ['except'=>['show','index','model']]);
+        $this->middleware('admin', ['except'=>['show','index','model','brand']]);
     }
 
     public function index(){
@@ -26,6 +27,12 @@ class VideoController extends Controller
         return view('videos.index', compact('videos'));
     }
 
+    public function brand($brand){
+        $brand  = Brand::where('slug',$brand)->first();
+        $videos = Video::where('brand_id',$brand->id)->latest()->paginate(4);
+        return view('videos.index', compact('videos'));
+    }
+
     public function create(){
 		$mobils = Mobil::orderBy('brand_id')->get();
 		return view('videos.create', compact('mobils'));
@@ -36,12 +43,14 @@ class VideoController extends Controller
                 'title' => 'required|unique:forums|max:255',
                 'link' => 'required|max:500',
                 'mobil_id' => 'required',
+                'brand_id' => 'required',
             ]);
     	Video::create([
     	    		'title' => $request->title,
     	    		'slug' => str_slug($request->title),
     	    		'link' => $request->link,
     	    		'mobil_id' => $request->mobil_id,
+                    'brand_id' => $request->brand_id,
     	    	]);
     	return redirect('/videos');
     }
@@ -51,7 +60,8 @@ class VideoController extends Controller
         $brand     = Brand::whereId($mobils->brand_id)->first();
         $video     = Video::where([['mobil_id',$mobils->id],['slug',$slug]])->first();
         if ($video) {
-            return view('videos.show', compact('video','brand'));
+            $comments   = $video->vcomments()->latest()->paginate(5);
+            return view('videos.show', compact('video','brand','comments'));
         }
             return redirect('/videos');
 
@@ -70,6 +80,7 @@ class VideoController extends Controller
     	    		'slug' => str_slug($request->title),
     	    		'link' => $request->link,
     	    		'mobil_id' => $request->mobil_id,
+                    'brand_id' => $request->brand_id,
     	    	]);
     	return redirect('/videos');
     }

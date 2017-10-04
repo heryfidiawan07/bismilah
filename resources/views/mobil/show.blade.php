@@ -62,7 +62,7 @@
 		</div>
 		<div class="text-center"><a href="/spesifikasi/{{$mobil->slug}}" class="btn btn-success">Lihat spesifikasi</a></div>
 		<br>
-		<div class="text-center"><a href="/videos/{{$mobil->brand->slug}}" class="btn btn-danger">Lihat spesifikasi di video</a></div>
+		<div class="text-center"><a href="/videos/{{$mobil->slug}}" class="btn btn-danger">Lihat video review</a></div>
 	</div>
 </div>
 @include('layouts.marketings')

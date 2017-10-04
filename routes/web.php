@@ -142,11 +142,15 @@ Route::get('/articles/{brand}/{slug}', 'ArticleController@show');
 Route::get('/articles/{brand}', 'ArticleController@brand');
 //Video Show
 Route::get('/videos', 'VideoController@index');
+Route::get('/videos/all/{brand}', 'VideoController@brand');
 Route::get('/videos/{model}/{slug}', 'VideoController@show');
 Route::get('/videos/{model}', 'VideoController@model');
 //Comment
 Route::post('/comment/{slug}', 'CommentController@store');
 Route::post('/comment/{id}/edit', 'CommentController@update');
+//Video Comment
+Route::post('/commentar/{slug}', 'VcommentController@store');
+Route::post('/commentar/{id}/edit', 'VcommentController@update');
 //Mobil global
 Route::get('/{brands}', 'MobilController@index');
 Route::get('/profil/{brand}/{slugModel}', 'MobilController@show');

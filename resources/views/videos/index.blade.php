@@ -10,6 +10,9 @@
 @section('image') https://seeklogo.com/images/Y/youtube-logo-FF3BEE4378-seeklogo.com.png @stop
 
 @section('content')
+
+@include('showBrand.videosBrand')
+
 <div class="row">
 		@if(Auth::check())
       @if(Auth::user()->admin())
