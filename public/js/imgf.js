@@ -1,4 +1,4 @@
 $(document).ready(function(){
-	$('img').addClass('spekImg');
-	$('.spekImg').parent().addClass('scrollImg');
+	$('img').css('max-width','100%');
+	$('img').css('height','auto');
 });

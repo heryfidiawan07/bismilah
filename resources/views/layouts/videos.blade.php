@@ -13,7 +13,7 @@
 			<div class="col-sm-6">
 				<a href="/videos/{{$video->mobil->slug}}/{{$video->slug}}"><h5>{{$video->title}}</h5></a>
 				<br>
-				<a href="/videos/{{$video->mobil->slug}}" class="thumbnail text-center pull-left"><b>{{$video->mobil->slug}}</b></a>
+				<a href="/videos/{{$video->mobil->slug}}" class="thumbnail text-center pull-left"><b>{{$video->mobil->model}}</b></a>
 				<a class="pull-right" href="/videos/{{$video->mobil->slug}}/{{$video->slug}}"><small>{{$video->jmlvCom()}} komentar</small></a>
       </div>
       <div class="pull-right">

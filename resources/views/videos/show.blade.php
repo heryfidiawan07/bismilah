@@ -17,7 +17,7 @@
 				</div>
 			<hr>
 			<p class="pull-left">
-				<a href="/videos/{{$video->mobil->slug}}" class="thumbnail text-center"><b>{{$video->mobil->slug}}</b></a>
+				<a href="/videos/{{$video->mobil->slug}}" class="thumbnail text-center"><b>{{$video->mobil->model}}</b></a>
 			</p>
 			<p class="pull-right">
 				@if(Auth::check())

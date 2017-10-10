@@ -45,4 +45,5 @@
 @section('js')
 	<script src="/js/marketings.js"></script>
 	<script src="/js/table.js"></script>
+	<script src="/js/imgf.js"></script>
 @stop

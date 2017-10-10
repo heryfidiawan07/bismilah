@@ -25,7 +25,7 @@
           <select name="brand_id" class="form-control">
             <option value="">Pilih Brand</option>
             @foreach($brands as $brand)
-              <option value=" {{$brand->id}} ">{{$brand->slug}}</option>
+              <option value=" {{$brand->id}} ">{{$brand->brand}}</option>
             @endforeach
           </select>
           @if($errors->has('brand_id'))
