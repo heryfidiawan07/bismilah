@@ -14,7 +14,7 @@
   <div class="modal-content">
     
     <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">Isi data anda
+      <h5 class="modal-title text-center" id="exampleModalLabel">Kirim Pesan
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -27,28 +27,28 @@
 			{{csrf_field()}}
 	      <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }} ">
 	          <label for="email">Email</label>
-	          <input type="email" name="email" class="form-control" value="{{old('email')}}" placeholder="alamat email anda">
+	          <input type="email" name="email" class="form-control" value="{{old('email')}}" placeholder="Alamat email">
 	          @if($errors->has('email'))
 	              <span class="help-block"> {{$errors->first('email')}} </span>
 	          @endif
 	      </div>
 	      <div class="form-group {{ $errors->has('alamat') ? ' has-error' : '' }} ">
 	          <label for="alamat">Alamat</label>
-	          <input type="text" name="alamat" class="form-control" value="{{old('alamat')}}" placeholder="alamat">
+	          <input type="text" name="Alamat" class="form-control" value="{{old('alamat')}}" placeholder="Alamat">
 	          @if($errors->has('alamat'))
 	              <span class="help-block"> {{$errors->first('alamat')}} </span>
 	          @endif
 	      </div>
 	      <div class="form-group {{ $errors->has('hp1') ? ' has-error' : '' }} ">
 	          <label for="hp1">Hp</label>
-	          <input type="text" name="hp1" class="form-control" value="{{old('hp1')}}" placeholder="call / sms">
+	          <input type="text" name="hp1" class="form-control" value="{{old('hp1')}}" placeholder="Call / SMS">
 	          @if($errors->has('hp1'))
 	              <span class="help-block"> {{$errors->first('hp1')}} </span>
 	          @endif
 	      </div>
 	      <div class="form-group {{ $errors->has('hp2') ? ' has-error' : '' }} ">
 	          <label for="hp2">Whatsapp</label>
-	          <input type="text" name="hp2" class="form-control" value="{{old('hp2')}}" placeholder="whatsapp">
+	          <input type="text" name="hp2" class="form-control" value="{{old('hp2')}}" placeholder="Whatsapp">
 	          @if($errors->has('hp2'))
 	              <span class="help-block"> {{$errors->first('hp2')}} </span>
 	          @endif

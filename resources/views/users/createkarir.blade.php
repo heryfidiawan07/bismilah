@@ -1,5 +1,5 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#karir">
-Daftar jadi marketing
+Daftar Jadi Marketing
 </button>
 
 <!-- Modal -->
@@ -8,7 +8,7 @@ Daftar jadi marketing
   <div class="modal-content">
     
     <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">Daftar jadi marketing
+      <h5 class="modal-title text-center" id="exampleModalLabel">Daftar Jadi Marketing
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -21,10 +21,8 @@ Daftar jadi marketing
 			<form action="" method="post" enctype="multipart/form-data">
 				{{csrf_field()}}
 		      <div class="form-group {{ $errors->has('area_id') ? ' has-error' : '' }} ">
-		          <label for="area_id">Pilih brand dan wilayah - 
-		          	<a href="/kritik-dan-saran" class="btn btn-primary btn-xs">Ajaukan permintaan</a>
-		          </label>
-		          <a type="button" href="#" data-toggle="collapse" data-target="#brandArea" class="form-control text-center" style="text-decoration: none; color: black;">Pilih brand dan wilayah</a>
+		          <label for="area_id">Pilih Brand Dan Wilayah</label>
+		          <a type="button" href="#" data-toggle="collapse" data-target="#brandArea" class="form-control text-center" style="text-decoration: none; color: black;">Pilih Brand Dan Wilayah</a>
 		          <div id="brandArea" class="collapse">
 		          	<div class="col-sm-6 alert alert-success">
 		          		@foreach($brands as $brand)
@@ -33,11 +31,23 @@ Daftar jadi marketing
 		          	</div>
 		          	<div class="col-sm-6 alert alert-warning">
 		          		@foreach($areas as $area)
+		          			@if($area->area == 'Kosong')
+                    	@continue;
+                    @endif
 		          			<span class="hasil_{{$area->id}}"><input type="radio" name="area_id" value="{{$area->id}}" class="areas_{{$area->id}}">{{$area->area}}</span> <br>
 		          		@endforeach
 		          	</div>
+		          	<div class="col-md-12">
+		          		<p class="text-center">
+				          	Apabila wilayah / area sudah terisi marketing lain atau belum tersedia pada menu di atas, silahkan kirim permintaan pada tombol berikut.
+				          	<a href="/kritik-dan-saran" class="btn btn-primary btn-xs">Kirim Permintaan</a>
+				          </p>
+		          	</div>
 		          </div>
 		      </div>
+
+		      <div class="row"></div>
+
 		      <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }} ">
 		          <label for="name">Nama</label>
 		          <input type="text" name="name" class="form-control" value="{{old('name')}}" placeholder="Nama">
@@ -45,17 +55,20 @@ Daftar jadi marketing
 		              <span class="help-block"> {{$errors->first('name')}} </span>
 		          @endif
 		      </div>
+
 		      <div class="form-group {{ $errors->has('img') ? ' has-error' : '' }} ">
-		          <label for="img">Image</label>
+		          <label for="img">Foto</label>
 		          @include('layouts.upload')
 		      </div>
+
 		      <div class="form-group {{ $errors->has('pt') ? ' has-error' : '' }} ">
-		          <label for="pt">PT</label>
+		          <label for="pt">Perusahaan</label>
 		          <input type="text" name="pt" class="form-control" value="{{old('pt')}}" placeholder="Perusahaan">
 		          @if($errors->has('pt'))
 		              <span class="help-block"> {{$errors->first('pt')}} </span>
 		          @endif
 		      </div>
+
 		      <div class="form-group {{ $errors->has('alamat') ? ' has-error' : '' }} ">
 		          <label for="alamat">Alamat</label>
 		          <input type="text" name="alamat" class="form-control" value="{{old('alamat')}}" placeholder="Alamat">
@@ -63,20 +76,23 @@ Daftar jadi marketing
 		              <span class="help-block"> {{$errors->first('alamat')}} </span>
 		          @endif
 		      </div>
+
 		      <div class="form-group {{ $errors->has('hp1') ? ' has-error' : '' }} ">
 		          <label for="hp1">Hp</label>
-		          <input type="text" name="hp1" class="form-control" value="{{old('hp1')}}" placeholder="CALL / SMS">
+		          <input type="text" name="hp1" class="form-control" value="{{old('hp1')}}" placeholder="87877xxxxxx">
 		          @if($errors->has('hp1'))
 		              <span class="help-block"> {{$errors->first('hp1')}} </span>
 		          @endif
 		      </div>
+
 		      <div class="form-group {{ $errors->has('hp2') ? ' has-error' : '' }} ">
 		          <label for="hp2">Whatsapp</label>
-		          <input type="text" name="hp2" class="form-control" value="{{old('hp2')}}" placeholder="Whatsapp">
+		          <input type="text" name="hp2" class="form-control" value="{{old('hp2')}}" placeholder="87877xxxxxx">
 		          @if($errors->has('hp2'))
 		              <span class="help-block"> {{$errors->first('hp2')}} </span>
 		          @endif
 		      </div>
+		      
 		      <div class="form-group {{ $errors->has('tentang') ? ' has-error' : '' }} ">
 		          <label for="tentang">Promosikan kelebihan anda</label>
 		          <textarea name="tentang" rows="5" class="form-control">{{old('tentang')}}</textarea>

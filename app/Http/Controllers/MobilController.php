@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Video;
 use App\Tipe;
+use App\Forum;
+use App\Article;
+use App\Spek;
 use App\Mobil;
 use App\Brand;
 use App\Marketing;
@@ -22,11 +26,15 @@ class MobilController extends Controller
             return view('errors.404');
         }
         $mobils = Mobil::where('brand_id',$brand->id)->latest()->paginate(6);
-        return view('mobil.index', compact('mobils','brand'));
+        $articles  = $brand->articles()->latest()->paginate(2);
+        $speks     = $brand->speks()->latest()->paginate(2);
+        $videos    = $brand->videos()->latest()->paginate(2);
+        $threads   = $brand->forums()->latest()->paginate(2);
+        return view('mobil.index', compact('mobils','brand','videos','articles','speks','threads'));
     }
 
     public function create(){
-        $mobils = Mobil::latest()->get();
+        $mobils = Mobil::orderBy('brand_id')->get();
         $brands = Brand::orderBy('brand')->get();
         return view('mobil.create', compact('brands','mobils'));
     }
@@ -54,7 +62,11 @@ class MobilController extends Controller
         $mobil  = Mobil::whereSlug($slugModel)->first();
         $brand  = Brand::whereSlug($brand)->first();
         $types  = Tipe::where('mobil_id',$mobil->id)->get();
-        return view('mobil.show', compact('mobil','marketings','brand','types'));
+        $articles  = $brand->articles()->latest()->paginate(2);
+        $threads   = $brand->forums()->latest()->paginate(2);
+        $videos    = $mobil->videos()->latest()->paginate(2);
+        $speks     = $mobil->speks()->latest()->paginate(2);
+        return view('mobil.show', compact('mobil','marketings','brand','types','articles','speks','videos','threads'));
     }
 
     public function edit($id){

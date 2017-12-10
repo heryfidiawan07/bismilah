@@ -48,6 +48,13 @@
         <li class="fotli">
           <a href="/karir">Marketing karir</a>
         </li>
+        @if(Auth::check())
+          @if(Auth::user()->admin())
+            <li class="fotli">
+              <a href="/iklan">Iklan</a>
+            </li>
+          @endif
+        @endif
         <li class="fotli">
           <a href="/syarat-dan-ketentuan">Syarat dan Ketentuan</a>
         </li>

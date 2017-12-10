@@ -12,7 +12,9 @@
 				<table class="table" id="modal-table">
 					@foreach($brands as $brand)
 						<tr><td>
-							<a href="/{{$brand->slug}}" style="display: block; color: black;">{{$brand->brand}}</a>
+							<a href="/{{$brand->slug}}" style="display: block; color: black;">
+								<img src="/brands/{{$brand->slug}}.png" width="35" style="float: left; margin-right: 5px;">{{$brand->brand}}
+							</a>
 						</td></tr>
 					@endforeach
 				</table>

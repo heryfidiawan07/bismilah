@@ -32,5 +32,21 @@
 	  </div>
 	</div>
 </div>
+
+<div class="row">
+	<h4 class="text-center"><b>Berita</b></h4><hr>
+	@include('layouts.articles')
+</div>
+
+<div class="row">
+    <h4 class="text-center"><b>Forum</b></h4><hr>
+    @include('layouts.forums')
+</div>
+
+<div class="row">
+    <h4 class="text-center"><b>Video Review</b></h4><hr>
+    @include('layouts.videos')
+</div>
+
 @endsection
 @section('js')<script src="/js/sales.js"></script>@stop

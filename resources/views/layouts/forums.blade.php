@@ -5,7 +5,7 @@
 			<div class="panel-body">
 				<a href="/forum/{{$thread->brand->slug}}/{{$thread->slug}}"><h5>{{$thread->title}}</h5></a>
 				<br>
-					<a href="/{{$thread->brand->slug}}" class="thumbnail text-center pull-left"><b>{{$thread->brand->brand}}</b></a>
+					<a href="/forum/{{$thread->brand->slug}}" class="thumbnail text-center pull-left"><b>{{$thread->brand->brand}}</b></a>
 					<a href="/forum/{{$thread->brand->slug}}/{{$thread->slug}}"><small class="pull-right">{{$thread->jmlCom()}} komentar</small></a>
 			</div>
 				<img src="{{$thread->user->avatar()}}" class="img-circle pull-left" style="margin-left: 3px; margin-right: 3px;">

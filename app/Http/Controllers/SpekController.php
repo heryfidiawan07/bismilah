@@ -6,6 +6,9 @@ use Purifier;
 use App\Spek;
 use App\Brand;
 use App\Mobil;
+use App\Article;
+use App\Forum;
+use App\Video;
 use App\Marketing;
 use Illuminate\Http\Request;
 
@@ -17,14 +20,22 @@ class SpekController extends Controller
     }
 
     public function index(){
-    	$speks   = Spek::latest()->paginate(4);
-    	return view('speks.index', compact('speks'));
+    	$speks   = Spek::latest()->paginate(8);
+        $articles   = Article::latest()->paginate(2);
+        $threads   = Forum::latest()->paginate(3);
+        $videos   = Video::latest()->paginate(2);
+    	return view('speks.index', compact('speks','articles','threads','videos'));
     }
 
     public function model($model){
         $mobil = Mobil::where('slug',$model)->first();
-        $speks = Spek::where('mobil_id',$mobil->id)->latest()->paginate(4);
-        return view('speks.index', compact('speks'));
+        $speks = Spek::where('mobil_id',$mobil->id)->latest()->paginate(8);
+
+        $brand     = $mobil->brand()->first();
+        $threads   = $brand->forums()->latest()->paginate(3);
+        $articles  = $brand->articles()->latest()->paginate(2);
+        $videos     = $brand->videos()->latest()->paginate(2);
+        return view('speks.index', compact('speks','articles','threads','videos'));
     }
             
     public function create(){
@@ -51,8 +62,12 @@ class SpekController extends Controller
         $mobils    = Mobil::whereSlug($model)->first();
         $brand     = Brand::whereId($mobils->brand_id)->first();
     	$spek  	   = Spek::where([['mobil_id',$mobils->id],['slug',$title]])->first();
+        
+        $threads   = $brand->forums()->latest()->paginate(3);
+        $articles  = $brand->articles()->latest()->paginate(2);
+        $videos     = $brand->videos()->latest()->paginate(2);
         if ($spek) {
-            return view('speks.show', compact('spek','brand'));
+            return view('speks.show', compact('spek','brand','articles','threads','videos'));
         }
             return redirect('/spesifikasi');
     }

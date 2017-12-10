@@ -36,5 +36,21 @@
 	  </div>
 	</div>
 </div>
+
+<div class="row">
+	<h4 class="text-center"><b>Video Review</b></h4><hr>
+	@include('layouts.videos')
+</div>
+
+<div class="row">
+    <h4 class="text-center"><b>Forum</b></h4><hr>
+    @include('layouts.forums')
+</div>
+
+<div class="row">
+    <h4 class="text-center"><b>Spesifikasi</b></h4><hr>
+    @include('layouts.speks')
+</div>
+
 @endsection
 @section('js')<script src="/js/sales.js"></script>@stop

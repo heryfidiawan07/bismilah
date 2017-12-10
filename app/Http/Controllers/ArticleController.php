@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Purifier;
+use App\Spek;
 use App\Brand;
+use App\Video;
+use App\Forum;
 use App\Article;
 use App\Marketing;
 use Illuminate\Http\Request;
@@ -17,13 +20,19 @@ class ArticleController extends Controller
 
     public function index(){
     	$articles   = Article::latest()->paginate(8);
-    	return view('articles.index', compact('articles'));
+        $threads   = Forum::latest()->paginate(3);
+        $videos   = Video::latest()->paginate(2);
+        $speks   = Spek::latest()->paginate(2);
+    	return view('articles.index', compact('articles','videos','threads','speks'));
     }
 
     public function brand($brand){
         $brand      = Brand::whereSlug($brand)->first();
         $articles   = Article::where('brand_id',$brand->id)->latest()->paginate(8);
-        return view('articles.index', compact('articles'));
+        $threads   = $brand->forums()->latest()->paginate(3);
+        $videos   = $brand->videos()->latest()->paginate(2);
+        $speks   = $brand->speks()->latest()->paginate(2);
+        return view('articles.index', compact('articles','threads','videos','speks'));
     }
 
     public function create(){
@@ -50,10 +59,15 @@ class ArticleController extends Controller
     public function show($brand, $slug){
         $brand     = Brand::whereSlug($brand)->first();
     	$article   = Article::whereSlug($slug)->first();
+        $threads   = $brand->forums()->latest()->paginate(3);
+        $videos   = $brand->videos()->latest()->paginate(2);
+        $speks   = $brand->speks()->latest()->paginate(2);
+
         if ($article && $brand) {
-            return view('articles.show', compact('article','brand'));
+            return view('articles.show', compact('article','brand','threads','videos','speks'));
         }
-            return redirect('/articles');
+
+        return redirect('/articles');
     }
 
     public function edit($id){

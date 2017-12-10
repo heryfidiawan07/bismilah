@@ -8,6 +8,7 @@ use App\Brand;
 use App\Forum;
 use App\Mobil;
 use App\Article;
+use App\Video;
 use App\Marketing;
 use Illuminate\Http\Request;
 
@@ -27,8 +28,9 @@ class HomeController extends Controller
     {   
         $articles  = Article::latest()->paginate(6);
         $threads   = Forum::latest()->paginate(9);
-        
-        return view('home', compact('articles','threads'));
+        $videos   = Video::latest()->paginate(4);
+        $speks     = Spek::latest()->paginate(2);
+        return view('home', compact('articles','threads','videos','speks'));
     }
 
     public function cari($brand, $area){

@@ -58,7 +58,7 @@
 			      <div class="form-group {{ $errors->has('brand_id') ? ' has-error' : '' }} ">
 			          <label for="brand_id">Brand</label>
 			          <select name="brand_id" class="form-control">
-			          	<option value="">Pilih Brand</option>
+			          	<option value="0">Pilih Brand</option>
 			          	@foreach($brands as $brand)
 			          		<option value=" {{$brand->id}} ">{{$brand->brand}}</option>
 			          	@endforeach
@@ -92,7 +92,7 @@
 			          @endif
 			      </div>
 			      <div class="form-group {{ $errors->has('iklan') ? ' has-error' : '' }} ">
-			          <label for="iklan">Iklan</label>
+			          <label for="iklan">Status</label>
 			          <select name="iklan" class="form-control">
 			          		<option value="0">0</option>
 			          		<option value="1">1</option>

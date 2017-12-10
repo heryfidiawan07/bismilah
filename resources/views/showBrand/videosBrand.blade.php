@@ -1,16 +1,29 @@
 
-<div class="row">
-	<div class="slider">
-		
-		<ul class="scroll">
-	    @foreach($brands as $brand)
-		    <li class="line">
-		    	<a href="/videos/all/{{$brand->slug}}"><img src="/brands/{{$brand->slug}}.png" width="60">
-					<h5 class="text-center"><b>{{$brand->brand}}</b></h5></a>
-				</li>
-			@endforeach
-		</ul>
+<a href="#" type="button" class="btn btn-info" data-toggle="modal" data-target="#videoModal">
+    Filter video
+</a>
+<!-- Modal -->
+<div class="modal right fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
 
-	</div>
-</div>
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">close &#62;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="color: white;">Kategori</h4>
+      </div>
 
+      <div class="modal-body">
+        <table class="table" id="modal-table">
+          @foreach($brands as $brand)
+            <tr><td>
+              <a href="/videos/all/{{$brand->slug}}" style="display: block; color: black;">
+                <img src="/brands/{{$brand->slug}}.png" width="35" style="float: left; margin-right: 5px;"> {{$brand->brand}}
+              </a>
+            </td></tr>
+          @endforeach
+        </table>
+      </div>
+
+    </div><!-- modal-content -->
+  </div><!-- modal-dialog -->
+</div><!-- modal -->

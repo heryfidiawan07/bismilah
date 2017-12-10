@@ -78,7 +78,7 @@
           @endif
       </div>
       <div class="form-group {{ $errors->has('iklan') ? ' has-error' : '' }} ">
-          <label for="iklan">Iklan</label>
+          <label for="iklan">Status</label>
           <select name="iklan" class="form-control">
           	<option value="{{$sales->iklan}}">{{$sales->iklan}}</option>
           	<option value="0">0</option>

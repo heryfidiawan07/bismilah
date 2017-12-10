@@ -7,9 +7,13 @@ use Auth;
 use Image;
 use App\User;
 use App\Area;
+use App\Article;
+use App\Forum;
+use App\Spek;
 use App\Brand;
 use App\Mobil;
 use App\Tipe;
+use App\Video;
 use App\Marketing;
 use App\Pembayaran;
 use Illuminate\Http\Request;
@@ -24,7 +28,7 @@ class MarketingController extends Controller
     }
 
     public function index(){
-    	$marketings = Marketing::get();
+    	$marketings = Marketing::orderBy('brand_id')->get();
     	$brands		= Brand::all();
     	$areas	    = Area::all();
         $users      = User::all();
@@ -59,8 +63,8 @@ class MarketingController extends Controller
     	    		'img' => $fileName,
     	    		'pt' => $request->pt,
     	    		'alamat' => $request->alamat,
-    	    		'hp1' => $request->hp1,
-    	    		'hp2' => $request->hp2,
+    	    		'hp1' => ltrim($request->hp1,'0'),
+    	    		'hp2' => ltrim($request->hp2,'0'),
     	    		'tentang' => $request->tentang,
     	    		'brand_id' => $request->brand_id,
     	    		'area_id' => $request->area_id,
@@ -108,8 +112,8 @@ class MarketingController extends Controller
     	    		'img' => $fileName,
     	    		'pt' => $request->pt,
     	    		'alamat' => $request->alamat,
-    	    		'hp1' => $request->hp1,
-    	    		'hp2' => $request->hp2,
+    	    		'hp1' => ltrim($request->hp1,'0'),
+    	    		'hp2' => ltrim($request->hp2,'0'),
     	    		'tentang' => $request->tentang,
     	    		'brand_id' => $request->brand_id,
     	    		'area_id' => $request->area_id,
@@ -145,7 +149,13 @@ class MarketingController extends Controller
         $sales = Marketing::where([['slug',$slug],['iklan',1]])->first();
         if ($sales) {
             $mobils = Mobil::where('brand_id',$sales->brand_id)->get();
-            return view('marketings.show', compact('sales','mobils'));
+            //$brand     = $mobils->brand()->first();
+            $brand     = Brand::whereId($sales->brand_id)->first();
+            $articles  = $brand->articles()->latest()->paginate(2);
+            $speks     = $brand->speks()->latest()->paginate(2);
+            $videos    = $brand->videos()->latest()->paginate(2);
+            $threads   = $brand->forums()->latest()->paginate(3);
+            return view('marketings.show', compact('sales','mobils','articles','speks','videos','threads'));
         }
         return redirect('/');
         

@@ -28,7 +28,7 @@ Route::post('/kirim-tukar-tambah', function() {
         	'WA : '.$data['hp2'].'------------------------------------'.
         	'Pesan : '.$data['pesan'], function($message) {
 		      $message->to('heryfidiawan07@gmail.com');
-              $message->subject('Ada yang mau tukar tambah BOSS');
+              $message->subject('Anda dapat pesan dari pengunjung BOSS.');
               $message->from('kampusmobil@gmail.com');
     		});
     return Redirect::to('/')->withInput()->with('success', 'Terimakasih, pesan anda akan segera kami proses.');
@@ -62,6 +62,14 @@ Route::post('/karir', 'UserController@createKarir');
 Route::post('/karir/{id}/edit', 'UserController@updateKarir');
 Route::post('/pembayaran/{id}', 'UserController@pembayaran');
 Route::post('/cek/sales/{brand}', 'UserController@cekArea');
+//Iklan ADS Admin
+Route::get('/iklan','IklanController@index');
+Route::post('/iklan','IklanController@store');
+Route::post('/iklan/{id}/update','IklanController@update');
+Route::get('/iklan/{id}/destroy','IklanController@destroy');
+Route::post('/pembayaran-iklan/{id}', 'IklanController@pembayaranIklan');
+//Iklan ADS User Show
+Route::get('/iklan/show/{nama}','IklanController@show');
 //admin show pembayaran
 Route::get('/admin/checkout', 'MarketingController@indexPembayaran');
 Route::get('/admin/pembayaran/{id}/show', 'MarketingController@showPembayaran');

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Auth;
 use Purifier;
 use App\Brand;
+use App\Article;
+use App\Spek;
+use App\Video;
 use App\Forum;
 use App\Comment;
 use App\Marketing;
@@ -19,7 +22,22 @@ class ForumController extends Controller
 
     public function index(){
     	$threads   = Forum::latest()->paginate(9);
-    	return view('forums.index', compact('threads'));
+        $articles  = Article::latest()->paginate(2);
+        $speks     = Spek::latest()->paginate(2);
+        $videos    = Video::latest()->paginate(2);
+    	return view('forums.index', compact('threads','articles','speks','videos'));
+    }
+
+    public function brand($brand){
+        $brand      = Brand::whereSlug($brand)->first();
+        if ($brand) {
+            $articles  = $brand->articles()->latest()->paginate(2);
+            $speks     = $brand->speks()->latest()->paginate(2);
+            $videos    = $brand->videos()->latest()->paginate(2);
+            $threads   = Forum::where('brand_id',$brand->id)->latest()->paginate(9);
+            return view('forums.index', compact('threads','articles','speks','videos'));
+        }
+            return redirect('/forum');
     }
 
     public function create(){
@@ -47,12 +65,15 @@ class ForumController extends Controller
     public function show($brand, $slug){
         $brand      = Brand::whereSlug($brand)->first();
         $thread     = Forum::whereSlug($slug)->first();
+        $articles  = $brand->articles()->latest()->paginate(2);
+        $speks     = $brand->speks()->latest()->paginate(2);
+        $videos    = $brand->videos()->latest()->paginate(2);
         if (!$thread) {
             return view('errors.404');
         }
         $comments   = $thread->comments()->latest()->paginate(5);
         if ($thread && $brand) {
-            return view('forums.show', compact('thread','comments','brand'));
+            return view('forums.show', compact('thread','comments','brand','articles','speks','videos'));
         }
             return redirect('/forum');
     }
@@ -79,15 +100,6 @@ class ForumController extends Controller
     	    		'brand_id' => $request->brand_id,
     	    	]);
     	return redirect("/forum/{$brand->slug}/{$slug}");
-    }
-
-    public function brand($brand){
-        $brand      = Brand::whereSlug($brand)->first();
-        if ($brand) {
-            $threads   = Forum::where('brand_id',$brand->id)->latest()->paginate(9);
-            return view('forums.index', compact('threads'));
-        }
-            return redirect('/forum');
     }
 
 }

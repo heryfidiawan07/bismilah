@@ -15,7 +15,7 @@
 						</a>
 					</div>
 					<div class="col-sm-7">
-						<a href="/pembayaran/{{$byr->id}}/show" class="pull-left"><h5>{{$byr->marketing->name}}</h5></a>
+						<a href="/admin/pembayaran/{{$byr->id}}/show" class="pull-left"><h5>{{$byr->marketing->name}}</h5></a>
 		      </div>
 			  </div>
 				</div>
