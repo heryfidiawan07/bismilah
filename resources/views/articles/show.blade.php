@@ -21,7 +21,7 @@
 			</div>
 			<hr>
 			<p class="pull-left">
-				<a href="/{{$article->brand->slug}}" class="thumbnail text-center"><b>{{$article->brand->brand}}</b></a>
+				<a href="/articles/{{$article->brand->slug}}" class="thumbnail text-center"><b>{{$article->brand->brand}}</b></a>
 			</p>
 			<p class="pull-right">
 				@if(Auth::check())

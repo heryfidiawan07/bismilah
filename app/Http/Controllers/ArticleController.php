@@ -30,7 +30,7 @@ class ArticleController extends Controller
         $brand      = Brand::whereSlug($brand)->first();
         $articles   = Article::where('brand_id',$brand->id)->latest()->paginate(8);
         $threads   = $brand->forums()->latest()->paginate(3);
-        $videos   = $brand->videos()->latest()->paginate(2);
+        $videos   = $brand->videos()->latest()->paginate(4);
         $speks   = $brand->speks()->latest()->paginate(2);
         return view('articles.index', compact('articles','threads','videos','speks'));
     }
@@ -60,7 +60,7 @@ class ArticleController extends Controller
         $brand     = Brand::whereSlug($brand)->first();
     	$article   = Article::whereSlug($slug)->first();
         $threads   = $brand->forums()->latest()->paginate(3);
-        $videos   = $brand->videos()->latest()->paginate(2);
+        $videos   = $brand->videos()->latest()->paginate(4);
         $speks   = $brand->speks()->latest()->paginate(2);
 
         if ($article && $brand) {

@@ -77,10 +77,12 @@ class VideoController extends Controller
         $threads   = $brand->forums()->latest()->paginate(3);
         $articles  = $brand->articles()->latest()->paginate(2);
         $speks     = $brand->speks()->latest()->paginate(2);
+        $text      =  explode("embed/", $video->link);
+        $thumb     = $text[1];
 
         if ($video) {
             $comments   = $video->vcomments()->latest()->paginate(5);
-            return view('videos.show', compact('video','brand','comments','articles','threads','speks'));
+            return view('videos.show', compact('video','brand','comments','articles','threads','speks','thumb'));
         }
         
         return redirect('/videos');

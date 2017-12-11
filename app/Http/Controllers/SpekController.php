@@ -16,7 +16,7 @@ class SpekController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('admin', ['except'=>['show','index','model']]);
+        $this->middleware('admin', ['except'=>['show','index','model','brand']]);
     }
 
     public function index(){
@@ -34,9 +34,19 @@ class SpekController extends Controller
         $brand     = $mobil->brand()->first();
         $threads   = $brand->forums()->latest()->paginate(3);
         $articles  = $brand->articles()->latest()->paginate(2);
-        $videos     = $brand->videos()->latest()->paginate(2);
+        $videos    = $mobil->videos()->latest()->paginate(4);
         return view('speks.index', compact('speks','articles','threads','videos'));
     }
+
+    public function brand($brand){
+        $brand     = Brand::whereSlug($brand)->first();
+        $threads   = $brand->forums()->latest()->paginate(3);
+        $articles  = $brand->articles()->latest()->paginate(2);
+        $videos    = $brand->videos()->latest()->paginate(4);
+        $speks     = $brand->speks()->latest()->paginate(8);
+        return view('speks.index', compact('speks','articles','threads','videos'));
+    }
+    
             
     public function create(){
 		$mobils = Mobil::orderBy('brand_id')->get();
@@ -65,7 +75,7 @@ class SpekController extends Controller
         
         $threads   = $brand->forums()->latest()->paginate(3);
         $articles  = $brand->articles()->latest()->paginate(2);
-        $videos     = $brand->videos()->latest()->paginate(2);
+        $videos    = $mobils->videos()->latest()->paginate(4);
         if ($spek) {
             return view('speks.show', compact('spek','brand','articles','threads','videos'));
         }

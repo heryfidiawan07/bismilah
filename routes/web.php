@@ -142,6 +142,7 @@ Route::get('/forum/{brand}/{slug}', 'ForumController@show');
 Route::get('/forum/{brand}', 'ForumController@brand');
 //Spesifikasi show
 Route::get('/spesifikasi', 'SpekController@index');
+Route::get('/spesifikasi/all/{brand}', 'SpekController@brand');
 Route::get('/spesifikasi/{model}/{title}', 'SpekController@show');
 Route::get('/spesifikasi/{model}', 'SpekController@model');
 //Article show

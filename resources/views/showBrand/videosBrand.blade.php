@@ -1,6 +1,6 @@
 
-<a href="#" type="button" class="btn btn-info" data-toggle="modal" data-target="#videoModal">
-    Filter video
+<a href="#" type="button" class="btn btn-warning" data-toggle="modal" data-target="#videoModal">
+    Filter video >>
 </a>
 <!-- Modal -->
 <div class="modal right fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

@@ -14,7 +14,13 @@
 <div class="row">
 	<div class="col-md-10">
 	
-		<h3 class="text-center animated flipInX"><b>{{$mobil->brand->brand}} {{$mobil->model}}</b></h3>
+		<h3 class="text-center animated flipInX"><b>{{$mobil->brand->brand}} {{$mobil->model}}</b>
+	    @if(Auth::check())
+	      @if(Auth::user()->admin())
+	        <a href="/admin/mobil/{{$mobil->id}}/edit" class="btn btn-success btn-sm pull-right">Edit</a>
+	      @endif
+	    @endif
+    </h3>
 		<hr>
 		<div class="col-md-12">
 			<div id="myCarousel" class="carousel slide pull-left" data-ride="carousel" style="margin-bottom: 10px;">

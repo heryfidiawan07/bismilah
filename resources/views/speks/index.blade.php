@@ -11,12 +11,14 @@
 		@if(Auth::check())
       @if(Auth::user()->admin())
 				<a href="/admin/spesifikasi/create" class="btn btn-sm btn-success pull-right">Admin create</a>
-				<br><hr>
 			@endif
 	  @endif
+	  @include('layouts.filterspek')
 	</h4>
+	<hr>
 	@include('layouts.speks')
 </div>
+
 <div class="row">
 	<div class="col-md-12">
 		<div class="text-center"><small>{{$speks->links()}}</small></div>

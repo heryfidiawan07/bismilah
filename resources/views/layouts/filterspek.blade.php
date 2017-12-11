@@ -1,8 +1,8 @@
-<a href="#" type="button" class="btn btn-warning" data-toggle="modal" data-target="#forumModal">
-    Forum Kategori >>
+<a href="#" type="button" class="btn btn-warning" data-toggle="modal" data-target="#spekFilter">
+    Filter >>
 </a>
 <!-- Modal -->
-<div class="modal right fade" id="forumModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal right fade" id="spekFilter" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
 
@@ -15,7 +15,7 @@
         <table class="table" id="modal-table">
           @foreach($brands as $brand)
             <tr><td>
-              <a href="/forum/{{$brand->slug}}" style="display: block; color: black;">
+              <a href="/spesifikasi/all/{{$brand->slug}}" style="display: block; color: black;">
                 <img src="/brands/{{$brand->slug}}.png" width="35" style="float: left; margin-right: 5px;"> {{$brand->brand}}
               </a>
             </td></tr>

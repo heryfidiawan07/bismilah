@@ -3,7 +3,7 @@
 @section('url') http://kampusmobil.com/videos/{{$video->mobil->slug}}/{{$video->slug}} @stop
 @section('title') {{$video->title}} @stop
 @section('description') {{ str_limit(strip_tags($video->body), $limit = 250, $end = '...') }} @stop
-@section('image') {{$video->link}}/0.jpg @stop
+@section('image') https://img.youtube.com/vi/{{$thumb}}/0.jpg @stop
 
 @section('content')
 <div class="row">

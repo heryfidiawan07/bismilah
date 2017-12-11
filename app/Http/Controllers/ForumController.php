@@ -33,7 +33,7 @@ class ForumController extends Controller
         if ($brand) {
             $articles  = $brand->articles()->latest()->paginate(2);
             $speks     = $brand->speks()->latest()->paginate(2);
-            $videos    = $brand->videos()->latest()->paginate(2);
+            $videos    = $brand->videos()->latest()->paginate(4);
             $threads   = Forum::where('brand_id',$brand->id)->latest()->paginate(9);
             return view('forums.index', compact('threads','articles','speks','videos'));
         }
@@ -67,7 +67,7 @@ class ForumController extends Controller
         $thread     = Forum::whereSlug($slug)->first();
         $articles  = $brand->articles()->latest()->paginate(2);
         $speks     = $brand->speks()->latest()->paginate(2);
-        $videos    = $brand->videos()->latest()->paginate(2);
+        $videos    = $brand->videos()->latest()->paginate(4);
         if (!$thread) {
             return view('errors.404');
         }

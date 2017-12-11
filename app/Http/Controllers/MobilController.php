@@ -27,8 +27,8 @@ class MobilController extends Controller
         }
         $mobils = Mobil::where('brand_id',$brand->id)->latest()->paginate(6);
         $articles  = $brand->articles()->latest()->paginate(2);
-        $speks     = $brand->speks()->latest()->paginate(2);
-        $videos    = $brand->videos()->latest()->paginate(2);
+        $speks     = $brand->speks()->latest()->paginate(6);
+        $videos    = $brand->videos()->latest()->paginate(4);
         $threads   = $brand->forums()->latest()->paginate(2);
         return view('mobil.index', compact('mobils','brand','videos','articles','speks','threads'));
     }
