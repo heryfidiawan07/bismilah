@@ -24,7 +24,7 @@ class MarketingController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('admin', ['except'=>['area','show']]);
+        $this->middleware('admin', ['except'=>['area','show','dealer']]);
     }
 
     public function index(){
@@ -54,7 +54,7 @@ class MarketingController extends Controller
             $ex = $file->getClientOriginalExtension();
             $fileName = $request->user_id.'-'.$time.'-kampusmobil.'.$ex;
             $path     = $file->getRealPath();
-            $img      = Image::make($path)->resize(300, 250);
+            $img      = Image::make($path)->resize(500, 400);
             $img->save(public_path("marketingImg/". $fileName));
         }
     	Marketing::create([
@@ -101,7 +101,7 @@ class MarketingController extends Controller
             $ex = $file->getClientOriginalExtension();
             $fileName = $marketing->img;
             $path     = $file->getRealPath();
-            $img      = Image::make($path)->resize(300, 250);
+            $img      = Image::make($path)->resize(500, 400);
             $img->save(public_path("marketingImg/". $fileName));
         }else {
             $fileName = $marketing->img;
@@ -158,6 +158,25 @@ class MarketingController extends Controller
             return view('marketings.show', compact('sales','mobils','articles','speks','videos','threads'));
         }
         return redirect('/');
+        
+    }
+
+    public function dealer($slug, $area){
+        $brand = Brand::where('slug',$slug)->first();
+        $area  = Area::where('slug',$area)->first();
+        
+        if ($brand && $area) {
+            $sales = Marketing::where([['brand_id',$brand->id],['iklan',1],['area_id',$area->id]])->first();
+        
+            $mobils    = Mobil::where('brand_id',$brand->id)->get();
+            $articles  = $brand->articles()->latest()->paginate(2);
+            $speks     = $brand->speks()->latest()->paginate(2);
+            $videos    = $brand->videos()->latest()->paginate(2);
+            $threads   = $brand->forums()->latest()->paginate(3);
+            return view('marketings.index', compact('sales','mobils','articles','speks','videos','threads','area','brand'));
+        }else{
+            return redirect('/');
+        }
         
     }
 

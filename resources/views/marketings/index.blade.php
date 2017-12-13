@@ -1,11 +1,29 @@
 @extends('layouts.app')
 
-@section('url') http://kampusmobil.com/marketing/{{$sales->slug}} @stop
-@section('title') Dealer Resmi Mobil {{$sales->brand->brand}} {{$sales->area->area}} @stop
-@section('description')
-	Harga terbaru, Paket kredit, Prace list, Promo dan discount {{$sales->brand->brand}} terbaru {{$sales->pt}} {{$sales->alamat}} {{$sales->tentang}}
-@stop
-@section('image') http://kampusmobil.com/marketingImg/{{$sales->img}} @stop
+@section('url') http://kampusmobil.com/dealer-resmi-mobil/{{$brand->slug}}/{{$area->slug}} @stop
+
+@if($sales)
+	
+	@section('title') Dealer Resmi Mobil {{$brand->brand}} {{$area->area}} @stop
+
+	@section('description')
+Harga terbaru, Paket kredit, Prace list, Promo dan discount {{$brand->slug}} terbaru {{$sales->pt}} {{$sales->alamat}} {{$sales->tentang}} 
+	@stop
+
+	@section('image') http://kampusmobil.com/marketingImg/{{$sales->img}} @stop
+
+@else
+
+	@section('title') Dealer Resmi Mobil {{$brand->brand}} {{$area->area}} @stop
+
+	@section('description')
+Harga terbaru, Paket kredit, Prace list, Promo dan discount {{$brand->slug}} terbaru.
+	@stop
+
+	@section('image') http://kampusmobil.com/largekampusmobil.png @stop
+
+@endif
+
 @section('event')
 	<script>
 		fbq('track', 'InitiateCheckout');
@@ -14,11 +32,14 @@
 @section('content')
 <div class="row">
 	<div class="col-md-10">
+
 		<div class="panel panel-default">
 			<div class="panel-body" id="show">
 				<h4 class="text-center"><b>Marketing Executive</b></h4>
 				<table class="table table-hover">
 					<tr>
+
+						@if($sales)
 						<td>
 							<img src="{{asset('/marketingImg/'.$sales->img )}}" class="img-thumbnail pull-left" width="350" height="350" style="margin-right: 15px;">
 							<div class="pull-left">
@@ -36,15 +57,39 @@
 								<a href="/{{$sales->brand->slug}}" class="thumbnail text-center animated bounceInDown"><b>{{$sales->brand->brand}}</b></a>
 							</div>
 						</td>
+
+						@else
+
+						<td>
+							<img src="/brands/{{$brand->slug}}.png" class="img-thumbnail pull-left" width="150" height="150" style="margin-right: 250px;">
+							<div class="pull-left">
+								<h4 class="animated bounceInDown"><b>places available</b></h4>
+								<p class="animated bounceInDown">-</p>
+								<p class="animated bounceInDown">-</p>
+								<p class="animated bounceInDown">-</p>
+								<p>Daftar sekarang juga</p>
+								<p class="animated bounceInDown">
+									<a href="#" class="btn btn-primary fa fa-phone"> 0822 xxxx xxxx</a>
+									<a href="#" class="btn btn-success fa fa-whatsapp"> 0822 xxxx xxxx</a>
+								</p>
+								<a href="mailto:kampusmobil@gmail.com" class="btn btn-danger fa fa-envelope"> Admin</a>
+								<p class="well animated bounceInDown">{{$area->area}}</p>
+								<a href="/{{$brand->slug}}" class="thumbnail text-center animated bounceInDown"><b>{{$brand->brand}}</b></a>
+							</div>
+						</td>
+						@endif
+
 					</tr>
 				</table>
-		</div>
-		</div>
-
-		<div class="panel panel-default">
-			<div class="panel-body" id="show">@include('layouts.marketingshare')</div>
+			</div>
 		</div>
 		
+		@if($sales)
+			<div class="panel panel-default">
+				<div class="panel-body" id="show">@include('layouts.marketingshare')</div>
+			</div>
+		@endif
+
 		<div class="panel panel-default">
 			<div class="panel-body" id="show">
 				@foreach($mobils as $mobil)
