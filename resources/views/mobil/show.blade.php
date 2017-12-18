@@ -13,16 +13,18 @@
 @section('content')
 <div class="row">
 	<div class="col-md-10">
-	
-		<h3 class="text-center animated flipInX"><b>{{$mobil->brand->brand}} {{$mobil->model}}</b>
-	    @if(Auth::check())
-	      @if(Auth::user()->admin())
-	        <a href="/admin/mobil/{{$mobil->id}}/edit" class="btn btn-success btn-sm pull-right">Edit</a>
-	      @endif
-	    @endif
-    </h3>
-		<hr>
-		<div class="col-md-12">
+
+		<div class="row">
+			<h3 class="text-center animated flipInX"><b>{{$mobil->brand->brand}} {{$mobil->model}}</b>
+		    @if(Auth::check())
+		      @if(Auth::user()->admin())
+		        <a href="/admin/mobil/{{$mobil->id}}/edit" class="btn btn-success btn-sm pull-right">Edit</a>
+		      @endif
+		    @endif
+	    </h3>
+
+			<hr>
+
 			<div id="myCarousel" class="carousel slide pull-left" data-ride="carousel" style="margin-bottom: 10px;">
 			  <!-- Indicators -->
 			  <ol class="carousel-indicators">
@@ -43,8 +45,7 @@
 			    </div>
 			  </div>
 			</div>
-		</div>
-		<div class="col-md-12">
+			
 			<table class="table" id="profil">
 				<tr class="tipe">
 					<th>Tipe</th><th>Harga</th>
@@ -57,7 +58,11 @@
 			@endforeach
 			</table>
 			<div class="text-center"><i>OTR Jakarta, Harga dapat berubah sewaktu-waktu.<br> Untuk informasi lebih lanjut hubungi marketing terdekat.</i></div>
-			<br>
+		</div>
+		
+		<br>
+			
+		<div class="row">
 			<div class="panel panel-default">
 				<div class="panel-body" id="show">
 					<div class="social-buttons">
@@ -71,7 +76,11 @@
 		</div>
 		
 		<div class="row">
-			@include('layouts.marketings')
+			<div class="panel panel-default">
+				<div class="panel-body" id="show">
+					@include('layouts.marketings')
+				</div>
+			</div>
 		</div>
 
 		<div class="row">
@@ -93,7 +102,6 @@
 		    <h4 class="text-center"><b>Forum</b></h4><hr>
 		    @include('layouts.forums')
 		</div>
-
 
 	</div>
 </div>

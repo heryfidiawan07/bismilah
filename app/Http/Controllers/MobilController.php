@@ -29,7 +29,7 @@ class MobilController extends Controller
         $articles  = $brand->articles()->latest()->paginate(2);
         $speks     = $brand->speks()->latest()->paginate(6);
         $videos    = $brand->videos()->latest()->paginate(4);
-        $threads   = $brand->forums()->latest()->paginate(2);
+        $threads   = $brand->forums()->latest()->paginate(3);
         return view('mobil.index', compact('mobils','brand','videos','articles','speks','threads'));
     }
 

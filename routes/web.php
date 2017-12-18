@@ -1,44 +1,13 @@
 <?php
-
-use Illuminate\Support\Facades\Input;
-Route::post('/kirim-tukar-tambah', function() {
-    $data = [
-    	'email' => Input::get('email'), 
-    	'alamat' => Input::get('alamat'), 
-    	'hp1' => Input::get('hp1'), 
-    	'hp2' => Input::get('hp2'), 
-    	'pesan' => Input::get('pesan')
-    ];
-    $rules = array(
-        'email'   => 'required|email',
-        'alamat'  => 'required|min:5',
-        'hp1'     => 'required|min:11',
-        'hp2'     => 'required|min:11',
-        'pesan'   => 'required|max:500',
-        'g-recaptcha-response' => 'required|captcha',
-    );
-    $validation = Validator::make(Input::all(), $rules);
-    if ($validation->fails()) {
-        return Redirect::to('/')->withInput()->withErrors($validation);
-    } else { 
-        Mail::raw(
-        	'Email : '.$data['email'].'------------------------------------'.
-        	'Alamat : '.$data['alamat'].'------------------------------------'.
-        	'HP : '.$data['hp1'].'------------------------------------'.
-        	'WA : '.$data['hp2'].'------------------------------------'.
-        	'Pesan : '.$data['pesan'], function($message) {
-		      $message->to('heryfidiawan07@gmail.com');
-              $message->subject('Anda dapat pesan dari pengunjung BOSS.');
-              $message->from('kampusmobil@gmail.com');
-    		});
-    return Redirect::to('/')->withInput()->with('success', 'Terimakasih, pesan anda akan segera kami proses.');
-    }
-});
-
+//Kiriman Pesan Pengunjung
+Route::post('/kirim-pesan', 'PesanController@store');
+//Kiriman Pesan Admin
+Route::get('/admin/pesan', 'PesanController@index');
+Route::get('/admin/pesan/{id}/destroy', 'PesanController@destroy');
 //Syarat
 Route::get('/syarat-dan-ketentuan', 'HomeController@syarat');
-//Memeber
-Route::get('/member', 'UserController@member');
+//Member
+Route::get('/daftar-member', 'UserController@member');
 Route::get('/member/{slug}', 'UserController@profil');
 //Register verification
 Route::get('/verify/{token}/{id}', 'Auth\RegisterController@verify_register');
@@ -56,20 +25,16 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index');
 Route::get('/admin', 'AdminController@index');
+//Member Auth
+Route::post('/member/status/{id}', 'UserController@status');
+Route::post('/member/gantiNama/{id}', 'UserController@nama');
+Route::post('/member/gantiFoto/{id}', 'UserController@foto');
 //Karir
 Route::get('/karir', 'UserController@karir');
 Route::post('/karir', 'UserController@createKarir');
 Route::post('/karir/{id}/edit', 'UserController@updateKarir');
 Route::post('/pembayaran/{id}', 'UserController@pembayaran');
 Route::post('/cek/sales/{brand}', 'UserController@cekArea');
-//Iklan ADS Admin
-Route::get('/iklan','IklanController@index');
-Route::post('/iklan','IklanController@store');
-Route::post('/iklan/{id}/update','IklanController@update');
-Route::get('/iklan/{id}/destroy','IklanController@destroy');
-Route::post('/pembayaran-iklan/{id}', 'IklanController@pembayaranIklan');
-//Iklan ADS User Show
-Route::get('/iklan/show/{nama}','IklanController@show');
 //admin show pembayaran
 Route::get('/admin/checkout', 'MarketingController@indexPembayaran');
 Route::get('/admin/pembayaran/{id}/show', 'MarketingController@showPembayaran');

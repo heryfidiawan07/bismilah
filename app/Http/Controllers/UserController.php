@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use File;
 use Image;
+use Purifier;
 use App\User;
 use App\Forum;
+use App\Profil;
 use App\Marketing;
 use App\Pembayaran;
 use Illuminate\Http\Request;
@@ -25,18 +28,94 @@ class UserController extends Controller
         return view('users.member', compact('members'));
     }
 
+    public function status(Request $request, $id){
+        $this->validate($request, [
+                'status' => 'required|max:500',
+            ]);
+        $user   = Auth::user();
+        if ($user->id == $id) {
+            $status = Profil::where('user_id',$user->id)->first();
+            if (count($status)) {
+                $status->update([
+                    'status' => Purifier::clean($request->status),
+                ]);
+            }else{
+                Profil::create([
+                    'user_id'=> $user->id,
+                    'status' => Purifier::clean($request->status),
+                ]);
+            }
+            $request->session()->flash('status', 'Berhasil update');
+            return back();
+        }else{
+            $request->session()->flash('status', 'Hey hey hey,,,,,');
+            return back();
+        }
+    }
+
+    public function nama(Request $request, $id){
+        $this->validate($request, [
+                'name' => 'required|min:3|max:20',
+            ]);
+        $user   = Auth::user();
+        if ($user->id == $id) {
+            $user->update([
+                    'name' => $request->name,
+                    'slug' => str_slug($request->name),
+                ]);
+            $request->session()->flash('status', 'Nama berhasil di ubah.');
+            return redirect("/member/{$user->slug}");
+        }else{
+            $request->session()->flash('status', 'Hey hey hey,,,,,');
+            return redirect("/member/{$user->slug}");
+        }
+    }
+    
+    
+    public function foto(Request $request, $id){
+        $this->validate($request, [
+                'img' => 'required|mimes:jpeg,bmp,png',
+            ]);
+        $user   = Auth::user();
+        $file = $request->file('img');
+        if ($user->id == $id) {
+            if (!empty($file)) {
+                $ex       = $file->getClientOriginalExtension();
+                $fileName = $user->slug.'.'.$ex;
+                $path     = $file->getRealPath();
+                $img      = Image::make($path)->resize(500, 400);
+                    $cek   = public_path("member/".$user->img);
+                    if ($user->img != null) {
+                        File::delete($cek);
+                    }
+                $img->save(public_path("member/". $fileName));
+            }
+            $user->update([
+                    'img'  => $fileName,
+                ]);
+            $request->session()->flash('status', 'Berhasil update');
+            return redirect("/member/{$user->slug}");
+        }else{
+            $request->session()->flash('status', 'Hey hey hey,,,,,');
+            return redirect("/member/{$user->slug}");
+        }
+
+    }
+    
     public function profil($slug){
     	$user    = User::whereSlug($slug)->first();
-    	$threads = Forum::where('user_id',$user->id)->latest()->paginate(4);
-        foreach ($threads as $thread) {
-            if (!$thread->img) {
-                $thread->img = "https://cdn1.iconfinder.com/data/icons/pixel-perfect-at-16px-volume-1/16/5082-512.png";
-            }   
-        }
-        if (!$user) {
+        if ($user) {
+            $threads = Forum::where('user_id',$user->id)->latest()->paginate(6);
+            foreach ($threads as $thread) {
+                if (!$thread->img) {
+                    $thread->img = "https://cdn1.iconfinder.com/data/icons/pixel-perfect-at-16px-volume-1/16/5082-512.png";
+                }   
+            }
+            return view('users.profil', compact('user','threads'));    
+        }else{
             return redirect('/');
         }
-      return view('users.profil', compact('user','threads'));
+
     }
 
     public function karir(){

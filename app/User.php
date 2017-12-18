@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Forum;
+use App\Profil;
 use App\Comments;
 use App\Vcomments;
 use Illuminate\Notifications\Notifiable;
@@ -37,6 +38,11 @@ class User extends Authenticatable
         return false;
     }
 
+    public function profil(){
+        return $this->hasOne(Profil::class);
+    }
+    
+
     public function forums(){
         return $this->hasMany(Forum::class);
     }
@@ -49,13 +55,13 @@ class User extends Authenticatable
         return $this->hasMany(Vcomment::class);
     }
 
-    public function getFb(){
+    public function getImg(){
         return $this->img;
     }
 
     public function avatar(){
-        if($this->getFb()){
-            return $this->getFb();
+        if($this->getImg()){
+            return $this->getImg();
         }else{
             return "https://www.gravatar.com/avatar/" . md5($this->email) . "?d=mm&s=50";
         }

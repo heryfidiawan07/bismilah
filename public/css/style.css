@@ -1,5 +1,8 @@
-.index {
+.frm {
   min-height: 200px;
+}
+.index {
+  min-height: 150px;
 }
 hr.garis {
   height: 10px;

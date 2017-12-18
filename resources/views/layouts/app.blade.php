@@ -79,10 +79,15 @@
     <div id="app">
         @include('layouts.nav')
         @include('layouts.brandmodal')
+        @if(session('pesan'))
+            <div class="alert alert-success animated bounceOutUp" style="position: absolute;">
+                <small class="">{{session('pesan')}}</small>
+            </div>
+        @endif
         <div class="container" style="min-height: 495px;">
             @yield('content')
         </div>
-        @include('users.tukartambah')
+        @include('users.pesan')
         <br>
         @include('layouts.footer')
     </div>

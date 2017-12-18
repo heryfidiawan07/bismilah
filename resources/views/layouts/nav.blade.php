@@ -70,7 +70,11 @@
                     </li>
                     <li>
                         <a href="/member/{{Auth::user()->slug}}" id="imgUser">
+                            @if(Auth::user()->img == null)
                             <img src="{{Auth::user()->avatar()}}" class="img-circle pull-left" style="margin-top: -7px; margin-right: 10px;">
+                            @else
+                            <img src="<?php if (file_exists(public_path("member/".Auth::user()->img))) echo '/member/' ?>{{Auth::user()->img}}" class="img-circle pull-left" style="margin-top: -7px; margin-right: 10px;">
+                            @endif
                         </a>
                     </li>
                 @endif

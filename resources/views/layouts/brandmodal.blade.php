@@ -13,7 +13,7 @@
 					@foreach($brands as $brand)
 						<tr><td>
 							<a href="/{{$brand->slug}}" style="display: block; color: black;">
-								<img src="/brands/{{$brand->slug}}.png" width="35" style="float: left; margin-right: 5px;">{{$brand->brand}}
+								<img alt="{{$brand->slug}}" src="/brands/{{$brand->slug}}.png" width="35" style="float: left; margin-right: 5px;">{{$brand->brand}}
 							</a>
 						</td></tr>
 					@endforeach

@@ -5,17 +5,22 @@
 <h3 class="text-center"><u> Daftar Member </u></h3><br>
     @foreach($members as $member)
 	    <div class="col-md-4">
-        <div class="well">
-      		<div class="media">
-            <a href="/member/{{$member->slug}}" class="pull-left">
-              <img src="{{$member->avatar() }}" class="img-responsive" width="150">
-            </a>
-            <a href="/member/{{$member->slug}}">
+        <a href="/member/{{$member->slug}}">
+          <div class="well" style="min-height: 180px; color: black;">
+      		  <div class="col-md-6">
+                <img src="<?php if (file_exists(public_path("member/".$member->img))) echo '/member/' ?>{{$member->avatar()}}" class="img-responsive" alt="{{$member->name}}" style="width: 100%; height: 130px;">
+              <div class="caption text-center">
+                <small>Joined : {{$member->created_at->diffForHumans()}}</small>
+              </div>
+            </div>
+            <div class="col-md-6">
               <p>{{$member->name}}</p>
-            </a>
-            <p><small>Joined : {{$member->created_at->diffForHumans()}}</small> </p>
-  				</div>
-        </div>
+              <div  style="overflow: scroll; max-height: 115px;">
+                <p>{!!$member->profil->status!!}</p>
+              </div>
+            </div>
+          </div>
+        </a>
 	    </div>
     @endforeach
 </div>

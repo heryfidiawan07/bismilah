@@ -14,13 +14,14 @@
 @section('content')
 <div class="row">
 	<div class="col-md-10">
+
 		<div class="panel panel-default">
 			<div class="panel-body" id="show">
 				<h4 class="text-center"><b>Marketing Executive</b></h4>
 				<table class="table table-hover">
 					<tr>
 						<td>
-							<img src="{{asset('/marketingImg/'.$sales->img )}}" class="img-thumbnail pull-left" width="350" height="350" style="margin-right: 15px;">
+							<img src="{{asset('/marketingImg/'.$sales->img )}}" class="img-thumbnail pull-left" alt="{{$sales->brand->slug}}" width="350" height="350" style="margin-right: 15px;">
 							<div class="pull-left">
 								<h4 class="animated bounceInDown"><b>{{$sales->name}}</b></h4>
 								<p class="animated bounceInDown">{{$sales->pt}}</p>
@@ -38,7 +39,7 @@
 						</td>
 					</tr>
 				</table>
-		</div>
+			</div>
 		</div>
 
 		<div class="panel panel-default">
@@ -50,7 +51,7 @@
 				@foreach($mobils as $mobil)
 					<div class="col-sm-4">
 						<a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}">
-							<img src="{{$mobil->depan}}" class="img-responsive" alt="{{$mobil->depan}}" style="width: 150px; height: 100px;">
+							<img src="{{$mobil->depan}}" class="img-responsive" alt="{{$mobil->model}}" style="width: 150px; height: 100px;">
 						</a>
 						<div class="text-center">
 							<p><a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}"><b>Harga {{$mobil->model}}</b></a></p>

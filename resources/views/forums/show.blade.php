@@ -23,7 +23,7 @@
 					<a href="/{{$thread->brand->slug}}" class="thumbnail text-center"><b>{{$thread->brand->brand}}</b></a>
 				</p>
 				<a href="/member/{{$thread->user->slug}}">
-					<img src="{{$thread->user->avatar()}}" class="img-circle pull-left">
+					<img src="<?php if (file_exists(public_path("member/".$thread->user->img))) echo '/member/' ?>{{$thread->user->avatar()}}" class="img-circle pull-left">
 				</a>
 				<p class="pull-left" style="margin-top: 10px; margin-left: 10px;">
 					<a href="/member/{{$thread->user->slug}}">{{$thread->user->name}}</a> - <small>{{$thread->created_at->diffForHumans()}}</small>
@@ -64,7 +64,7 @@
 					@endif
 				@endif
 				<a href="/member/{{$comment->user->slug}}">
-					<img src="{{$comment->user->avatar()}}" class="img-circle pull-left">
+					<img src="<?php if (file_exists(public_path("member/".$comment->user->img))) echo '/member/' ?>{{$comment->user->avatar()}}" class="img-circle pull-left">
 				</a>
 				<p class="pull-left" style="margin-top: 8px; margin-left: 10px;">
 					<a href="/member/{{$comment->user->slug}}">{{$comment->user->name}}</a> - <small>{{$comment->created_at->diffForHumans()}}</small>

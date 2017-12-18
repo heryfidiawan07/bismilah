@@ -1,20 +1,2 @@
 User-agent: *
-Disallow: /admin
-Allow: /honda/
-Allow: /kia/
-Allow: /suzuki/
-Allow: /chevrolet/
-Allow: /toyota/
-Allow: /mitsubishi/
-Allow: /nissan/
-Allow: /datsun/
-Allow: /ford/
-Allow: /daihatsu/
-Allow: /mazda/
-Allow: /marketing/
-Allow: /karir/
-Allow: /forum/
-Allow: /spesifikasi/
-Allow: /articles/
-Allow: /kampusmobil/
-Allow: /profil/
+Disallow:

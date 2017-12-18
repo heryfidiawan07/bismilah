@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateIklansTable extends Migration
+class CreateProfilsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,10 @@ class CreateIklansTable extends Migration
      */
     public function up()
     {
-        Schema::create('iklans', function (Blueprint $table) {
+        Schema::create('profils', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('img');
-            $table->string('deskripsi');
-            $table->string('hp');
-            $table->string('wa');
-            $table->integer('pilihan');
-            $table->date('mulai');
-            $table->date('selesai');//di isi otomatis
-            $table->integer('status')->default(0);
-            $table->string('bukti')->nullable();
             $table->integer('user_id')->unsigned();
+            $table->string('status');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
@@ -38,6 +30,6 @@ class CreateIklansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('iklans');
+        Schema::dropIfExists('profils');
     }
 }

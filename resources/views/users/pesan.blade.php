@@ -1,15 +1,12 @@
-@if(Session::has('success'))
-	<div class="alert alert-success">
-	    <p class="animated bounceInUp">{{ Session::get('success') }}</p>
-	</div>
-@endif
 <div class="text-center">
-	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#tukarTambah">
-	Kirim Pesan !
+	<button type="button" class="btn btn-success btn-sm pull-left" data-toggle="modal" data-target="#kirimPesan">
+		Kirim Pesan !
 	</button>
 </div>
+<br>
+
 <!-- Modal -->
-<div class="modal fade" id="tukarTambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="kirimPesan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-lg" role="document">
   <div class="modal-content">
     
@@ -23,7 +20,7 @@
     
     <div class="modal-body">
 
-		<form action="/kirim-tukar-tambah" method="post">
+		<form action="/kirim-pesan" method="post">
 			{{csrf_field()}}
 	      <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }} ">
 	          <label for="email">Email</label>
@@ -34,23 +31,23 @@
 	      </div>
 	      <div class="form-group {{ $errors->has('alamat') ? ' has-error' : '' }} ">
 	          <label for="alamat">Alamat</label>
-	          <input type="text" name="Alamat" class="form-control" value="{{old('alamat')}}" placeholder="Alamat">
+	          <input type="text" name="alamat" class="form-control" value="{{old('alamat')}}" placeholder="Alamat">
 	          @if($errors->has('alamat'))
 	              <span class="help-block"> {{$errors->first('alamat')}} </span>
 	          @endif
 	      </div>
-	      <div class="form-group {{ $errors->has('hp1') ? ' has-error' : '' }} ">
-	          <label for="hp1">Hp</label>
-	          <input type="text" name="hp1" class="form-control" value="{{old('hp1')}}" placeholder="Call / SMS">
-	          @if($errors->has('hp1'))
-	              <span class="help-block"> {{$errors->first('hp1')}} </span>
+	      <div class="form-group {{ $errors->has('hp') ? ' has-error' : '' }} ">
+	          <label for="hp">Hp</label>
+	          <input type="text" name="hp" class="form-control" value="{{old('hp')}}" placeholder="Call / SMS">
+	          @if($errors->has('hp'))
+	              <span class="help-block"> {{$errors->first('hp')}} </span>
 	          @endif
 	      </div>
-	      <div class="form-group {{ $errors->has('hp2') ? ' has-error' : '' }} ">
-	          <label for="hp2">Whatsapp</label>
-	          <input type="text" name="hp2" class="form-control" value="{{old('hp2')}}" placeholder="Whatsapp">
-	          @if($errors->has('hp2'))
-	              <span class="help-block"> {{$errors->first('hp2')}} </span>
+	      <div class="form-group {{ $errors->has('wa') ? ' has-error' : '' }} ">
+	          <label for="wa">Whatsapp</label>
+	          <input type="text" name="wa" class="form-control" value="{{old('wa')}}" placeholder="Whatsapp">
+	          @if($errors->has('wa'))
+	              <span class="help-block"> {{$errors->first('wa')}} </span>
 	          @endif
 	      </div>
 	      <div class="form-group {{ $errors->has('pesan') ? ' has-error' : '' }} ">

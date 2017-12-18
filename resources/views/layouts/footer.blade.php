@@ -28,7 +28,7 @@
             <a href="/spesifikasi">Spesifikasi</a>
           </li>
           <li class="fotli">
-            <a href="/member">Member</a>
+            <a href="/daftar-member">Member</a>
           </li>
       </div>
       <div class="text-center">
@@ -48,13 +48,6 @@
         <li class="fotli">
           <a href="/karir">Marketing karir</a>
         </li>
-        @if(Auth::check())
-          @if(Auth::user()->admin())
-            <li class="fotli">
-              <a href="/iklan">Iklan</a>
-            </li>
-          @endif
-        @endif
         <li class="fotli">
           <a href="/syarat-dan-ketentuan">Syarat dan Ketentuan</a>
         </li>

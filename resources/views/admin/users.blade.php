@@ -7,9 +7,9 @@
 	    <div class="col-md-4">
         <div class="well">
 
-      		<div class="media">
+      		<div class="media index">
             <a href="/member/{{$member->slug}}" class="pull-left">
-              <img src="{{$member->avatar() }}" class="img-responsive thumbnail" width="150">
+              <img src="<?php if (file_exists(public_path("member/".$member->img))) echo '/member/' ?>{{$member->avatar() }}" class="img-responsive thumbnail" width="200">
             </a>
             <a href="/member/{{$member->slug}}">
               <p>{{$member->name}}</p>
