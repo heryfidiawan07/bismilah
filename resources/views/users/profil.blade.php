@@ -29,9 +29,11 @@
                         <small>@include('users.statusModal')</small>
                     @endif
                 @endif
-                <div style="overflow: scroll; max-height: 130px;">
-                    <p>{!!$profil->status!!}</p>
-                </div>
+                @if(count($user->profil))
+                    <div style="overflow: scroll; max-height: 130px;">
+                        {!!$user->profil->status!!}
+                    </div>
+                @endif
             </div>
         </div>
         </div>

@@ -1,5 +1,5 @@
 
-<a href="#" type="button" class="btn btn-warning" data-toggle="modal" data-target="#videoModal">
+<a href="#" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#videoModal">
     Filter video >>
 </a>
 <!-- Modal -->

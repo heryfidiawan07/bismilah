@@ -104,10 +104,9 @@ class UserController extends Controller
     
     public function profil($slug){
     	$user    = User::whereSlug($slug)->first();
-        $profil  = $user->profil()->first();
         if ($user) {
             $threads = Forum::where('user_id',$user->id)->latest()->paginate(6);
-            return view('users.profil', compact('user','threads','profil'));    
+            return view('users.profil', compact('user','threads'));
         }else{
             return redirect('/');
         }

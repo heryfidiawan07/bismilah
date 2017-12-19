@@ -97,6 +97,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'token' => str_random(20),
+            'img' => 'https://s5.postimg.org/qb4j49k4n/kampusmobil.jpg',
         ]);
         // mengirim email
         Mail::to($user->email)->send(new KampusMobilRegister($user));

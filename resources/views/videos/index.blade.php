@@ -11,9 +11,9 @@
 
 @section('content')
 
-@include('showBrand.videosBrand')
 <br><br>
 <div class="row">
+		@include('showBrand.videosBrand')
 		@if(Auth::check())
       @if(Auth::user()->admin())
 				<a href="/admin/video/create" class="btn btn-sm btn-success pull-right">Admin create</a>

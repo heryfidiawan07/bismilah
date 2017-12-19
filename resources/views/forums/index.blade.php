@@ -8,8 +8,8 @@
 @section('image') http://kampusmobil.com/largekampusmobil.png @stop
 
 @section('content')
-@include('layouts.forumkategori')
 <div class="row">
+		@include('layouts.forumkategori')
 		@if(Auth::user())
 			<a href="/forum/create" class="btn btn-sm btn-success pull-right">Tulis !</a>
 			<br>

@@ -1,4 +1,4 @@
-<a href="#" type="button" class="btn btn-warning" data-toggle="modal" data-target="#spekFilter">
+<a href="#" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#spekFilter">
     Filter >>
 </a>
 <!-- Modal -->
