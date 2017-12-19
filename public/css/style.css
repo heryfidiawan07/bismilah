@@ -2,7 +2,7 @@
   min-height: 200px;
 }
 .index {
-  min-height: 150px;
+  min-height: 200px;
 }
 hr.garis {
   height: 10px;
@@ -26,7 +26,7 @@ img { margin: 0 auto; display: block;}
   display: inline-block;
 }
 .line a {
-  margin: 10px 47px;
+  margin: 10px 40px;
 }
 .line a:hover {
   color: black;

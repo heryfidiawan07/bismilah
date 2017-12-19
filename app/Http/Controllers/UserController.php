@@ -104,14 +104,10 @@ class UserController extends Controller
     
     public function profil($slug){
     	$user    = User::whereSlug($slug)->first();
+        $profil  = $user->profil()->first();
         if ($user) {
             $threads = Forum::where('user_id',$user->id)->latest()->paginate(6);
-            foreach ($threads as $thread) {
-                if (!$thread->img) {
-                    $thread->img = "https://cdn1.iconfinder.com/data/icons/pixel-perfect-at-16px-volume-1/16/5082-512.png";
-                }   
-            }
-            return view('users.profil', compact('user','threads'));    
+            return view('users.profil', compact('user','threads','profil'));    
         }else{
             return redirect('/');
         }

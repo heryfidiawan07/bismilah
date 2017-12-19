@@ -7,7 +7,7 @@
         <div class="panel panel-default">
         <div class="panel-body">
             <div class="col-md-5">
-                <img src="<?php if (file_exists(public_path("member/".$user->img))) echo '/member/' ?>{{$user->avatar()}}" class="img-responsive" alt="{{$user->name}}" style="width: 100%; height: 180px;">
+                <img src="<?php if (file_exists(public_path("member/".$user->img))) echo '/member/' ?>{{$user->avatar()}}" class="img-responsive" alt="{{$user->name}}" style="width: auto; height: 200px;">
                 <p class="text-center"><small>Joined-{{$user->created_at->diffForHumans()}}</small></p>
             </div>
             <div class="col-md-7">
@@ -29,8 +29,8 @@
                         <small>@include('users.statusModal')</small>
                     @endif
                 @endif
-                <div  style="overflow: scroll; max-height: 130px;">
-                    <p>{!!$user->profil->status!!}</p>
+                <div style="overflow: scroll; max-height: 130px;">
+                    <p>{!!$profil->status!!}</p>
                 </div>
             </div>
         </div>

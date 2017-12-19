@@ -1,5 +1,5 @@
 <div class="text-center">
-	<button type="button" class="btn btn-success btn-sm pull-left" data-toggle="modal" data-target="#kirimPesan">
+	<button type="button" class="btn btn-success btn-sm pull-left fa fa-envelope" data-toggle="modal" data-target="#kirimPesan">
 		Kirim Pesan !
 	</button>
 </div>
