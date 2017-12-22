@@ -6,10 +6,14 @@
 	Harga mobil terbaru, Marketing terdekat, Spesifikasi lengkap, dan Forum diskusi yang bisa menambah wawasan atau rasa penasaran anda selama ini.
 @stop
 @section('image') http://kampusmobil.com/largekampusmobil.png @stop
-
+@section('css')
+	<link href="/css/sliding.css" rel="stylesheet">
+@stop
 @section('content')
 
-@include('showBrand.mobils')
+<div class="row">
+	@include('showBrand.mobils')
+</div>
 
 <div class="row">
     <h4 class="text-center"><b>Berita</b></h4><hr>
@@ -41,4 +45,7 @@
 	</div>
 </div>
 @endsection
-@section('js')<script src="/js/sales.js"></script>@stop
+@section('js')
+	<script src="/js/sales.js"></script>
+	<script src="/js/sliding.js"></script>
+@stop

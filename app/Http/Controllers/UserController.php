@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Auth;
 use File;
 use Image;
@@ -58,13 +59,20 @@ class UserController extends Controller
                 'name' => 'required|min:3|max:20',
             ]);
         $user   = Auth::user();
+        $slug  = DB::table('users')->select('slug')->where('slug', str_slug($request->name))->get();
+
         if ($user->id == $id) {
-            $user->update([
+            if(count($slug) > 0 ){
+                $request->session()->flash('status', 'Maaf, Nama pengguna sudah di gunakan.');
+                return back();
+            }else {
+                $user->update([
                     'name' => $request->name,
                     'slug' => str_slug($request->name),
                 ]);
-            $request->session()->flash('status', 'Nama berhasil di ubah.');
-            return redirect("/member/{$user->slug}");
+                $request->session()->flash('status', 'Nama berhasil di ubah.');
+                return redirect("/member/{$user->slug}");   
+            }
         }else{
             $request->session()->flash('status', 'Hey hey hey,,,,,');
             return redirect("/member/{$user->slug}");

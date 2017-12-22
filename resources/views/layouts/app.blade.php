@@ -30,6 +30,7 @@
     <meta property="og:image:height"  content="315" />
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    @yield('css')
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/modal.css" rel="stylesheet">
     <link href="/css/share.css" rel="stylesheet">

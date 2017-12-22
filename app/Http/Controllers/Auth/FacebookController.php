@@ -66,12 +66,17 @@ class FacebookController extends Controller
         }else {
             $slug  = str_slug($facebookUser->name);//ok Fix
         }
+        if ($facebookUser->avatar == null) {
+            $img = 'https://s5.postimg.org/qb4j49k4n/kampusmobil.jpg';
+        }else{
+            $img = $facebookUser->avatar;
+        }
 
         return User::create([
             'name'        => $facebookUser->name,
             'email'       => $facebookUser->email,
             'sosmed'      => $facebookUser->id,
-            'img'         => $facebookUser->avatar,
+            'img'         => $img,
             'status'      => 1,
             'token'       => str_random(20),
             'password'    => bcrypt(str_random(20)),

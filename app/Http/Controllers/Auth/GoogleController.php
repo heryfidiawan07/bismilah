@@ -67,12 +67,17 @@ class GoogleController extends Controller
         }else {
             $slug  = str_slug($googleUser->name);//OK Fix
         }
+        if ($googleUser->avatar_original == null) {
+            $img = 'https://s5.postimg.org/qb4j49k4n/kampusmobil.jpg';
+        }else{
+            $img = $googleUser->avatar_original;
+        }
         //'handle' => $googleUser->nickname,
         return User::create([
             'name'        => $googleUser->name,
             'email'       => $googleUser->email,
             'sosmed'      => $googleUser->id,
-            'img'         => $googleUser->avatar_original,
+            'img'         => $img,
             'status'      => 1,
             'token'       => str_random(20),
             'password'    => bcrypt(str_random(20)),

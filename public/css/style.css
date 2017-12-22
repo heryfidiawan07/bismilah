@@ -1,5 +1,18 @@
+
+.fa-pencil:hover {
+  background-color: unset !important;
+}
+.line {
+  display: inline-block;
+}
+.line a {
+  margin: 10px 40px;
+}
+.line a:hover {
+  color: black;
+}
 .frm {
-  min-height: 200px;
+  min-height: 230px;
 }
 .index {
   min-height: 200px;
@@ -21,15 +34,6 @@ img { margin: 0 auto; display: block;}
 }
 #articleShow img {
   max-width: 100%;
-}
-.line {
-  display: inline-block;
-}
-.line a {
-  margin: 10px 40px;
-}
-.line a:hover {
-  color: black;
 }
 ::-webkit-scrollbar { 
     display: none; 
