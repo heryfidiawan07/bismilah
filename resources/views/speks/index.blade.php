@@ -14,7 +14,6 @@
 			@endif
 	  @endif
 	  @include('layouts.filterspek')
-	</h4>
 	<hr>
 	@include('layouts.speks')
 </div>

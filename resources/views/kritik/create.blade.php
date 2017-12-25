@@ -4,7 +4,7 @@
 <div class="row">
 	<div class="col-md-10">
 	
-		<h4 class="text-center">Masukan anda sangat berarti untuk kami.</h4>
+		<h4 class="text-center">Masukan anda untuk kami kemajuan kami.</h4>
 		@include('layouts.flash')
 			<form action="" method="post">
 				{{csrf_field()}}
@@ -16,7 +16,7 @@
 		          @endif
 		      </div>
 		      <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }} ">
-		          <label for="email">Alamat email anda</label>
+		          <label for="email">Alamat email</label>
 		          <input type="email" name="email" class="form-control" placeholder="email">
 		          @if($errors->has('email'))
 		              <span class="help-block"> {{$errors->first('email')}} </span>

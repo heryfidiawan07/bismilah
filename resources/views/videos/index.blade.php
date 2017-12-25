@@ -11,15 +11,17 @@
 
 @section('content')
 
-<br><br>
 <div class="row">
 		@include('showBrand.videosBrand')
 		@if(Auth::check())
       @if(Auth::user()->admin())
 				<a href="/admin/video/create" class="btn btn-sm btn-success pull-right">Admin create</a>
-				<br><hr>
 			@endif
 	  @endif
+	  <hr>
+		@if(!Auth::user())
+			<div class="alert alert-warning"><a href="/login"> login </a>sebelum dapat bertanya di forum</div>
+		@endif
 	@include('layouts.videos')
 </div>
 

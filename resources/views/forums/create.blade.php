@@ -21,7 +21,7 @@
 		          @endif
 		      </div>
 		      <div class="form-group {{ $errors->has('brand_id') ? ' has-error' : '' }} ">
-		          <label for="brand_id">Brand</label>
+		          <label for="brand_id">Kategori</label>
 		          <select name="brand_id" class="form-control">
 		          	<option value="">Pilih Brand</option>
 		          	@foreach($brands as $brand)

@@ -12,10 +12,9 @@
 		@include('layouts.forumkategori')
 		@if(Auth::user())
 			<a href="/forum/create" class="btn btn-sm btn-success pull-right">Tulis !</a>
-			<br>
 		@endif
 	</h4>
-	<br>
+	<hr>
 		@if(!Auth::user())
 			<div class="alert alert-warning"><a href="/login"> login </a>sebelum dapat bertanya di forum</div>
 		@endif

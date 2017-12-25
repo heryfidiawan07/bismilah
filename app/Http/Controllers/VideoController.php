@@ -29,7 +29,7 @@ class VideoController extends Controller
 
     public function model($model){
         $mobil  = Mobil::where('slug',$model)->first();
-        $videos = Video::where('mobil_id',$mobil->id)->latest()->paginate(4);
+        $videos = Video::where('mobil_id',$mobil->id)->latest()->paginate(6);
 
         $brand     = $mobil->brand()->first();
         $threads   = $brand->forums()->latest()->paginate(3);
@@ -40,7 +40,7 @@ class VideoController extends Controller
 
     public function brand($brand){
         $brand  = Brand::where('slug',$brand)->first();
-        $videos = Video::where('brand_id',$brand->id)->latest()->paginate(4);
+        $videos = Video::where('brand_id',$brand->id)->latest()->paginate(6);
 
         $threads   = $brand->forums()->latest()->paginate(3);
         $articles  = $brand->articles()->latest()->paginate(2);
