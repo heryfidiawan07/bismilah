@@ -20,7 +20,7 @@
 	  @endif
 	  <hr>
 		@if(!Auth::user())
-			<div class="alert alert-warning"><a href="/login"> login </a>sebelum dapat bertanya di forum</div>
+			<div class="alert alert-warning"><a href="/login"> login </a>untuk berkomentar di video.</div>
 		@endif
 	@include('layouts.videos')
 </div>

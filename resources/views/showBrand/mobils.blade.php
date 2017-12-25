@@ -1,7 +1,7 @@
 
-<button class="btn btn-xs col-xs-1" onclick="example_animate('-=50px')" style="height: 70px; font-size: 30px; background-color: unset; color: black !important; border-right: 1px solid grey;"> < </button>
+<button class="btn btn-xs col-xs-1" onclick="example_animate('-=50px')" style="margin-top: 15px; height: auto; font-size: 30px; background-color: unset; color: black !important; border-right: 1px solid grey;"> < </button>
 
-<div class="text-center col-xs-10" style="overflow-x: scroll; white-space: nowrap; height: 70px;">
+<div class="text-center col-xs-10" style="overflow-x: scroll; white-space: nowrap; height: auto;">
 	<div class="slide">
 
 		@foreach($brands as $brand)
@@ -12,5 +12,5 @@
 	</div>
 </div>
 
-<button class="btn btn-xs col-xs-1" onclick="example_animate('+=50px')" style="height: 70px; font-size: 30px; background-color: unset; color: black !important; border-left: 1px solid grey;"> > </button>
+<button class="btn btn-xs col-xs-1" onclick="example_animate('+=50px')" style="margin-top: 15px; height: auto; font-size: 30px; background-color: unset; color: black !important; border-left: 1px solid grey;"> > </button>
 
