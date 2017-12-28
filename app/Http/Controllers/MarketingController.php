@@ -24,8 +24,17 @@ class MarketingController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('admin', ['except'=>['area','show','dealer']]);
+        $this->middleware('admin', ['except'=>['area','show','dealer','ads']]);
     }
+
+    public function ads($slug){
+        $sales = Marketing::where([['slug',$slug],['iklan',1]])->first();
+        if ($sales) {
+            $mobils = Mobil::where('brand_id',$sales->brand_id)->get();
+            return view('marketings.ads', compact('sales','mobils'));
+        }
+    }
+    
 
     public function index(){
     	$marketings = Marketing::orderBy('brand_id')->get();

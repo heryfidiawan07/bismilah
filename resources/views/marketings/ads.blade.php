@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('url') http://kampusmobil.com/marketing/{{$sales->slug}} @stop
+@section('url') http://kampusmobil.com/ads/{{$sales->slug}} @stop
 @section('title') Dealer Resmi Mobil {{$sales->brand->brand}} {{$sales->area->area}} @stop
 @section('description')
-	Harga terbaru, Paket kredit, Prace list, Promo dan discount {{$sales->brand->brand}} terbaru {{$sales->pt}} {{$sales->alamat}} {{$sales->tentang}}
+	Harga terbaru, Paket kredit, Prace list, Promo dan discount {{$sales->brand->slug}} {{$sales->pt}} {{$sales->alamat}} {{$sales->tentang}}
 @stop
 @section('image') http://kampusmobil.com/marketingImg/{{$sales->img}} @stop
 @section('event')
@@ -12,6 +12,14 @@
 	</script>
 @stop
 @section('content')
+
+<div class="row">
+	<div class="text-center">
+		<a href="https://api.whatsapp.com/send?phone=62{{$sales->hp2}}&text={{$sales->name}}" class="btn btn-success btn-lg">SELENGKAPNYA >></a>
+	</div>
+</div>
+<hr>
+
 <div class="row">
 	<div class="col-md-10">
 
@@ -60,26 +68,6 @@
 					</div>
 				@endforeach
 			</div>
-		</div>
-
-		<div class="row">
-			<h4 class="text-center"><b>Berita</b></h4><hr>
-			@include('layouts.articles')
-		</div>
-
-		<div class="row">
-		    <h4 class="text-center"><b>Spesifikasi</b></h4><hr>
-		    @include('layouts.speks')
-		</div>
-
-		<div class="row">
-		    <h4 class="text-center"><b>Video Review</b></h4><hr>
-		    @include('layouts.videos')
-		</div>
-
-		<div class="row">
-		    <h4 class="text-center"><b>Forum</b></h4><hr>
-		    @include('layouts.forums')
 		</div>
 		
 	</div>
