@@ -14,8 +14,8 @@
 @section('content')
 
 <div class="row">
-	<div class="text-center">
-		<a href="https://api.whatsapp.com/send?phone=62{{$sales->hp2}}&text={{$sales->name}}" class="btn btn-success btn-lg">SELENGKAPNYA >></a>
+	<div class="col-md-12 text-center">
+		<a href="https://api.whatsapp.com/send?phone=62{{$sales->hp2}}&text={{$sales->name}}" class="btn btn-success btn-lg fa fa-whatsapp"> Chatting dengan {{$sales->name}} >></a>
 	</div>
 </div>
 <hr>
