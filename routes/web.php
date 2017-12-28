@@ -97,7 +97,6 @@ Route::post('/admin/spesifikasi/{id}/edit', 'SpekController@update');
 Route::get('/admin/spesifikasi/{id}/delete', 'SpekController@destroy');
 //Marketing show
 Route::get('/marketing/{slug}', 'MarketingController@show');
-Route::get('/ads/{slug}', 'MarketingController@ads');
 //Dealer Resmi
 Route::get('/dealer-resmi-mobil/{slug}/{area}', 'MarketingController@dealer');
 //Forum
