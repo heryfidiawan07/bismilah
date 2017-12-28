@@ -32,10 +32,10 @@
 				<p class="text-center">Belum ada profil</p>
 			@endif
 		
-		<div class="row"><div class="text-center">{{$mobils->links()}}</div></div>
-		
 	</div>
 </div>
+
+<div class="row"><div class="col-md-10 text-center">{{$mobils->links()}}</div></div>
 
 <div class="row">
 	<div class="col-md-10">
