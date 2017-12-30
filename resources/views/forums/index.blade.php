@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('url') http://kampusmobil.com/forum @stop
-@section('title') Bahas semua tentang mobil di forum diskusi mobil atau cari marketing mobil di daerah anda @stop
+@section('title') Forum diskusi mobil atau cari marketing mobil di daerah anda @stop
 @section('description')
-	Berita mobil terbaru, Forum diskusi mobil, Spesifikasi mobil atau mau tukar tambah mobil bekas anda ?
+	Forum diskusi mobil, Berita mobil terbaru, Spesifikasi mobil atau mau tukar tambah mobil bekas anda ?
 @stop
 @section('image') http://kampusmobil.com/largekampusmobil.png @stop
 

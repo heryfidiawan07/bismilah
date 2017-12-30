@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
-@section('title') Berita seputar mobil dari brand-brand terkenal di Indonesia. @stop
+@section('title') Berita seputar mobil 
+	@foreach($brands as $brand)
+		{{$brand->slug}}
+	@endforeach
+@stop
 @section('description')
 	Berita mobil terbaru, Forum diskusi mobil, Spesifikasi mobil atau mau tukar tambah mobil 
 	@foreach($articles as $article)

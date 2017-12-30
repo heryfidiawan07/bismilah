@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
-@section('title') Spesifikasi lengkap mobil dari brand-brand terkenal di Indonesia. @stop
+@section('title') Spesifikasi lengkap mobil 
+	@foreach($speks as $spek)
+		{{$spek->mobil->slug}}
+	@endforeach.
+@stop
 @section('description')
 	Spesifikasi lengkap mobil @foreach($speks as $spek) {{$spek->mobil->slug}} @endforeach , Forum diskusi dan marketing mobil.
 @stop
