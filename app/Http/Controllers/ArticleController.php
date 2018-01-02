@@ -43,7 +43,7 @@ class ArticleController extends Controller
     public function store(Request $request){
         $this->validate($request, [
                 'title' => 'required|unique:forums|max:255',
-                'body' => 'required|max:10000',
+                'body' => 'required',
                 'brand_id' => 'required',
             ]);
     	Article::create([

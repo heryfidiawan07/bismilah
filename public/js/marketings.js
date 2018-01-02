@@ -18,12 +18,14 @@ $(document).ready(function(){
                     //alert('kosong');
                     $('#table').addClass('table table-hover animated flipInX');
                     $("#img").attr('src','https://lh3.googleusercontent.com/-fA4GNmqpiLo/WQBwGMc_1nI/AAAAAAAAAkQ/p2pkw2WDaJUj4pJciG3_2AeC1LW3gFNswCHM/s200/%255BUNSET%255D');
-                    $("#name").html('Tidak di temukan');
-                    $("#pt").html('Tidak di temukan');
-                    $("#alamat").html('Tidak di temukan');
-                    $("#tentang").html('Tidak di temukan');
-                    $("#hp1").html('Tidak di temukan');
-                    $("#hp2").html('Tidak di temukan');
+                    $("#name").html('Places Available');
+                    $("#pt").html('-');
+                    $("#alamat").html('-');
+                    $("#tentang").html('-');
+                    $("#hp1").html('-');
+                    $("#hp1").attr("href","#");
+                    $("#hp2").html('-');
+                    $("#hp2").attr("href","#");
                     $("#prof").attr("href","#");
                 }
                 if (data.iklan == 1) {
@@ -38,7 +40,7 @@ $(document).ready(function(){
                     $("#hp1").html("0"+data.hp1);
                     $("#hp1").attr("href","tel://+62"+data.hp1);
                     $("#hp2").html("0"+data.hp2);
-                    $("#hp2").attr("href","https://api.whatsapp.com/send?phone=62"+data.hp2+"&text=Kampus%20Mobil%20Marketing");
+                    $("#hp2").attr("href","https://api.whatsapp.com/send?phone=62"+data.hp2+"&text="+data.name);
                     $("#prof").attr("href","/marketing/"+data.slug);
                 }
             }

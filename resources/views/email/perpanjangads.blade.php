@@ -80,32 +80,29 @@ $style = [
           <tr>
             <td style="{{ $fontFamily }} {{ $style['email-body_cell'] }}">
                 <!-- Greeting -->
-              <h1 style="{{ $style['header-1'] }}">
-                Hello {{$user->name}}
-              </h1>
               <!-- Intro -->
               <p style="{{ $style['paragraph'] }}">
-                Selamat datang di kampusmobil, di sini anda dapat mencari informasi-informasi tentang mobil, forum mobil, spesifikasi mobil, bahkan di kolom pencarian marketing anda dapat mencari rekomendasi marketing mobil yang terdekat dari kota anda.
+                Ada yang perpanjang ads boss,,,
               </p>
           <!-- Action Button -->
               <table style="{{ $style['body_action'] }}" align="center" width="100%" cellpadding="0" cellspacing="0">
                 <tr>
                   <td align="center">
                     <?php
-                      $actionColor = 'button--blue';
+                      $actionColor = 'button--green';
                     ?>
-                    <a href="http://kampusmobil.com/verify/{{$user->token}}/{{$user->id}}"
+                    <a href="http://kampusmobil.com/admin/advertising"
                       style="{{ $fontFamily }} {{ $style['button'] }} {{ $style[$actionColor] }}"
                       class="button"
                       target="_blank">
-                      Klik disini untuk verifikasi akun
+                      Klik disini untuk meninjau
                     </a>
                   </td>
                 </tr>
               </table>
           <!-- Outro -->
               <p style="{{ $style['paragraph'] }}">
-								Semoga anda puas dengan layanan kami, masih dalam tahap development.
+								Semangat boss,
               </p>
           <!-- Salutation -->
               <p style="{{ $style['paragraph'] }}">
@@ -119,8 +116,8 @@ $style = [
 	                    Jika ada masalah dengan klik tombol di atas silahkan klik link di bawah ini, atau copy di browser anda.
 	                  </p>
 	                  <p style="{{ $style['paragraph-sub'] }}">
-                      <a style="{{ $style['anchor'] }}" href="http://kampusmobil.com/verify/{{$user->token}}/{{$user->id}}" target="_blank">
-                        http://kampusmobil.com/verify/{{$user->token}}/{{$user->id}}
+                      <a style="{{ $style['anchor'] }}" href="http://kampusmobil.com/admin/advertising" target="_blank">
+                        http://kampusmobil.com/admin/advertising
                       </a>
 	                  </p>
                   </td>
@@ -152,7 +149,7 @@ $style = [
                       <a style="{{ $style['anchor'] }}" href="http://kampusmobil.com/spesifikasi" target="_blank">Spesifikasi</a>
                       <a style="{{ $style['anchor'] }}" href="http://kampusmobil.com/articles" target="_blank">Berita</a>
                       <a style="{{ $style['anchor'] }}" href="http://kampusmobil.com/kritik-dan-saran" target="_blank">Kritik dan saran</a>
-                      <a style="{{ $style['anchor'] }}" href="http://kampusmobil.com/karir" target="_blank">Marketing karir</a>
+                      <a style="{{ $style['anchor'] }}" href="http://kampusmobil.com/karir" target="_blank">karir</a>
                       <a style="{{ $style['anchor'] }}" href="http://kampusmobil.com/advertising" target="_blank">advertising</a>
                       <a style="{{ $style['anchor'] }}" href="http://kampusmobil.com/syarat-dan-ketentuan" target="_blank">Syarat dan ketentuan</a>
                       <a style="{{ $style['anchor'] }}" href="http://kampusmobil.com/member" target="_blank">Member</a>

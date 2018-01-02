@@ -49,6 +49,9 @@
           <a href="/karir">Marketing karir</a>
         </li>
         <li class="fotli">
+          <a href="/advertising">Ads</a>
+        </li>
+        <li class="fotli">
           <a href="/syarat-dan-ketentuan">Syarat dan Ketentuan</a>
         </li>
       </div>

@@ -6,6 +6,7 @@ use App\Forum;
 use App\Profil;
 use App\Comments;
 use App\Vcomments;
+use App\Advertising;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -52,6 +53,10 @@ class User extends Authenticatable
 
     public function vcomments(){
         return $this->hasMany(Vcomment::class);
+    }
+
+    public function advertisings(){
+        return $this->hasMany(Advertising::class);
     }
 
     public function getImg(){

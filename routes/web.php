@@ -95,6 +95,9 @@ Route::post('/admin/spesifikasi/create', 'SpekController@store');
 Route::get('/admin/spesifikasi/{id}/edit', 'SpekController@edit');
 Route::post('/admin/spesifikasi/{id}/edit', 'SpekController@update');
 Route::get('/admin/spesifikasi/{id}/delete', 'SpekController@destroy');
+//Advertising Admin
+Route::get('/admin/advertising', 'AdvertisingController@index');
+Route::post('/admin/advertising/{id}/verifikasi', 'AdvertisingController@verifikasi');
 //Marketing show
 Route::get('/marketing/{slug}', 'MarketingController@show');
 //Dealer Resmi
@@ -127,6 +130,12 @@ Route::post('/comment/{id}/edit', 'CommentController@update');
 //Video Comment
 Route::post('/commentar/{slug}', 'VcommentController@store');
 Route::post('/commentar/{id}/edit', 'VcommentController@update');
+//Advertising User
+Route::get('/advertising', 'AdvertisingController@create');
+Route::post('/advertising', 'AdvertisingController@store');
+Route::post('/advertising/{id}/update', 'AdvertisingController@update');
+Route::post('/advertising/{id}/perpanjangan', 'AdvertisingController@perpanjangan');
+Route::post('/advertising/{id}/pembayaran', 'AdvertisingController@pembayaran');
 //Mobil global
 Route::get('/{brands}', 'MobilController@index');
 Route::get('/profil/{brand}/{slugModel}', 'MobilController@show');

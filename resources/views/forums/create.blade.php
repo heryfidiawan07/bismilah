@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
 	<div class="col-md-10">
-		<h4 class="text-center">buat pertanyaan atau sebuah diskusi</h4>
+		<h4 class="text-center">Buat pertanyaan atau sebuah diskusi</h4>
 			<form action="" method="post">
 				{{csrf_field()}}
 		      <div class="form-group {{ $errors->has('title') ? ' has-error' : '' }} ">

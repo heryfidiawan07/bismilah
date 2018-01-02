@@ -33,6 +33,9 @@
         <li class="admin">
             <a class="btn btn-info btn-lg" href="/admin/video/create">Videos panel</a>
         </li>
+        <li class="admin">
+            <a class="btn btn-success btn-lg" href="/admin/advertising">Advertising</a>
+        </li>
     </div>
 </div>
 @endsection

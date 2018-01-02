@@ -59,7 +59,7 @@ class TwitterController extends Controller
         }
 
         if ($twitterUser->email == null) {
-            $twitterUser->email = str_random(10).'_twitter';
+            $twitterUser->email = $twitterUser->id.'@twitter.com';
         }
 
         if(count($slug) > 0 ){

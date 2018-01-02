@@ -59,7 +59,7 @@ class GoogleController extends Controller
         }
 
         if ($googleUser->email == null) {
-            $googleUser->email = str_random(10).'_google';
+            $googleUser->email = $googleUser->id.'@google.com';
         }
 
         if(count($slug) > 0 ){

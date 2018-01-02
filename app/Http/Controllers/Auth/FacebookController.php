@@ -58,7 +58,7 @@ class FacebookController extends Controller
             return $authUser;
         }
         if ($facebookUser->email == null) {
-            $facebookUser->email = str_random(10).'_facebook';
+            $facebookUser->email = $facebookUser->id.'@facebook.com';
         }
 
         if(count($slug) > 0 ){

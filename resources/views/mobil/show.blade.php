@@ -35,13 +35,13 @@
 			  <!-- Wrapper for slides -->
 			  <div class="carousel-inner" role="listbox">
 			    <div class="item active">
-			      <img src="{{$mobil->depan}}" class="img-responsive" alt="{{$mobil->model}}" id="mobil">
+			      <img src="{{$mobil->depan}}" class="img-responsive mobil" alt="{{$mobil->model}}">
 			    </div>
 			    <div class="item">
-			      <img src="{{$mobil->samping}}" class="img-responsive" alt="{{$mobil->model}}" id="mobil">
+			      <img src="{{$mobil->samping}}" class="img-responsive mobil" alt="{{$mobil->model}}">
 			    </div>
 			    <div class="item">
-			      <img src="{{$mobil->belakang}}" class="img-responsive" alt="{{$mobil->model}}" id="mobil">
+			      <img src="{{$mobil->belakang}}" class="img-responsive mobil" alt="{{$mobil->model}}">
 			    </div>
 			  </div>
 			</div>
