@@ -8,7 +8,7 @@
 		{{$type->tipe}} {{$type->harga}} {{$type->transmisi}}
 	@endforeach
 @stop
-@section('image') http://kampusmobil.com/{{$mobil->depan}} @stop
+@section('image') {{$mobil->depan}} @stop
 
 @section('content')
 <div class="row">
