@@ -29,6 +29,11 @@
 		            @endif
 		        </div>
 		        <div class="form-group">
+			      	<div class="alert alert-success">
+		          	<b>BCA - A/N - Heri Fidiawan - 8730342072</b>
+		          </div>
+			      </div>
+		        <div class="form-group">
 		          <input type="submit" class="btn btn-primary btn-sm" value="kirim">
 		        </div>
 		      </form>

@@ -81,9 +81,45 @@
 		              <span class="help-block"> {{$errors->first('start')}} </span>
 		          @endif
 		      </div>
+					<div class="form-group {{ $errors->has('area_id') ? ' has-error' : '' }} ">
+	          <label for="area_id">Pembayaran</label>
+	          <a type="button" href="#checkout" data-toggle="collapse" data-target="#transfer" class="form-control text-center" style="text-decoration: none; color: black;">Pembayaran</a>
+	          <div id="transfer" class="collapse">
+	          	<div class="panel panel-default">
+	          	<div class="panel-body" style="background-color: #f2f2f2;">
+		          	<div class="col-sm-6">
+		          		<p><h4 class="text-center">Bank Transfer</h4><br>
+		          			Harap upload bukti pembayaran, team kami akan segera memproses akun anda secepatnya.<br><br>
+		          			<small><i style="color: red;">Note : Tombol upload bukti pembayaran akan terlihat setelah anda berhasil melakukan register Ads Account.</i></small>
+		          		</p>
+		          	</div>
+		          	<div class="col-sm-6 alert alert-success">
+		          		<h4 class="text-center">Bank Transfer</h4>
+		          		<table class="table">
+										<tr>
+											<td><p>BCA</p></td><td><p><b>8730342072</b></p></td>
+										</tr>
+										<tr>
+											<td><p>A/N</p></td><td><p><b>Heri Fidiawan</b></p></td>
+										</tr>
+										<tr>
+											<td><p>10 Hari</p></td><td><p><b>Rp 180.000 </b></p></td>
+										</tr>
+										<tr>
+											<td><p>20 Hari</p></td><td><p><b>Rp 340.000 </b></p></td>
+										</tr>
+										<tr>
+											<td><p>30 Hari</p></td><td><p><b>Rp 500.000 </b></p></td>
+										</tr>
+									</table>
+		          	</div>
+		          </div>
+		          </div>
+			      </div>
+			    </div>
 		      <div class="form-group">
 		        <input type="submit" class="btn btn-primary btn-sm" value="kirim">
-		    </div>
+		    	</div>
 
 			</form>
 			@endif
@@ -95,6 +131,17 @@
 			</div>
 
 		@endif
+	</div>
+	<div class="col-md-6">
+		<h4 class="text-center"><b>Kenapa harus beriklan ?</b></h4>
+		<p>
+			Iklan atau promosi di internet saat ini bukan suatu hal yang asing lagi, karena semakin hari pengguna internet khususnya di Indonesia terus bertambah. Iklan sudah muncul sejak era media cetak, baliho, kemudian media elektronik (TV dan radio) yang sampai saat ini masih dipakai. Prinsip “promosi” akan efektif jika ditempatkan di suatu tempat yang dikunjungi, diketahui, dan dilihat banyak orang. Seperti media massa (koran/majalah), jalan raya, pasar, event dsb adalah tempat-tempat yang biasa dipilih untuk memasang iklan.
+		</p>
+		<p><b>Kelebihan beriklan di Internet</b></p>
+		<p>Tentu saja banyak kelebihan dengan beriklan atau promosi di internet antara lain:</p>
+		<p><b>- Murah,</b> dibandingkan dengan beriklan di TV, radio dan surat kabar, beriklan di internet dengan media Google, Facebook, iklan baris, dan marketplace ternyata bisa lebih murah.</p>
+		<p><b>- Akses yang luas,</b> jika beriklan dengan menggunakan bahasa Indonesia kemungkinan bisa diakses di seluruh wilayah Indonesia, jika menggunakan bahasa Inggris kemungkinan bisa diakses lebih luas di seluruh dunia yang mayoritas penduduknya mengunakan bahasa Inggris.</p>
+		<p><b>- Target yang spesifik,</b> layanan iklan seperti contohnya di Google dan Facebook semakin menekankan tayangan iklan pada target pasar yang potensial berdasar spesifikasi keyword, jenes kelamin, usia, dan minat yang bisa di deteksi melalui cookies di Google dan biodata di Facebook.</p>
 	</div>
 </div>
 @endsection
