@@ -1,10 +1,3 @@
-<div class="text-center">
-	<button type="button" class="btn btn-success btn-sm pull-left fa fa-envelope" data-toggle="modal" data-target="#kirimPesan">
-		Kirim Pesan !
-	</button>
-</div>
-<br>
-
 <!-- Modal -->
 <div class="modal fade" id="kirimPesan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-lg" role="document">
