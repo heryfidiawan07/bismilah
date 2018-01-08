@@ -1,19 +1,16 @@
 @if($speks->count())
 	@foreach($speks as $spek)
-	<div class="col-md-6">
-		<div class="panel panel-default">
-		<div class="panel-body index">
-			<div class="col-sm-5">
-				<a href="/spesifikasi/{{$spek->mobil->slug}}/{{$spek->slug}}">
-					<img src="https://lh3.googleusercontent.com/-WL0ZJvL2woo/WQBwHGJsPdI/AAAAAAAAAkg/sehLYuEPH5MnOCIo06PD-mx6V2xLa8SQwCHM/s200/%255BUNSET%255D" class="img-responsive" alt="spesification" id="imgS">
+	<div class="col-md-3 col-sm-4">
+		<div class="index">
+			<a href="/spesifikasi/{{$spek->mobil->slug}}/{{$spek->slug}}">
+				<img src="{{$spek->mobil->depan}}" id="imgH">
+			</a>
+		</div>
+		<div class="index2">
+			<div class="pull-left" style="width: 100%; margin-bottom: -2px;">
+				<a href="/spesifikasi/{{$spek->mobil->slug}}" class="thumbnail text-center pull-left" style="margin-bottom: 3px;">
+					<b>{{$spek->mobil->model}}</b>
 				</a>
-			</div>
-			<div class="col-sm-7">
-				<a href="/spesifikasi/{{$spek->mobil->slug}}/{{$spek->slug}}"><b>{{$spek->title}}</b></a>
-				<br><br>
-				<a href="/spesifikasi/{{$spek->mobil->slug}}" class="thumbnail text-center"><b>{{$spek->mobil->model}}</b></a>
-      </div>
-      <div class="pull-right">
 				@if(Auth::check())
           @if(Auth::user()->admin())
             <a href="/admin/spesifikasi/{{$spek->id}}/edit" class="btn btn-xs btn-success">edit</a>
@@ -24,8 +21,10 @@
 					@endif
         @endif
       </div>
+      <div class="pull-left">
+      	<a href="/spesifikasi/{{$spek->mobil->slug}}/{{$spek->slug}}"><b>{{$spek->title}}</b></a>
+      </div>
     </div>
-		</div>
 	</div>
 	@endforeach
 @else

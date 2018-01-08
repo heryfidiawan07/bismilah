@@ -14,10 +14,10 @@
 			<h4 class="text-center"><b>{{$article->title}}</b></h4>
 			<hr class="garis">
 			<a href="{{$article->img}}">
-				<img src="{{$article->img}}" class="img-responsive" alt="{{$article->brand->brand}}" style="width: 100%; max-height: 400px;">
+				<img src="{{$article->img}}" class="img-responsive" alt="{{$article->brand->brand}}">
 			</a>
 			<br>
-			<div id="articleShow">
+			<div id="showing">
 				{!! $article->body !!}
 			</div>
 			<hr>
@@ -61,6 +61,5 @@
 @endsection
 @section('js')
 	<script src="/js/marketings.js"></script>
-	<script src="/js/table.js"></script>
-	<script src="/js/imgf.js"></script>
+	<script src="/js/imgtab.js"></script>
 @stop

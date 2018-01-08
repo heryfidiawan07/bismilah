@@ -1,19 +1,16 @@
 @if($articles->count())
 	@foreach($articles as $article)
-	<div class="col-md-6">
-		<div class="panel panel-default">
-		<div class="panel-body index">
-			<div class="col-sm-6">
-				<a href="/articles/{{$article->brand->slug}}/{{$article->slug}}">
-					<img src="{{$article->img}}" class="img-responsive" alt="{{$article->brand->brand}}" id="imgH">
+	<div class="col-md-3 col-sm-4">
+		<div class="index">
+			<a href="/articles/{{$article->brand->slug}}/{{$article->slug}}">
+				<img src="{{$article->img}}" class="img-responsive" alt="{{$article->brand->brand}}" id="imgH">
+			</a>
+    </div>
+    <div class="index3">
+    	<div class="pull-left" style="width: 100%; margin-bottom: -15px;">
+				<a href="/articles/{{$article->brand->slug}}" class="thumbnail text-center pull-left">
+					<b>{{$article->brand->brand}}</b>
 				</a>
-			</div>
-			<div class="col-sm-6">
-				<a href="/articles/{{$article->brand->slug}}/{{$article->slug}}"><h5>{{$article->title}}</h5></a>
-				<br>
-				<a href="/articles/{{$article->brand->slug}}" class="thumbnail text-center"><b>{{$article->brand->brand}}</b></a>
-      </div>
-      <div class="pull-right">
 				@if(Auth::check())
           @if(Auth::user()->admin())
             <a href="/admin/article/{{$article->id}}/edit" class="btn btn-xs btn-success">edit</a>
@@ -24,8 +21,10 @@
 					@endif
         @endif
       </div>
+      <div class="pull-left">
+	    	<a href="/articles/{{$article->brand->slug}}/{{$article->slug}}"><b>{{$article->title}}</b></a>
+	    </div>
 	  </div>
-		</div>
 	</div>
 	@endforeach
 @else

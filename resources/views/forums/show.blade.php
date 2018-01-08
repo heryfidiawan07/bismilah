@@ -7,7 +7,7 @@
 
 @section('content')
 <div class="row">
-	<div class="col-md-10">
+	<div class="col-md-9">
 		<div class="panel panel-default">
 		<div class="panel-body" id="show">
 			<h4 class="text-center"><b>{{$thread->title}}</b></h4>
@@ -16,8 +16,9 @@
 					<img src="{{$thread->img}}" class="img-responsive" alt="{{$thread->brand->brand}}">
 				</a>
 			@endif
-				<br>
-				{!!$thread->body!!}
+				<div id="showing">
+					{!!$thread->body!!}
+				</div>
 				<hr>
 				<p>
 					<a href="/{{$thread->brand->slug}}" class="thumbnail text-center"><b>{{$thread->brand->brand}}</b></a>
@@ -43,7 +44,7 @@
 		<div class="panel panel-default">
 			<div class="panel-body" id="show">
 				@foreach($comments as $comment)
-				<div style="margin-left: 50px;">{!!$comment->body!!}</div>
+				<div style="margin-left: 50px;" id="showing">{!!$comment->body!!}</div>
 				@if(Auth::check())
 					@if($comment->user_id == Auth::user()->id)
 						<button data-toggle="collapse" data-target="#body_{{$comment->id}}" class="btn btn-success btn-xs pull-right">edit</button><br>
@@ -121,5 +122,5 @@
 	<script type="text/javascript" src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 	<script type="text/javascript" src="/js/mcef.js"></script>
 	<script src="/js/marketings.js"></script>
-	<script src="/js/imgf.js"></script>
+	<script src="/js/imgtab.js"></script>
 @stop

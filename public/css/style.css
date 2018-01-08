@@ -10,11 +10,25 @@
 .line a:hover {
   color: black;
 }
-.frm {
-  min-height: 230px;
-}
 .index {
-  min-height: 200px;
+  min-height: 135px;
+  max-height: 135px;
+}
+.index2 {
+  margin-bottom: 10px;
+  min-height: 80px;
+  max-height: 80px;
+}
+.index3 {
+  margin-bottom: 10px;
+  min-height: 120px;
+  max-height: 120px;
+}
+#imgH {
+  height: 130px; max-width: 100%; width: 100%;
+}
+#imgM {
+  height: 150px; max-width: 100%; width: 80%;
 }
 hr.garis {
   height: 10px;
@@ -73,8 +87,8 @@ select { border-radius: unset !important; }
 }
 .container-fluid a { color: #ffffff !important; text-decoration: none; font-weight: bold; font-family: 'Rationale', sans-serif; letter-spacing: 1px;}
 .thumbnail {
-  width: 100px;
-  font-size: 12px !important;
+  width: 80px;
+  font-size: 10px !important;
   text-decoration: none !important;
 }
 .fotli {
@@ -172,15 +186,6 @@ body {
 #tbl {
   font-size: 14px;
  }
-#imgH {
-  max-height: 130px; max-width: 100%; width: 100%;
-}
-#imgS {
-  height: 100px; max-width: 100%; width: 100%;
-}
-#imgM {
-  height: 150px; max-width: 100%; width: 80%;
-}
 .social {
   list-style: none;
 }
