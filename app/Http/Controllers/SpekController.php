@@ -21,9 +21,9 @@ class SpekController extends Controller
 
     public function index(){
     	$speks   = Spek::latest()->paginate(8);
-        $articles   = Article::latest()->paginate(2);
-        $threads   = Forum::latest()->paginate(3);
-        $videos   = Video::latest()->paginate(2);
+        $articles   = Article::latest()->paginate(4);
+        $threads   = Forum::latest()->paginate(4);
+        $videos   = Video::latest()->paginate(4);
     	return view('speks.index', compact('speks','articles','threads','videos'));
     }
 
@@ -32,16 +32,16 @@ class SpekController extends Controller
         $speks = Spek::where('mobil_id',$mobil->id)->latest()->paginate(8);
 
         $brand     = $mobil->brand()->first();
-        $threads   = $brand->forums()->latest()->paginate(3);
-        $articles  = $brand->articles()->latest()->paginate(2);
+        $threads   = $brand->forums()->latest()->paginate(4);
+        $articles  = $brand->articles()->latest()->paginate(4);
         $videos    = $mobil->videos()->latest()->paginate(4);
         return view('speks.index', compact('speks','articles','threads','videos'));
     }
 
     public function brand($brand){
         $brand     = Brand::whereSlug($brand)->first();
-        $threads   = $brand->forums()->latest()->paginate(3);
-        $articles  = $brand->articles()->latest()->paginate(2);
+        $threads   = $brand->forums()->latest()->paginate(4);
+        $articles  = $brand->articles()->latest()->paginate(4);
         $videos    = $brand->videos()->latest()->paginate(4);
         $speks     = $brand->speks()->latest()->paginate(8);
         return view('speks.index', compact('speks','articles','threads','videos'));
@@ -73,8 +73,8 @@ class SpekController extends Controller
         $brand     = Brand::whereId($mobils->brand_id)->first();
     	$spek  	   = Spek::where([['mobil_id',$mobils->id],['slug',$title]])->first();
         
-        $threads   = $brand->forums()->latest()->paginate(3);
-        $articles  = $brand->articles()->latest()->paginate(2);
+        $threads   = $brand->forums()->latest()->paginate(4);
+        $articles  = $brand->articles()->latest()->paginate(4);
         $videos    = $mobils->videos()->latest()->paginate(4);
         if ($spek) {
             return view('speks.show', compact('spek','brand','articles','threads','videos'));

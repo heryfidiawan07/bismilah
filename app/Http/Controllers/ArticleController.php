@@ -20,9 +20,9 @@ class ArticleController extends Controller
 
     public function index(){
     	$articles   = Article::latest()->paginate(8);
-        $threads   = Forum::latest()->paginate(3);
-        $videos   = Video::latest()->paginate(2);
-        $speks   = Spek::latest()->paginate(2);
+        $threads   = Forum::latest()->paginate(4);
+        $videos   = Video::latest()->paginate(4);
+        $speks   = Spek::latest()->paginate(4);
     	return view('articles.index', compact('articles','videos','threads','speks'));
     }
 
@@ -59,9 +59,9 @@ class ArticleController extends Controller
     public function show($brand, $slug){
         $brand     = Brand::whereSlug($brand)->first();
     	$article   = Article::whereSlug($slug)->first();
-        $threads   = $brand->forums()->latest()->paginate(3);
+        $threads   = $brand->forums()->latest()->paginate(4);
         $videos   = $brand->videos()->latest()->paginate(4);
-        $speks   = $brand->speks()->latest()->paginate(2);
+        $speks   = $brand->speks()->latest()->paginate(4);
 
         if ($article && $brand) {
             return view('articles.show', compact('article','brand','threads','videos','speks'));

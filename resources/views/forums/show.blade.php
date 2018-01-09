@@ -101,17 +101,14 @@
 		</div>
 		
 		<div class="row">
-			<h4 class="text-center"><b>Berita</b></h4><hr>
 			@include('layouts.articles')
 		</div>
 
 		<div class="row">
-		    <h4 class="text-center"><b>Spesifikasi</b></h4><hr>
 		    @include('layouts.speks')
 		</div>
 
 		<div class="row">
-		    <h4 class="text-center"><b>Video Review</b></h4><hr>
 		    @include('layouts.videos')
 		</div>
 

@@ -12,7 +12,7 @@
 
             <!-- Branding Image -->
             <a id="logo" class="navbar-brand" href="{{ url('/') }}">
-                <img style="height: 40px; margin-top: -7px; width: 170px;" src="/kampusmobil.png">
+                <img style="height: 40px; margin-top: -7px; width: 150px;" src="/kampusmobil.png">
             </a>
             <!-- Brandi Modal -->
             <div class="navbar-brand">

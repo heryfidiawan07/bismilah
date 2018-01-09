@@ -20,9 +20,9 @@ class VideoController extends Controller
     }
 
     public function index(){
-        $articles   = Article::latest()->paginate(2);
-        $threads   = Forum::latest()->paginate(3);
-        $speks   = Spek::latest()->paginate(2);
+        $articles   = Article::latest()->paginate(4);
+        $threads   = Forum::latest()->paginate(4);
+        $speks   = Spek::latest()->paginate(4);
     	$videos   = Video::latest()->paginate(8);
     	return view('videos.index', compact('videos','speks','articles','threads'));
     }
@@ -32,9 +32,9 @@ class VideoController extends Controller
         $videos = Video::where('mobil_id',$mobil->id)->latest()->paginate(6);
 
         $brand     = $mobil->brand()->first();
-        $threads   = $brand->forums()->latest()->paginate(3);
-        $articles  = $brand->articles()->latest()->paginate(2);
-        $speks     = $brand->speks()->latest()->paginate(2);
+        $threads   = $brand->forums()->latest()->paginate(4);
+        $articles  = $brand->articles()->latest()->paginate(4);
+        $speks     = $brand->speks()->latest()->paginate(4);
         return view('videos.index', compact('videos','articles','threads','speks'));
     }
 
@@ -42,9 +42,9 @@ class VideoController extends Controller
         $brand  = Brand::where('slug',$brand)->first();
         $videos = Video::where('brand_id',$brand->id)->latest()->paginate(6);
 
-        $threads   = $brand->forums()->latest()->paginate(3);
-        $articles  = $brand->articles()->latest()->paginate(2);
-        $speks     = $brand->speks()->latest()->paginate(2);
+        $threads   = $brand->forums()->latest()->paginate(4);
+        $articles  = $brand->articles()->latest()->paginate(4);
+        $speks     = $brand->speks()->latest()->paginate(4);
         return view('videos.index', compact('videos','articles','threads','speks'));
     }
 
@@ -74,9 +74,9 @@ class VideoController extends Controller
         $mobils    = Mobil::whereSlug($model)->first();
         $brand     = Brand::whereId($mobils->brand_id)->first();
         $video     = Video::where([['mobil_id',$mobils->id],['slug',$slug]])->first();
-        $threads   = $brand->forums()->latest()->paginate(3);
-        $articles  = $brand->articles()->latest()->paginate(2);
-        $speks     = $brand->speks()->latest()->paginate(2);
+        $threads   = $brand->forums()->latest()->paginate(4);
+        $articles  = $brand->articles()->latest()->paginate(4);
+        $speks     = $brand->speks()->latest()->paginate(4);
         $text      =  explode("embed/", $video->link);
         $thumb     = $text[1];
 

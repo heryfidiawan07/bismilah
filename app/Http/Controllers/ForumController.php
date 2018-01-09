@@ -21,20 +21,20 @@ class ForumController extends Controller
     }
 
     public function index(){
-    	$threads   = Forum::latest()->paginate(9);
-        $articles  = Article::latest()->paginate(2);
-        $speks     = Spek::latest()->paginate(2);
-        $videos    = Video::latest()->paginate(2);
+    	$threads   = Forum::latest()->paginate(8);
+        $articles  = Article::latest()->paginate(4);
+        $speks     = Spek::latest()->paginate(4);
+        $videos    = Video::latest()->paginate(4);
     	return view('forums.index', compact('threads','articles','speks','videos'));
     }
 
     public function brand($brand){
         $brand      = Brand::whereSlug($brand)->first();
         if ($brand) {
-            $articles  = $brand->articles()->latest()->paginate(2);
-            $speks     = $brand->speks()->latest()->paginate(2);
+            $articles  = $brand->articles()->latest()->paginate(4);
+            $speks     = $brand->speks()->latest()->paginate(4);
             $videos    = $brand->videos()->latest()->paginate(4);
-            $threads   = Forum::where('brand_id',$brand->id)->latest()->paginate(9);
+            $threads   = Forum::where('brand_id',$brand->id)->latest()->paginate(8);
             return view('forums.index', compact('threads','articles','speks','videos'));
         }
             return redirect('/forum');
@@ -65,8 +65,8 @@ class ForumController extends Controller
     public function show($brand, $slug){
         $brand      = Brand::whereSlug($brand)->first();
         $thread     = Forum::whereSlug($slug)->first();
-        $articles  = $brand->articles()->latest()->paginate(2);
-        $speks     = $brand->speks()->latest()->paginate(2);
+        $articles  = $brand->articles()->latest()->paginate(4);
+        $speks     = $brand->speks()->latest()->paginate(4);
         $videos    = $brand->videos()->latest()->paginate(4);
         if (!$thread) {
             return view('errors.404');

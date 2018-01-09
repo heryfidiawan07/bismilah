@@ -1,3 +1,18 @@
+.main {
+  transition: transform 1s;
+}
+.main:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 0.5px 0.5px #f2f2f2;
+
+  -webkit- box-shadow: 0px 0px 0.5px 0.5px #f2f2f2;
+  -moz- box-shadow: 0px 0px 0.5px 0.5px #f2f2f2;
+  -o- box-shadow: 0px 0px 0.5px 0.5px #f2f2f2;
+  -ms- box-shadow: 0px 0px 0.5px 0.5px #f2f2f2;
+}
+.container a {
+  text-decoration: none !important;
+}
 .fa-pencil:hover {
   background-color: unset !important;
 }
@@ -10,22 +25,63 @@
 .line a:hover {
   color: black;
 }
+.tab {
+  border-bottom: 3px solid navy;
+  margin-top: 50px;
+}
+.contArt {
+  background-color: #E0FFFF !important;
+  max-width: 100%;
+}
+.contFor {
+  max-width: 100%;
+}
+.conVid {
+  background-color: black !important;
+  max-width: 100%;
+}
+.conSpek {
+  max-width: 100%;
+}
 .index {
-  min-height: 135px;
-  max-height: 135px;
+  margin-top: 20px;
+  min-height: 150px;
+  max-height: 150px;
+}
+.indexforum {
+  margin-top: 20px;
+  min-height: 70px;
+  max-height: 70px; 
+}
+.thumb {
+  width: 100%; height: 30px; padding: 2px 2px;
 }
 .index2 {
-  margin-bottom: 10px;
-  min-height: 80px;
-  max-height: 80px;
+  margin-bottom: 20px;
+  min-height: 50px;
+  max-height: 50px;
 }
 .index3 {
-  margin-bottom: 10px;
-  min-height: 120px;
-  max-height: 120px;
+  margin-bottom: 20px;
+  min-height: 70px;
+  max-height: 70px;
+}
+.more {
+  font-size: 17px;
+  padding: 5px 5px;
+  text-decoration: none !important;
+  transition: letter-spacing 1s;
+  transition: letter-spacing 2s;
+}
+.more:hover {
+  letter-spacing: 2px;
+  color: black;
+}
+.fa-arrow-right:hover {
+  background-color: unset !important;
 }
 #imgH {
-  height: 130px; max-width: 100%; width: 100%;
+  height: 150px; max-width: 100%; width: 100%;
 }
 #imgM {
   height: 150px; max-width: 100%; width: 80%;

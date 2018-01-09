@@ -16,23 +16,39 @@
 </div>
 
 <div class="row">
-    <h4 class="text-center"><b>Berita</b></h4><hr>
     @include('layouts.articles')
 </div>
+<div class="row">
+	<div class="text-center">
+		<a class="more" href="/articles">Show more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+	</div>
+</div>
 
 <div class="row">
-    <h4 class="text-center"><b>Forum</b></h4><hr>
     @include('layouts.forums')
 </div>
-
 <div class="row">
-	<h4 class="text-center"><b>Video Review</b></h4><hr>
-	@include('layouts.videos')
+	<div class="text-center">
+		<a class="more" href="/forum">Show more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+	</div>
 </div>
 
 <div class="row">
-    <h4 class="text-center"><b>Spesifikasi</b></h4><hr>
-    @include('layouts.speks')
+	@include('layouts.videos')
+</div>
+<div class="row">
+	<div class="text-center">
+		<a class="more" href="/videos">Show more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+	</div>
+</div>
+
+<div class="row">
+   @include('layouts.speks')
+</div>
+<div class="row">
+	<div class="text-center">
+		<a class="more" href="/spesifikasi">Show more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+	</div>
 </div>
 
 <div class="row">

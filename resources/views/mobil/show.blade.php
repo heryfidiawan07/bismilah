@@ -12,7 +12,7 @@
 
 @section('content')
 <div class="row">
-	<div class="col-md-10">
+	<div class="col-md-9">
 
 		<div class="row">
 			<h3 class="text-center animated flipInX"><b>{{$mobil->brand->brand}} {{$mobil->model}}</b>
@@ -84,22 +84,18 @@
 		</div>
 
 		<div class="row">
-			<h4 class="text-center"><b>Video Review</b></h4><hr>
 			@include('layouts.videos')
 		</div>
 
 		<div class="row">
-			<h4 class="text-center"><b>Berita</b></h4><hr>
 			@include('layouts.articles')
 		</div>
 
 		<div class="row">
-		    <h4 class="text-center"><b>Spesifikasi</b></h4><hr>
 		    @include('layouts.speks')
 		</div>
 
 		<div class="row">
-		    <h4 class="text-center"><b>Forum</b></h4><hr>
 		    @include('layouts.forums')
 		</div>
 

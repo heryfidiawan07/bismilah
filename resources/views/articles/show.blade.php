@@ -27,7 +27,11 @@
 			<p class="pull-right">
 				@if(Auth::check())
 	        @if(Auth::user()->admin())
-						<a href="/admin/article/{{$article->id}}/edit" class="btn btn-sm btn-warning">edit</a>
+	          <a href="/admin/article/{{$article->id}}/edit" class="btn btn-xs btn-success">edit</a>
+						<button data-toggle="collapse" data-target="#rem_{{$article->id}}" class="btn btn-warning btn-xs">Remove ?</button>
+						<div id="rem_{{$article->id}}" class="collapse pull-right">
+							<a href="/admin/article/{{$article->id}}/delete" class="btn btn-xs btn-danger">delete</a>
+						</div>
 					@endif
 				@endif
 				<small>{{$article->created_at->diffForHumans()}}</small>
@@ -42,17 +46,14 @@
 		</div>
 
 		<div class="row">
-			<h4 class="text-center"><b>Video Review</b></h4><hr>
 			@include('layouts.videos')
 		</div>
 
 		<div class="row">
-		    <h4 class="text-center"><b>Forum</b></h4><hr>
 		    @include('layouts.forums')
 		</div>
 
 		<div class="row">
-		    <h4 class="text-center"><b>Spesifikasi</b></h4><hr>
 		    @include('layouts.speks')
 		</div>
 

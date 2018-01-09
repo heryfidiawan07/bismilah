@@ -22,7 +22,11 @@
 			<p class="pull-right">
 				@if(Auth::check())
 	        @if(Auth::user()->admin())
-	          <a href="/admin/spesifikasi/{{$spek->id}}/edit" class="btn btn-sm btn-warning">edit</a>
+	          <a href="/admin/spesifikasi/{{$spek->id}}/edit" class="btn btn-xs btn-success">edit</a>
+						<button data-toggle="collapse" data-target="#sp_{{$spek->id}}" class="btn btn-warning btn-xs">Remove ?</button>
+						<div id="sp_{{$spek->id}}" class="collapse pull-right">
+							<a href="/admin/spesifikasi/{{$spek->id}}/delete" class="btn btn-xs btn-danger">delete</a>
+						</div>
 	        @endif
 	      @endif
 				<small>{{$spek->created_at->diffForHumans()}}</small>
@@ -37,17 +41,14 @@
 		</div>
 	
 		<div class="row">
-			<h4 class="text-center"><b>Berita</b></h4><hr>
 			@include('layouts.articles')
 		</div>
 
 		<div class="row">
-		    <h4 class="text-center"><b>Forum</b></h4><hr>
 		    @include('layouts.forums')
 		</div>
 
 		<div class="row">
-		    <h4 class="text-center"><b>Video Review</b></h4><hr>
 		    @include('layouts.videos')
 		</div>
 
