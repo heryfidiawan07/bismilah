@@ -8,17 +8,17 @@
 					<img src="https://img.youtube.com/vi/<?php $text = explode("embed/", $video->link); echo $text[1]; ?>/0.jpg" class="img-responsive" id="imgH">
 				</a>
 			</div>
-			<div class="thumb">
-				<a class="pull-right" href="/videos/{{$video->mobil->slug}}/{{$video->slug}}"><small>{{$video->jmlvCom()}} komentar</small></a>
-			</div>
-			<div class="thumb">
-				<a href="/videos/{{$video->mobil->slug}}" class="thumbnail text-center"><b>{{$video->mobil->model}}</b></a>
-			</div>
 			<div class="index2">
 				<div class="pull-left">
 	      	<a href="/videos/{{$video->mobil->slug}}/{{$video->slug}}">{{ str_limit($video->title, $limit = 50, $end = '...') }}</a>
 	      </div>
 		  </div>
+		  <div class="thumb">
+				<a class="pull-right" href="/videos/{{$video->mobil->slug}}/{{$video->slug}}"><small>{{$video->jmlvCom()}} komentar</small></a>
+			</div>
+		  <div class="thumb">
+				<a href="/videos/{{$video->mobil->slug}}" class="thumbnail text-center"><b>{{$video->mobil->model}}</b></a>
+			</div>
 		</div>
 		@endforeach
 	@else

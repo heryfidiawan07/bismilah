@@ -10,7 +10,7 @@
         <a style="padding: 10px;" class="fa fa-google" href="https://plus.google.com/u/1/111026721153212508704"></a>
         <a style="padding: 10px;" class="fa fa-instagram" href="https://www.instagram.com/kampusmobil/"></a>
         <a style="padding: 10px;" class="fa fa-youtube" href="https://www.youtube.com/channel/UC95Bj_ZS_E0V6BdbOz09uYQ"></a>
-        <button style="padding: 10px;" type="button" class="fa fa-envelope" data-toggle="modal" data-target="#kirimPesan">
+        <button style="padding: 9px;" type="button" class="fa fa-envelope" data-toggle="modal" data-target="#kirimPesan"> Hubungi Kami
         </button>
       </li>
     </div>
@@ -71,5 +71,5 @@
     </div>
   </div>
   <p class="text-center">All rights reserved.</p>
-  <h5 class="text-center"><b> &copy; kampusmobil 2017 - 2018.</b></h5>
+  <h6 class="text-center"><b> &copy; kampusmobil 2017 - 2018.</b></h6>
 </blockquote>

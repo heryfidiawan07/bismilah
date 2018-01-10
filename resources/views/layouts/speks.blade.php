@@ -8,16 +8,16 @@
 					<img src="{{$spek->mobil->depan}}" id="imgH">
 				</a>
 			</div>
-			<div class="thumb">
-				<a href="/spesifikasi/{{$spek->mobil->slug}}" class="thumbnail text-center">
-						<b>{{$spek->mobil->model}}</b>
-				</a>
-			</div>
 			<div class="index2">
 	      <div class="pull-left">
 	      	<a href="/spesifikasi/{{$spek->mobil->slug}}/{{$spek->slug}}"><b>{{ str_limit($spek->title, $limit = 50, $end = '...') }}</b></a>
 	      </div>
 	    </div>
+	    <div class="thumb">
+				<a href="/spesifikasi/{{$spek->mobil->slug}}" class="thumbnail text-center">
+						<b>{{$spek->mobil->model}}</b>
+				</a>
+			</div>
 		</div>
 		@endforeach
 	@else

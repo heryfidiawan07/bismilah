@@ -18,14 +18,15 @@
 		<hr>
 		@if($mobils->count())
 			@foreach($mobils as $mobil)
-			<div class="col-md-4">
-				<a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}">
-					<img src="{{$mobil->depan}}" class="img-responsive" alt="{{$mobil->slug}}" id="imgM">
-				</a>
-				<div class="text-center">
+			<div class="col-md-4 mainMobil">
+				<div class="indexMobil">
+					<a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}">
+						<img src="{{$mobil->depan}}" class="img-responsive" alt="{{$mobil->slug}}" id="imgM">
+					</a>
+				</div>
+				<div class="titleMobil text-center">
 					<h4><a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}"><b>{{$mobil->model}}</b></a></h4>
 				</div>
-				<hr>
 			</div>
 			@endforeach
 			@else
@@ -62,22 +63,18 @@
 			</div>
 
 			<div class="row">
-				<h4 class="text-center"><b>Video Review</b></h4><hr>
 				@include('layouts.videos')
 			</div>
 
 			<div class="row">
-				<h4 class="text-center"><b>Berita</b></h4><hr>
 				@include('layouts.articles')
 			</div>
 
 			<div class="row">
-			    <h4 class="text-center"><b>Spesifikasi</b></h4><hr>
 			    @include('layouts.speks')
 			</div>
 
 			<div class="row">
-			    <h4 class="text-center"><b>Forum</b></h4><hr>
 			    @include('layouts.forums')
 			</div>
 

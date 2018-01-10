@@ -63,7 +63,7 @@
 		          @endif
 		      </div>
 		      <div class="form-group {{ $errors->has('durasi') ? ' has-error' : '' }} ">
-		          <label for="durasi">Durasi</label>
+		          <label for="durasi">Durasi - <small><i style="color: green;">Promo</i></small></label>
 		          <select name="durasi" class="form-control">
 		          	<option value="">Atur durasi</option>
 		          	<option value="10">10 Hari Rp 180.000</option>

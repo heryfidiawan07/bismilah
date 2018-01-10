@@ -8,12 +8,12 @@
 					<img src="{{$article->img}}" class="img-responsive" alt="{{$article->brand->brand}}" id="imgH">
 				</a>
 	    </div>
-	    <div class="thumb">
-				<a href="/articles/{{$article->brand->slug}}" class="thumbnail text-center"><b>{{$article->brand->brand}}</b></a>
-	    </div>
 	    <div class="index3">
 		    <a href="/articles/{{$article->brand->slug}}/{{$article->slug}}"><b>{{ str_limit($article->title, $limit = 80, $end = '...') }}</b></a>
 		  </div>
+		  <div class="thumb">
+				<a href="/articles/{{$article->brand->slug}}" class="thumbnail text-center"><b>{{$article->brand->brand}}</b></a>
+	    </div>
 		</div>
 		@endforeach
 	@else
