@@ -18,9 +18,6 @@
 .container a {
   text-decoration: none !important;
 }
-.fa-envelope:hover {
-  background-color: unset !important;
-}
 .fa-pencil:hover {
   background-color: unset !important;
 }
@@ -88,14 +85,20 @@
   letter-spacing: 2px;
   color: black;
 }
+.well .fa-map-marker: {
+  color: black !important;
+}
+.fa-map-marker:hover {
+  background-color: unset !important;
+}
 .fa-arrow-right:hover {
   background-color: unset !important;
 }
 #imgH {
-  height: auto; max-height: 150px; max-width: 100%; width: auto;
+  height: auto; max-height: 150px; max-width: 100%; width: auto; text-align: center;
 }
 #imgM {
-  height: auto; max-height: 150px; max-width: 100%; width: auto;
+  height: auto; max-height: 150px; max-width: 100%; width: auto; text-align: center;
 }
 hr.garis {
   height: 10px;

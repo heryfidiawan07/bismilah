@@ -169,10 +169,10 @@ class MarketingController extends Controller
             $sales = Marketing::where([['brand_id',$brand->id],['iklan',1],['area_id',$area->id]])->first();
         
             $mobils    = Mobil::where('brand_id',$brand->id)->get();
-            $articles  = $brand->articles()->latest()->paginate(2);
-            $speks     = $brand->speks()->latest()->paginate(2);
-            $videos    = $brand->videos()->latest()->paginate(2);
-            $threads   = $brand->forums()->latest()->paginate(3);
+            $articles  = $brand->articles()->latest()->paginate(4);
+            $speks     = $brand->speks()->latest()->paginate(4);
+            $videos    = $brand->videos()->latest()->paginate(4);
+            $threads   = $brand->forums()->latest()->paginate(4);
             return view('marketings.index', compact('sales','mobils','articles','speks','videos','threads','area','brand'));
         }else{
             return redirect('/');

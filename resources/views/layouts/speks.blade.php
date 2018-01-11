@@ -24,3 +24,10 @@
 		<p class="text-center">Belum ada spesifikasi</p>
 	@endif
 </div>
+@if(Request::url() != 'http://kampusmobil.com/spesifikasi')
+<div class="row">
+	<div class="text-center">
+		<a class="more" href="/spesifikasi">Show more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+	</div>
+</div>
+@endif

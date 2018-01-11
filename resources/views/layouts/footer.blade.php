@@ -2,15 +2,14 @@
 <br>
   <div class="row">
     <div class="col-md-6">
-      <p>Berita mobil, Spesifikasi mobil, Profil mobil, Marketing mobil<br>
-      dan Forum diskusi.</p>
+      <p>Harga Mobil Terbaru, Berita Seputar mobil, Spesifikasi, Video Review, Profil,<br> Marketing dan Forum diskusi.</p>
       <li class="social">
-        <a style="padding: 10px;" class="fa fa-facebook" href="https://www.facebook.com/Kampus-Mobil-247408789060534/"></a>
+        <a style="padding: 10px;" class="fa fa-facebook" href="https://web.facebook.com/Mobil-Indonesia-198137864097827/"></a>
         <a style="padding: 10px;" class="fa fa-twitter" href="https://twitter.com/kampusmobil"></a>
         <a style="padding: 10px;" class="fa fa-google" href="https://plus.google.com/u/1/111026721153212508704"></a>
         <a style="padding: 10px;" class="fa fa-instagram" href="https://www.instagram.com/kampusmobil/"></a>
         <a style="padding: 10px;" class="fa fa-youtube" href="https://www.youtube.com/channel/UC95Bj_ZS_E0V6BdbOz09uYQ"></a>
-        <button style="padding: 9px;" type="button" class="fa fa-envelope" data-toggle="modal" data-target="#kirimPesan"> Hubungi Kami
+        <button id="hubungi" style="padding: 9px;" type="button" class="fa fa-envelope" data-toggle="modal" data-target="#kirimPesan"> Hubungi Kami
         </button>
       </li>
     </div>

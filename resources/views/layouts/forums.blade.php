@@ -28,3 +28,10 @@
 		<p class="text-center">Belum ada diskusi</p>
 	@endif
 </div>
+@if(Request::url() != 'http://kampusmobil.com/forum')
+<div class="row">
+	<div class="text-center">
+		<a class="more" href="/forum">Show more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+	</div>
+</div>
+@endif

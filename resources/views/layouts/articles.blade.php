@@ -20,3 +20,10 @@
 		<p class="text-center">Belum ada article</p>
 	@endif
 </div>
+@if(Request::url() != 'http://kampusmobil.com/articles')
+  <div class="row">
+		<div class="text-center">
+			<a class="more" href="/articles">Show more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+		</div>
+	</div>
+@endif

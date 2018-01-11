@@ -26,10 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {   
-        $articles  = Article::latest()->paginate(8);
-        $threads   = Forum::latest()->paginate(8);
-        $videos   = Video::latest()->paginate(8);
-        $speks     = Spek::latest()->paginate(8);
+        $articles  = Article::latest()->paginate(4);
+        $threads   = Forum::latest()->paginate(4);
+        $videos   = Video::latest()->paginate(4);
+        $speks     = Spek::latest()->paginate(4);
         return view('home', compact('articles','threads','videos','speks'));
     }
 

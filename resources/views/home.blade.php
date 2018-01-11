@@ -18,37 +18,17 @@
 <div class="row">
     @include('layouts.articles')
 </div>
-<div class="row">
-	<div class="text-center">
-		<a class="more" href="/articles">Show more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-	</div>
-</div>
 
 <div class="row">
     @include('layouts.forums')
-</div>
-<div class="row">
-	<div class="text-center">
-		<a class="more" href="/forum">Show more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-	</div>
 </div>
 
 <div class="row">
 	@include('layouts.videos')
 </div>
-<div class="row">
-	<div class="text-center">
-		<a class="more" href="/videos">Show more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-	</div>
-</div>
 
 <div class="row">
    @include('layouts.speks')
-</div>
-<div class="row">
-	<div class="text-center">
-		<a class="more" href="/spesifikasi">Show more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-	</div>
 </div>
 
 <div class="row">
