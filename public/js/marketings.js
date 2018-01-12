@@ -13,36 +13,35 @@ $(document).ready(function(){
             type: 'POST',
             url : fullUrl,
             data:  {area:'area',brand:'brand'},
-            success : function(data){
-                if (data.name == undefined || data.iklan == 0) {
-                    //alert('kosong');
-                    $('#table').addClass('table table-hover animated flipInX');
-                    $("#img").attr('src','https://lh3.googleusercontent.com/-fA4GNmqpiLo/WQBwGMc_1nI/AAAAAAAAAkQ/p2pkw2WDaJUj4pJciG3_2AeC1LW3gFNswCHM/s200/%255BUNSET%255D');
-                    $("#name").html('Places Available');
-                    $("#pt").html('-');
-                    $("#alamat").html('-');
-                    $("#tentang").html('-');
-                    $("#hp1").html('-');
-                    $("#hp1").attr("href","#");
-                    $("#hp2").html('-');
-                    $("#hp2").attr("href","#");
-                    $("#prof").attr("href","#");
-                }
-                if (data.iklan == 1) {
-                    //console.log(data.name);
-                    $('#table').addClass('table table-hover animated flipInX');
-                    $("#aImg").attr("href","/marketing/"+data.slug);
-                    $("#img").attr('src',"/marketingImg/"+data.img);
-                    $("#name").html(data.name);
-                    $("#pt").html(data.pt);
-                    $("#alamat").html(data.alamat);
-                    $("#tentang").html(data.tentang);
-                    $("#hp1").html("0"+data.hp1);
-                    $("#hp1").attr("href","tel://+62"+data.hp1);
-                    $("#hp2").html("0"+data.hp2);
-                    $("#hp2").attr("href","https://api.whatsapp.com/send?phone=62"+data.hp2+"&text="+data.name);
-                    $("#prof").attr("href","/marketing/"+data.slug);
-                }
+            success : function(data, statusTxt, xhr){
+                //console.log(xhr.status);-> berhasil = 200, gagal = 404
+                //console.log(xhr.statusText);-> berhasil = OK, gagal = Not Found
+                //console.log(statusTxt);->berhasil = success, gagal = error
+                $('#table').addClass('table table-hover animated flipInX');
+                $("#aImg").attr("href","/marketing/"+data.sales.slug);
+                $("#img").attr('src',"/marketingImg/"+data.sales.img);
+                $("#name").html(data.sales.name);
+                $("#pt").html(data.sales.pt);
+                $("#alamat").html(data.sales.alamat);
+                $("#tentang").html(data.sales.tentang);
+                $("#hp1").html(" 0"+data.sales.hp1);
+                $("#hp1").attr("href","tel://+62"+data.sales.hp1);
+                $("#hp2").html(" 0"+data.sales.hp2);
+                $("#hp2").attr("href",data.link.link);
+                $("#prof").attr("href","/marketing/"+data.sales.slug);
+
+            },error : function(data, statusTxt, xhr){
+                $('#table').addClass('table table-hover animated flipInX');
+                $("#img").attr('src','https://lh3.googleusercontent.com/-fA4GNmqpiLo/WQBwGMc_1nI/AAAAAAAAAkQ/p2pkw2WDaJUj4pJciG3_2AeC1LW3gFNswCHM/s200/%255BUNSET%255D');
+                $("#name").html('Places Available');
+                $("#pt").html('-');
+                $("#alamat").html('-');
+                $("#tentang").html('-');
+                $("#hp1").html(' -');
+                $("#hp1").attr("href","#");
+                $("#hp2").html(' -');
+                $("#hp2").attr("href","#");
+                $("#prof").attr("href","#");
             }
         });
 	});

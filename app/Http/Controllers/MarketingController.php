@@ -15,6 +15,7 @@ use App\Mobil;
 use App\Tipe;
 use App\Video;
 use App\Marketing;
+use App\Link;
 use App\Pembayaran;
 use Illuminate\Http\Request;
 use App\Mail\KonfirmasiMarketing;
@@ -72,6 +73,22 @@ class MarketingController extends Controller
     	    		'iklan' => $request->iklan,
     	    	]);
     	return redirect('/admin/marketings');
+    }
+
+    public function link(Request $request, $sid)
+    {   $sales = Marketing::whereId($sid)->first();
+        $link = Link::where('marketing_id', $sid)->first();
+        if (count($link) > 0) {
+            $link->update([
+                    'link' => $request->link,
+                ]);
+        }else{
+            Link::create([
+                'marketing_id' => $sid,
+                'link' => $request->link,
+            ]);
+        }
+        return back();
     }
 
     public function edit($id){
@@ -141,8 +158,9 @@ class MarketingController extends Controller
     public function area($brand, $area){
         $brand = Brand::whereSlug($brand)->first();
         $area  = Area::whereSlug($area)->first();
-        $sales = Marketing::where([['brand_id',$brand->id],['area_id',$area->id]])->first();
-        return response()->json($sales);
+        $sales = Marketing::where([['brand_id',$brand->id],['area_id',$area->id],['iklan',1]])->first();
+        $link = $sales->link()->first();
+        return response()->json(array('sales' => $sales, 'link' => $link));
     }
 
     public function show($slug){

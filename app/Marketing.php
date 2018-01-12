@@ -4,6 +4,7 @@ namespace App;
 
 use App\User;
 use App\Area;
+use App\Link;
 use App\Brand;
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,6 +22,10 @@ class Marketing extends Model
 
     public function user(){
     	return $this->belongsTo(User::class);
+    }
+    
+    public function link(){
+        return $this->hasOne(Link::class);
     }
     
 }

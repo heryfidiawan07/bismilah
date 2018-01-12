@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Link;
 use App\Area;
 use App\Spek;
 use App\Brand;
@@ -34,8 +35,9 @@ class HomeController extends Controller
     }
 
     public function cari($brand, $area){
-        $sales = Marketing::where([['brand_id',$brand],['area_id',$area]])->first();
-        return response()->json($sales);
+        $sales = Marketing::where([['brand_id',$brand],['area_id',$area],['iklan',1]])->first();
+        $link = $sales->link()->first();
+        return response()->json(array('sales' => $sales, 'link' => $link));
     }
 
     public function syarat(){

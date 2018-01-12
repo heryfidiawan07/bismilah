@@ -5,7 +5,7 @@
 	<div class="slide">
 
 		@foreach($brands as $brand)
-			<a href="/{{$brand->slug}}" style="display: inline-block; margin: 15px;"><img src="/brands/{{$brand->slug}}.png" width="50">
+			<a class="mainBrand" href="/{{$brand->slug}}" style="display: inline-block; margin: 15px;"><img src="/brands/{{$brand->slug}}.png" width="50">
 			<h6 class="text-center"><b>{{$brand->brand}}</b></h6></a>
 		@endforeach
 

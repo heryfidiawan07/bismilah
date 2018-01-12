@@ -120,8 +120,8 @@
 						<tr><td>{{$sales->pt}}</td></tr>
 						<tr><td>{{$sales->alamat}}</td></tr>
 						<tr><td>
-							<a href="tel://+62{{$sales->hp1}}" class="btn btn-primary">0{{$sales->hp1}}</a>
-							<a href="tel://+62{{$sales->hp2}}" class="btn btn-success">0{{$sales->hp2}}</a>
+							<a href="tel://+62{{$sales->hp1}}" class="fa fa-phone btn btn-primary"> 0{{$sales->hp1}}</a>
+							<a href="tel://+62{{$sales->hp2}}" class="fa fa-whatsapp btn btn-success"> 0{{$sales->hp2}}</a>
 						</td></tr>
 						<tr><td>{!!nl2br($sales->tentang)!!}</td></tr>
 						<tr><td>
@@ -129,14 +129,29 @@
 								<b>{{$sales->brand->brand}}</b>
 							</a>
 						</td></tr>
-						<tr><td>{{$sales->area->area}}</td></tr>
-						<tr><td>{{$sales->iklan}}</td></tr>
+						<tr><td><p class="fa fa-map-marker"> {{$sales->area->area}}</p></td></tr>
+						<tr><td class="danger">Link : 
+							@if(count($sales->link))
+								{{$sales->link->link}}
+							@endif
+						</td></tr>
+						<tr><td>Status : {{$sales->iklan}}</td></tr>
+						<tr><td>
+							<button data-toggle="collapse" data-target="#bit_{{$sales->id}}" class="btn btn-success btn-sm pull-left">Link Bitly <span class="caret"></span></button>
+								<div id="bit_{{$sales->id}}" class="collapse pull-right">
+									<form method="post" action="/admin/link/{{$sales->id}}">
+									{{csrf_field()}}
+										<input type="text" name="link">
+										<input type="submit" value="create">
+									</form>
+								</div>
+						</td></tr>
 						<tr>
 							<td>
 								<a href="/marketing/{{$sales->slug}}" class="btn btn-sm btn-primary">profil</a>
 								<a href="/admin/marketing/{{$sales->id}}/edit" class="btn btn-sm btn-warning">edit</a>
 								<button data-toggle="collapse" data-target="#rem_{{$sales->id}}" class="btn btn-success btn-sm pull-right">Remove ?</button>
-								<div id="rem_{{$sales->id}}" class="collapse">
+								<div id="rem_{{$sales->id}}" class="collapse pull-right" style="margin-right: 10px;">
 									<a href="/admin/marketing/{{$sales->id}}/delete" class="btn btn-sm btn-danger pull-right">delete</a>
 								</div>
 							</td>

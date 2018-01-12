@@ -29,7 +29,7 @@
 					<p class="animated bounceInDown">{!!nl2br($sales->tentang)!!}</p>
 					<p class="animated bounceInDown">
 						<p><b><u>Chat via whatsapp :</u></b></p>
-						<a href="https://api.whatsapp.com/send?phone=62{{$sales->hp2}}&text={{$sales->name}}" class="btn btn-success fa fa-whatsapp"> 0{{$sales->hp2}}</a>
+						<a href="<?php if(count($sales->link)) {echo $sales->link->link;} ?>" class="btn btn-success fa fa-whatsapp"> 0{{$sales->hp2}}</a>
 						<p><b><u>Telp / Sms :</u></b></p>
 						<a href="tel://+62{{$sales->hp1}}" class="btn btn-primary fa fa-phone"> 0{{$sales->hp1}}</a>
 					</p>

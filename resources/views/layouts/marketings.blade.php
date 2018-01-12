@@ -5,6 +5,9 @@
 	        <select name="area_id" class="form-control" id="area" style="margin-bottom: 10px;">
 	        	<option value="">Pilih Kota</option>
 	        	@foreach($areas as $area)
+	        		@if($area->area == 'Kosong')
+		          	@continue;
+		          @endif
 	        		<option value="{{$area->slug}}">{{$area->area}}</option>
 	        	@endforeach
 	        </select>

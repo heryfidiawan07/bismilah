@@ -77,6 +77,8 @@ Route::post('/admin/marketings', 'MarketingController@store');
 Route::get('/admin/marketing/{id}/edit', 'MarketingController@edit');
 Route::post('/admin/marketing/{id}/edit', 'MarketingController@update');
 Route::get('/admin/marketing/{id}/delete', 'MarketingController@destroy');
+//Link Admin Only
+Route::post('/admin/link/{sid}', 'MarketingController@link');
 //Article Amdin
 Route::get('/admin/article/create', 'ArticleController@create');
 Route::post('/admin/article/create', 'ArticleController@store');

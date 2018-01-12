@@ -18,7 +18,6 @@
 			@endif
 	  @endif
 	  @include('layouts.filterspek')
-	<hr>
 	@include('layouts.speks')
 </div>
 
