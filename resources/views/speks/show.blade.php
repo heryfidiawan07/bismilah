@@ -33,11 +33,11 @@
 			</p>
 		</div>
 		</div>
-		<div class="panel panel-default">
-			<div class="panel-body" id="show">@include('layouts.spekshare')</div>
+		<div class="row">
+			@include('layouts.spekshare')
 		</div>
-		<div class="panel panel-default">
-			<div class="panel-body" id="show">@include('layouts.marketings')</div>
+		<div class="row">
+			@include('layouts.marketings')
 		</div>
 	
 		<div class="row">

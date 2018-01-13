@@ -38,11 +38,11 @@
 			</p>
 		</div>
 		</div>
-		<div class="panel panel-default">
-			<div class="panel-body" id="show">@include('layouts.articleshare')</div>
+		<div class="row">
+			@include('layouts.articleshare')
 		</div>
-		<div class="panel panel-default">
-			<div class="panel-body" id="show">@include('layouts.marketings')</div>
+		<div class="row">
+			@include('layouts.marketings')
 		</div>
 
 		<div class="row">

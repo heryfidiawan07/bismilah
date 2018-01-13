@@ -18,6 +18,9 @@
   margin-top: 20px;
   margin-bottom: 50px;
 }
+.mainForum {
+  border-bottom: 2px solid grey;
+}
 .main:hover {
   transform: scale(1.1);
 }

@@ -37,8 +37,8 @@
 		</div>
 		</div>
 
-		<div class="panel panel-default">
-			<div class="panel-body" id="show">@include('layouts.forumshare')</div>
+		<div class="row">
+			@include('layouts.forumshare')
 		</div>
 
 		<div class="panel panel-default">
@@ -88,7 +88,6 @@
 				    </div>
 				</form>
 				@else
-					<br><br>
 					<div class="text-center alert alert-warning">
 						<a href="/login">Login </a>untuk dapat bertanya dan berkomentar di forum
 					</div>
@@ -96,8 +95,8 @@
 			</div>
 		</div>
 		
-		<div class="panel panel-default">
-			<div class="panel-body" id="show">@include('layouts.marketings')</div>
+		<div class="row">
+			@include('layouts.marketings')
 		</div>
 		
 		<div class="row">

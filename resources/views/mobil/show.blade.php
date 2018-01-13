@@ -9,6 +9,9 @@
 	@endforeach
 @stop
 @section('image') {{$mobil->depan}} @stop
+@section('css')
+	<link rel="stylesheet" type="text/css" href="/css/mobilslide.css">
+@stop
 
 @section('content')
 <div class="row">
@@ -22,30 +25,13 @@
 		      @endif
 		    @endif
 	    </h3>
+		</div>
 
-			<hr>
-
-			<div id="myCarousel" class="carousel slide pull-left" data-ride="carousel" style="margin-bottom: 10px;">
-			  <!-- Indicators -->
-			  <ol class="carousel-indicators">
-			    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			    <li data-target="#myCarousel" data-slide-to="1"></li>
-			    <li data-target="#myCarousel" data-slide-to="2"></li>
-			  </ol>
-			  <!-- Wrapper for slides -->
-			  <div class="carousel-inner" role="listbox">
-			    <div class="item active">
-			      <img src="{{$mobil->depan}}" class="img-responsive mobil" alt="{{$mobil->model}}">
-			    </div>
-			    <div class="item">
-			      <img src="{{$mobil->samping}}" class="img-responsive mobil" alt="{{$mobil->model}}">
-			    </div>
-			    <div class="item">
-			      <img src="{{$mobil->belakang}}" class="img-responsive mobil" alt="{{$mobil->model}}">
-			    </div>
-			  </div>
-			</div>
-			
+		<div class="row">
+			@include('layouts.mobilslide')
+		</div>
+		<br>
+		<div class="row">
 			<table class="table" id="profil">
 				<tr class="tipe">
 					<th>Tipe</th><th>Harga</th>
@@ -63,32 +49,15 @@
 		<br>
 			
 		<div class="row">
-			<div class="panel panel-default">
-				<div class="panel-body" id="show">
-					<div class="social-buttons">
-						<b>Share : </b>
-						<a href="https://www.facebook.com/sharer/sharer.php?u=http://kampusmobil.com/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}" target="_blank" class="fa fa-facebook"></a>
-						<a href="https://twitter.com/intent/tweet?url=http://kampusmobil.com/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}" target="_blank" class="fa fa-twitter"></a>
-						<a href="https://plus.google.com/share?url=http://kampusmobil.com/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}" target="_blank" class="fa fa-google"></a>
-					</div>
-				</div>
-			</div>
+			@include('layouts.mobilshare')
 		</div>
 		
 		<div class="row">
-			<div class="panel panel-default">
-				<div class="panel-body" id="show">
-					@include('layouts.marketings')
-				</div>
-			</div>
+			@include('layouts.marketings')
 		</div>
 
 		<div class="row">
 			@include('layouts.videos')
-		</div>
-
-		<div class="row">
-			@include('layouts.articles')
 		</div>
 
 		<div class="row">
@@ -99,10 +68,15 @@
 		    @include('layouts.forums')
 		</div>
 
+		<div class="row">
+			@include('layouts.articles')
+		</div>
+
 	</div>
 </div>
 
 @endsection
 @section('js')
+	<script src="/js/mobilslide.js"></script>
 	<script src="/js/marketings.js"></script>
 @stop

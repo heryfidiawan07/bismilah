@@ -30,8 +30,8 @@
 		</div>
 		</div>
 
-		<div class="panel panel-default">
-			<div class="panel-body" id="show">@include('layouts.videoshare')</div>
+		<div class="row">
+			@include('layouts.videoshare')
 		</div>
 
 		<div class="panel panel-default">
@@ -81,7 +81,6 @@
 				    </div>
 				</form>
 				@else
-					<br><br>
 					<div class="text-center alert alert-warning">
 						<a href="/login">Login </a>untuk dapat berkomentar
 					</div>
@@ -89,8 +88,8 @@
 			</div>
 		</div>
 		
-		<div class="panel panel-default">
-			<div class="panel-body" id="show">@include('layouts.marketings')</div>
+		<div class="row">
+			@include('layouts.marketings')
 		</div>
 
 		<div class="row">

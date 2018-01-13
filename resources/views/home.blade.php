@@ -30,15 +30,9 @@
 <div class="row">
    @include('layouts.speks')
 </div>
-<br>
+
 <div class="row">
-	<div class="col-md-12">
-		<div class="panel panel-default">
-			<div class="panel-body" id="show">
-	    	@include('layouts.sales')
-	    </div>
-	  </div>
-	</div>
+	@include('layouts.sales')
 </div>
 @endsection
 @section('js')
