@@ -27,9 +27,8 @@ $(document).ready(function(){
                 $("#hp1").html(" 0"+data.sales.hp1);
                 $("#hp1").attr("href","tel://+62"+data.sales.hp1);
                 $("#hp2").html(" 0"+data.sales.hp2);
-                $("#hp2").attr("href",data.link.link);
                 $("#prof").attr("href","/marketing/"+data.sales.slug);
-
+                $("#hp2").attr("href",data.link.link);
             },error : function(data, statusTxt, xhr){
                 $('#table').addClass('table table-hover animated flipInX');
                 $("#img").attr('src','https://lh3.googleusercontent.com/-fA4GNmqpiLo/WQBwGMc_1nI/AAAAAAAAAkQ/p2pkw2WDaJUj4pJciG3_2AeC1LW3gFNswCHM/s200/%255BUNSET%255D');

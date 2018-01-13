@@ -26,10 +26,10 @@ class MobilController extends Controller
             return view('errors.404');
         }
         $mobils = Mobil::where('brand_id',$brand->id)->latest()->paginate(6);
-        $articles  = $brand->articles()->latest()->paginate(2);
-        $speks     = $brand->speks()->latest()->paginate(6);
+        $articles  = $brand->articles()->latest()->paginate(4);
+        $speks     = $brand->speks()->latest()->paginate(4);
         $videos    = $brand->videos()->latest()->paginate(4);
-        $threads   = $brand->forums()->latest()->paginate(3);
+        $threads   = $brand->forums()->latest()->paginate(4);
         return view('mobil.index', compact('mobils','brand','videos','articles','speks','threads'));
     }
 

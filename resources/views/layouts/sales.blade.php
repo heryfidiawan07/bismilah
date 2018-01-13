@@ -24,7 +24,7 @@
 		<td>
 			<div class="col-sm-3 text-center">
 				<a id="aImg" href="">
-					<img id="img" src="https://lh3.googleusercontent.com/-fA4GNmqpiLo/WQBwGMc_1nI/AAAAAAAAAkQ/p2pkw2WDaJUj4pJciG3_2AeC1LW3gFNswCHM/s200/%255BUNSET%255D" class="img-responsive" width="200" height="200">
+					<img id="img" src="https://lh3.googleusercontent.com/-fA4GNmqpiLo/WQBwGMc_1nI/AAAAAAAAAkQ/p2pkw2WDaJUj4pJciG3_2AeC1LW3gFNswCHM/s200/%255BUNSET%255D" class="img-responsive text-center">
 				</a>
 			</div>
 			<br>

@@ -44,12 +44,16 @@
   background-color: #E0FFFF !important;
   max-width: 100%;
 }
-.contFor {
+.contFor a{
+  color: black !important;
   max-width: 100%;
 }
 .conVid {
   background-color: black !important;
   max-width: 100%;
+}
+.conVid a {
+  color: red !important;
 }
 .conSpek {
   max-width: 100%;
@@ -90,6 +94,7 @@
 .more:hover {
   letter-spacing: 2px;
   color: black;
+  border-bottom: 3px solid red;
 }
 .well .fa-map-marker: {
   color: black !important;
