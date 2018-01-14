@@ -95,24 +95,23 @@
 			</div>
 		</div>
 		
-		<div class="row">
-			@include('layouts.marketings')
-		</div>
-		
-		<div class="row">
-			@include('layouts.articles')
-		</div>
-
-		<div class="row">
-		    @include('layouts.speks')
-		</div>
-
-		<div class="row">
-		    @include('layouts.videos')
-		</div>
+		<div class="row">@include('layouts.marketings')</div>
 
 	</div>
 </div>
+
+<div class="col-md-9">
+	@include('layouts.articles')
+</div>
+
+<div class="col-md-9">
+  @include('layouts.speks')
+</div>
+
+<div class="col-md-9">
+  @include('layouts.videos')
+</div>
+
 @endsection
 @section('js')
 	<script type="text/javascript" src="//cdn.tinymce.com/4/tinymce.min.js"></script>

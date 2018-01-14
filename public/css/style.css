@@ -11,7 +11,7 @@
   margin-bottom: 20px;
 }
 .mainMobil:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .main {
   transition: transform 1s;
@@ -22,7 +22,7 @@
   border-bottom: 2px solid grey;
 }
 .main:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .container a {
   text-decoration: none !important;
@@ -49,16 +49,18 @@
 }
 .contFor a{
   color: black !important;
+}
+.contFor {
   max-width: 100%;
 }
-.conVid {
+.contVid {
   background-color: black !important;
   max-width: 100%;
 }
-.conVid a {
+.contVid a {
   color: red !important;
 }
-.conSpek {
+.contSpek {
   max-width: 100%;
 }
 .titleMobil {
@@ -97,7 +99,7 @@
 .more:hover {
   letter-spacing: 2px;
   color: black;
-  border-bottom: 3px solid red;
+  border-bottom: 3px solid blue;
 }
 .well .fa-map-marker: {
   color: black !important;

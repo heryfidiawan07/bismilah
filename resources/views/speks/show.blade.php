@@ -33,27 +33,29 @@
 			</p>
 		</div>
 		</div>
+
 		<div class="row">
 			@include('layouts.spekshare')
 		</div>
 		<div class="row">
 			@include('layouts.marketings')
 		</div>
-	
-		<div class="row">
-			@include('layouts.articles')
-		</div>
-
-		<div class="row">
-		    @include('layouts.forums')
-		</div>
-
-		<div class="row">
-		    @include('layouts.videos')
-		</div>
 
 	</div>
 </div>
+
+<div class="col-md-9">
+	@include('layouts.articles')
+</div>
+
+<div class="col-md-9">
+    @include('layouts.forums')
+</div>
+
+<div class="col-md-9">
+    @include('layouts.videos')
+</div>
+
 @endsection
 @section('js')
 	<script src="/js/marketings.js"></script>

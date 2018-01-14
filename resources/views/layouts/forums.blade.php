@@ -3,7 +3,7 @@
 	@if($threads->count())
 		@foreach($threads as $thread)
 		<a href="/forum/{{$thread->brand->slug}}/{{$thread->slug}}">
-			<div class="col-md-3 col-sm-4 main mainForum">
+			<div class="col-md-3 col-sm-6 main mainForum">
 				<div class="indexforum">
 					<b>{{ str_limit($thread->title, $limit = 70, $end = '...') }}</b>
 				</div>

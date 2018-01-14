@@ -1,9 +1,9 @@
 <h4 class="tab"><b>Spesifikasi</b></h4>
-<div class="container conSpek">
+<div class="container contSpek">
 	@if($speks->count())
 		@foreach($speks as $spek)
 		<a href="/spesifikasi/{{$spek->mobil->slug}}/{{$spek->slug}}">
-			<div class="col-md-3 col-sm-4 main">
+			<div class="col-md-3 col-sm-6 main">
 				<div class="index">
 					<img src="{{$spek->mobil->depan}}" id="imgH">
 				</div>

@@ -16,14 +16,14 @@
 
 @section('content')
 <div class="row">
-		@if(Auth::check())
-      @if(Auth::user()->admin())
-				<a href="/admin/article/create" class="btn btn-sm btn-success pull-right">Admin create</a>
-				<br><hr>
-			@endif
-	  @endif
-	@include('layouts.articles')
+	@if(Auth::check())
+    @if(Auth::user()->admin())
+			<a href="/admin/article/create" class="btn btn-sm btn-success pull-right">Admin create</a>
+		@endif
+  @endif
 </div>
+
+<div class="col-md-12">@include('layouts.articles')</div>
 
 <div class="row">
 	<div class="col-md-12">
@@ -31,19 +31,19 @@
 	</div>
 </div>
 
-<div class="row">
+<div class="col-md-12">
 	@include('layouts.sales')
 </div>
 
-<div class="row">
+<div class="col-md-12">
 	@include('layouts.videos')
 </div>
 
-<div class="row">
+<div class="col-md-12">
     @include('layouts.forums')
 </div>
 
-<div class="row">
+<div class="col-md-12">
     @include('layouts.speks')
 </div>
 

@@ -13,7 +13,7 @@
 @stop
 @section('content')
 <div class="row">
-	<div class="col-md-10">
+	<div class="col-md-9">
 
 		<div class="panel panel-default">
 			<div class="panel-body" id="show">
@@ -64,24 +64,24 @@
 				@endforeach
 			</div>
 		</div>
-
-		<div class="row">
-			@include('layouts.articles')
-		</div>
-
-		<div class="row">
-		    @include('layouts.speks')
-		</div>
-
-		<div class="row">
-		    @include('layouts.videos')
-		</div>
-
-		<div class="row">
-		    @include('layouts.forums')
-		</div>
 		
 	</div>
+</div>
+
+<div class="col-md-9">
+	@include('layouts.articles')
+</div>
+
+<div class="col-md-9">
+    @include('layouts.speks')
+</div>
+
+<div class="col-md-9">
+    @include('layouts.videos')
+</div>
+
+<div class="col-md-9">
+    @include('layouts.forums')
 </div>
 
 @endsection

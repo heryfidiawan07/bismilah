@@ -30,18 +30,19 @@
 		<div class="row">
 			@include('layouts.mobilslide')
 		</div>
+
 		<br>
 		<div class="row">
 			<table class="table" id="profil">
 				<tr class="tipe">
 					<th>Tipe</th><th>Harga</th>
 				</tr>
-			@foreach($types as $type)
-				<tr>
-					<td><p id="tbl" class="animated bounceInRight">{{$type->tipe}}</p></td>
-					<td><p id="tbl" class="animated bounceInRight">Rp {{$type->harga}}</p></td>
-				</tr>
-			@endforeach
+				@foreach($types as $type)
+					<tr>
+						<td><p id="tbl" class="animated bounceInRight">{{$type->tipe}}</p></td>
+						<td><p id="tbl" class="animated bounceInRight">Rp {{$type->harga}}</p></td>
+					</tr>
+				@endforeach
 			</table>
 			<div class="text-center"><i>OTR Jakarta, Harga dapat berubah sewaktu-waktu.<br> Untuk informasi lebih lanjut hubungi marketing terdekat.</i></div>
 		</div>
@@ -56,23 +57,23 @@
 			@include('layouts.marketings')
 		</div>
 
-		<div class="row">
-			@include('layouts.videos')
-		</div>
-
-		<div class="row">
-		    @include('layouts.speks')
-		</div>
-
-		<div class="row">
-		    @include('layouts.forums')
-		</div>
-
-		<div class="row">
-			@include('layouts.articles')
-		</div>
-
 	</div>
+</div>
+
+<div class="col-md-9">
+	@include('layouts.videos')
+</div>
+
+<div class="col-md-9">
+    @include('layouts.speks')
+</div>
+
+<div class="col-md-9">
+    @include('layouts.forums')
+</div>
+
+<div class="col-md-9">
+	@include('layouts.articles')
 </div>
 
 @endsection

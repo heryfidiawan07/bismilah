@@ -1,9 +1,9 @@
 <h4 class="tab"><b>Video Review</b></h4>
-<div class="container conVid">
+<div class="container contVid">
 	@if($videos->count())
 		@foreach($videos as $video)
 		<a href="/videos/{{$video->mobil->slug}}/{{$video->slug}}">
-			<div class="col-md-3 col-sm-4 main">
+			<div class="col-md-3 col-sm-6 main">
 				<div class="index">
 					<img src="https://img.youtube.com/vi/<?php $text = explode("embed/", $video->link); echo $text[1]; ?>/0.jpg" class="img-responsive" id="imgH">
 				</div>

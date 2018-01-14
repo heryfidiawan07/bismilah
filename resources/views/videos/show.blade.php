@@ -7,7 +7,7 @@
 
 @section('content')
 <div class="row">
-	<div class="col-md-10">
+	<div class="col-md-9">
 		<div class="panel panel-default">
 		<div class="panel-body" id="show">
 			<h4 class="text-center"><b>{{$video->title}}</b></h4>
@@ -92,23 +92,21 @@
 			@include('layouts.marketings')
 		</div>
 
-		<div class="row">
-			<h4 class="text-center"><b>Berita</b></h4><hr>
-			@include('layouts.articles')
-		</div>
-
-		<div class="row">
-		    <h4 class="text-center"><b>Forum</b></h4><hr>
-		    @include('layouts.forums')
-		</div>
-
-		<div class="row">
-		    <h4 class="text-center"><b>Spesifikasi</b></h4><hr>
-		    @include('layouts.speks')
-		</div>
-
 	</div>
 </div>
+
+<div class="col-md-9">
+	@include('layouts.articles')
+</div>
+
+<div class="col-md-9">
+  @include('layouts.forums')
+</div>
+
+<div class="col-md-9">
+    @include('layouts.speks')
+</div>
+
 @endsection
 @section('js')
 	<script src="/js/marketings.js"></script>

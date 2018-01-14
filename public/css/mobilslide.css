@@ -16,7 +16,7 @@
     margin: 0 auto;
     position: relative;
 	}
-	label {
+	.label {
 		width: 80px !important;
 		font-size: 40pt !important;
         line-height: 200px !important;
@@ -32,7 +32,7 @@
     margin: 0 auto;
     position: relative;
 	}
-	label {
+	.label {
 		width: 100px !important;
 		font-size: 80pt !important;
         line-height: 280px !important;
@@ -48,12 +48,11 @@
     margin: 0 auto;
     position: relative;
   }
-  label {
+  .label {
     width: 200px !important;
     font-size: 156pt !important;
     line-height: 380px !important;
   }
-
 }
 .slides * {
     user-select: none;
@@ -85,13 +84,13 @@
     height: 100%;
 }
 
-.nav label {
+.nav .label {
     width: 200px;
     height: 100%;
     display: none;
     position: absolute;
 
-	  opacity: 0;
+	opacity: 0.5;
     z-index: 9;
     cursor: pointer;
 
@@ -102,13 +101,13 @@
     text-align: center;
     line-height: 380px;
     font-family: "Varela Round", sans-serif;
-    background-color: rgba(255, 255, 255, .3);
+    /**background-color: rgba(255, 255, 255, .3);**/
     text-shadow: 0px 0px 15px rgb(119, 119, 119);
 }
 
-.slide:hover + .nav label { opacity: 0.5; }
+.slide:hover + .nav .label { opacity: 0.5; }
 
-.nav label:hover { opacity: 1; }
+.nav .label:hover { opacity: 1; }
 
 .nav .next { right: 0; }
 
@@ -120,5 +119,5 @@ input:checked + .slide-container  .slide {
     transition: opacity 1s ease-in-out;
 }
 
-input:checked + .slide-container .nav label { display: block; }
+input:checked + .slide-container .nav .label { display: block; }
 

@@ -38,6 +38,7 @@
 			</p>
 		</div>
 		</div>
+		
 		<div class="row">
 			@include('layouts.articleshare')
 		</div>
@@ -45,20 +46,21 @@
 			@include('layouts.marketings')
 		</div>
 
-		<div class="row">
-			@include('layouts.videos')
-		</div>
-
-		<div class="row">
-		    @include('layouts.forums')
-		</div>
-
-		<div class="row">
-		    @include('layouts.speks')
-		</div>
-
 	</div>
 </div>
+
+<div class="col-md-9">
+	@include('layouts.videos')
+</div>
+
+<div class="col-md-9">
+    @include('layouts.forums')
+</div>
+
+<div class="col-md-9">
+    @include('layouts.speks')
+</div>
+
 @endsection
 @section('js')
 	<script src="/js/marketings.js"></script>

@@ -13,11 +13,13 @@
 		@if(Auth::user())
 			<a href="/forum/create" class="btn btn-sm btn-success pull-right">Tulis !</a>
 		@endif
-	</h4>
-	<hr>
 		@if(!Auth::user())
+			<hr>
 			<div class="alert alert-warning"><a href="/login"> login </a>sebelum dapat bertanya di forum</div>
 		@endif
+</div>
+
+<div class="col-md-12">
 	@include('layouts.forums')
 </div>
 
@@ -27,19 +29,19 @@
 	</div>
 </div>
 
-<div class="row">
+<div class="col-md-12">
 	@include('layouts.sales')
 </div>
 
-<div class="row">
+<div class="col-md-12">
 	@include('layouts.articles')
 </div>
 
-<div class="row">
+<div class="col-md-12">
     @include('layouts.speks')
 </div>
 
-<div class="row">
+<div class="col-md-12">
     @include('layouts.videos')
 </div>
 
