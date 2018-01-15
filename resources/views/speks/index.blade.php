@@ -20,7 +20,7 @@
 	  @include('layouts.filterspek')
 </div>
 
-<div class="col-md-12">@include('layouts.speks')</div>
+<div class="row">@include('layouts.speks')</div>
 
 <div class="row">
 	<div class="col-md-12">
@@ -28,19 +28,19 @@
 	</div>
 </div>
 
-<div class="col-md-12">
+<div class="ro">
 	@include('layouts.sales')
 </div>
 
-<div class="col-md-12">
+<div class="row">
 	@include('layouts.articles')
 </div>
 
-<div class="col-md-12">
+<div class="row">
     @include('layouts.forums')
 </div>
 
-<div class="col-md-12">
+<div class="row">
     @include('layouts.videos')
 </div>
 

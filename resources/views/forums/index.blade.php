@@ -19,7 +19,7 @@
 		@endif
 </div>
 
-<div class="col-md-12">
+<div class="row">
 	@include('layouts.forums')
 </div>
 
@@ -29,19 +29,19 @@
 	</div>
 </div>
 
-<div class="col-md-12">
+<div class="row">
 	@include('layouts.sales')
 </div>
 
-<div class="col-md-12">
+<div class="row">
 	@include('layouts.articles')
 </div>
 
-<div class="col-md-12">
+<div class="row">
     @include('layouts.speks')
 </div>
 
-<div class="col-md-12">
+<div class="row">
     @include('layouts.videos')
 </div>
 

@@ -95,15 +95,15 @@
 	</div>
 </div>
 
-<div class="col-md-9">
+<div class="row">
 	@include('layouts.articles')
 </div>
 
-<div class="col-md-9">
+<div class="row">
   @include('layouts.forums')
 </div>
 
-<div class="col-md-9">
+<div class="row">
     @include('layouts.speks')
 </div>
 

@@ -100,15 +100,15 @@
 	</div>
 </div>
 
-<div class="col-md-9">
+<div class="row">
 	@include('layouts.articles')
 </div>
 
-<div class="col-md-9">
+<div class="row">
   @include('layouts.speks')
 </div>
 
-<div class="col-md-9">
+<div class="row">
   @include('layouts.videos')
 </div>
 

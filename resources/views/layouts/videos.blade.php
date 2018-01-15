@@ -9,7 +9,7 @@
 				</div>
 				<div class="index2">
 					<div class="pull-left">
-		      	{{ str_limit($video->title, $limit = 50, $end = '...') }}
+		      	{{ str_limit($video->title, $limit = 40, $end = '...') }}
 		      </div>
 			  </div>
 			  <div class="thumb">
@@ -26,9 +26,7 @@
 	@endif
 </div>
 @if(Request::url() != 'http://kampusmobil.com/videos')
-<div class="row">
 	<div class="text-center">
-		<a class="more" href="/videos">Show more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+		<a class="more" href="/videos">Lihat lainya <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 	</div>
-</div>
 @endif

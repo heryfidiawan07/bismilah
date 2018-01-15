@@ -9,7 +9,7 @@
 				</div>
 				<div class="index2">
 		      <div class="pull-left">
-		      	<b>{{ str_limit($spek->title, $limit = 50, $end = '...') }}</b>
+		      	<b>{{ str_limit($spek->title, $limit = 40, $end = '...') }}</b>
 		      </div>
 		    </div>
 		    <div class="thumb">
@@ -25,9 +25,7 @@
 	@endif
 </div>
 @if(Request::url() != 'http://kampusmobil.com/spesifikasi')
-<div class="row">
 	<div class="text-center">
-		<a class="more" href="/spesifikasi">Show more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+		<a class="more" href="/spesifikasi">Lihat lainya <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 	</div>
-</div>
 @endif

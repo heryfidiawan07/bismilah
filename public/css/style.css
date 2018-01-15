@@ -99,7 +99,7 @@
 .more:hover {
   letter-spacing: 2px;
   color: black;
-  border-bottom: 3px solid blue;
+  border-bottom: 2px solid blue;
 }
 .well .fa-map-marker: {
   color: black !important;

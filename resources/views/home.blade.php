@@ -15,19 +15,19 @@
 	@include('showBrand.mobils')
 </div>
 
-<div class="col-md-12">
+<div class="row">
   @include('layouts.articles')
 </div>
 
-<div class="col-md-12">
+<div class="row">
   @include('layouts.forums')
 </div>
 
-<div class="col-md-12">
+<div class="row">
 	@include('layouts.videos')
 </div>
 
-<div class="col-md-12">
+<div class="row">
    @include('layouts.speks')
 </div>
 

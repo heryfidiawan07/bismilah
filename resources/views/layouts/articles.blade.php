@@ -8,7 +8,7 @@
 					<img src="{{$article->img}}" class="img-responsive" alt="{{$article->brand->brand}}" id="imgH">
 		    </div>
 		    <div class="index3">
-			    <b>{{ str_limit($article->title, $limit = 80, $end = '...') }}</b>
+			    <b>{{ str_limit($article->title, $limit = 60, $end = '...') }}</b>
 			  </div>
 			  <div class="thumb">
 					<a href="/articles/{{$article->brand->slug}}" class="thumbnail text-center"><b>{{$article->brand->brand}}</b></a>
@@ -21,9 +21,7 @@
 	@endif
 </div>
 @if(Request::url() != 'http://kampusmobil.com/articles')
-  <div class="row">
-		<div class="text-center">
-			<a class="more" href="/articles">Show more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-		</div>
+	<div class="text-center">
+		<a class="more" href="/articles">Lihat lainya <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 	</div>
 @endif

@@ -86,19 +86,19 @@ Harga terbaru, Paket kredit, Prace list, Promo dan discount {{$brand->slug}} ter
 	</div>
 </div>
 
-<div class="col-md-9">
+<div class="row">
 	@include('layouts.articles')
 </div>
 
-<div class="col-md-9">
+<div class="row">
     @include('layouts.speks')
 </div>
 
-<div class="col-md-9">
+<div class="row">
     @include('layouts.videos')
 </div>
 
-<div class="col-md-9">
+<div class="row">
     @include('layouts.forums')
 </div>
 

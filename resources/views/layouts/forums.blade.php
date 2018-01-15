@@ -20,7 +20,7 @@
 								<img src="<?php if (file_exists(public_path("member/".$thread->user->img))) echo '/member/' ?>{{$thread->user->avatar()}}" class="img-circle">
 							</div>
 							<p class="pull-left" style="margin-top: 10px;">
-								{{$thread->user->name}} - <small>{{$thread->created_at->diffForHumans()}}</small>
+								{{$thread->user->name}} <br> <small>{{$thread->created_at->diffForHumans()}}</small>
 							</p>
 						</div>
 					</a>
@@ -33,9 +33,7 @@
 	@endif
 </div>
 @if(Request::url() != 'http://kampusmobil.com/forum')
-<div class="row">
 	<div class="text-center">
-		<a class="more" href="/forum">Show more <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+		<a class="more" href="/forum">Lihat lainya <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 	</div>
-</div>
 @endif

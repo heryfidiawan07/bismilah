@@ -33,7 +33,7 @@
 			<p class="text-center">Belum ada profil</p>
 		@endif
 
-		<div class="row"><div class="col-md-9 text-center">{{$mobils->links()}}</div></div>
+		<div class="row"><div class="text-center">{{$mobils->links()}}</div></div>
 		
 
 		<div class="panel panel-default">
@@ -52,19 +52,19 @@
 	</div>
 </div>
 
-<div class="col-md-9">
+<div class="row">
 	@include('layouts.videos')
 </div>
 
-<div class="col-md-9">
+<div class="row">
 	@include('layouts.articles')
 </div>
 
-<div class="col-md-9">
+<div class="row">
   @include('layouts.speks')
 </div>
 
-<div class="col-md-9">
+<div class="row">
   @include('layouts.forums')
 </div>
 
