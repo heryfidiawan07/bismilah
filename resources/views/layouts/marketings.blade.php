@@ -1,5 +1,4 @@
 <br>
-<div class="col-md-12">
 	<div class="panel panel-default">
 		<div class="panel-body" id="show">
 			<div class="form-inline">
@@ -38,5 +37,4 @@
 				</tr>
 			</table>
 		</div>
-	</div>		
-</div>
+	</div>

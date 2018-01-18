@@ -15,7 +15,7 @@
 
 @section('content')
 <div class="row">
-	<div class="col-md-9">
+	<div class="col-md-10">
 
 		<div class="row">
 			<h3 class="text-center animated flipInX"><b>{{$mobil->brand->brand}} {{$mobil->model}}</b>

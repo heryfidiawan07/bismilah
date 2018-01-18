@@ -3,7 +3,7 @@
 @section('url') http://kampusmobil.com/ @stop
 @section('title') Berita mobil terbaru, spesifikasi, profil dan forum diskusi seputar mobil. @stop
 @section('description')
-	Harga mobil terbaru, Marketing terdekat, Spesifikasi lengkap, dan Forum diskusi yang bisa menambah wawasan atau rasa penasaran anda selama ini.
+	Harga mobil terbaru, Spesifikasi lengkap, Video review, Delaer resmi terdekat dan Forum diskusi tentang mobil dari indonesia.
 @stop
 @section('image') http://kampusmobil.com/largekampusmobil.png @stop
 @section('css')
