@@ -120,3 +120,8 @@ Harga terbaru, Paket kredit, Prace list, Promo dan discount {{$brand->slug}} ter
 </div>
 
 @endsection
+@section('js')
+<script type="text/javascript">
+    $('#kirimPesan').modal('show');
+</script>
+@stop

@@ -58,3 +58,8 @@
 </div>
 
 @endsection
+@section('js')
+<script type="text/javascript">
+    $('#kirimPesan').modal('show');
+</script>
+@stop
