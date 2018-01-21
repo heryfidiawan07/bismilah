@@ -103,7 +103,7 @@ Route::post('/admin/advertising/{id}/verifikasi', 'AdvertisingController@verifik
 //Marketing show
 Route::get('/marketing/{slug}', 'MarketingController@show');
 //Dealer Resmi
-Route::get('/dealer-resmi-mobil/{slug}/{area}', 'MarketingController@dealer');
+Route::get('/dealer/{slug}/{area}', 'MarketingController@dealer');
 //Forum
 Route::get('/forum', 'ForumController@index');
 Route::get('/forum/create', 'ForumController@create');

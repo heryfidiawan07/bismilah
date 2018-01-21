@@ -96,5 +96,8 @@
     <script src="/js/app.js"></script>
     <script src="/js/share.js"></script>
     @yield('js')
+    <script type="text/javascript">
+        $('#kirimPesan').modal('show');
+    </script>
 </body>
 </html>

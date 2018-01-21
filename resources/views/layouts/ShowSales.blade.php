@@ -11,14 +11,14 @@
 			<p class="animated bounceInDown">{{$sales->alamat}}</p>
 			<p class="animated bounceInDown">{!!nl2br($sales->tentang)!!}</p>
 			<p class="animated bounceInDown">
-				<p><b><u>Klik untuk chat via whatsapp</u> :</b></p>
+				<p><b><u>Chatt via whatsapp</u> :</b></p>
 				<a href="<?php if(count($sales->link)) {echo $sales->link->link;} ?>" class="btn btn-success fa fa-whatsapp"> 0{{$sales->hp2}}</a>
-				<p><b><u>Klik untuk telp / sms</u> :</b></p>
+				<p><b><u>Telp / SMS</u> :</b></p>
 				<a href="tel://+62{{$sales->hp1}}" class="btn btn-primary fa fa-phone"> 0{{$sales->hp1}}</a>
 			</p>
 			<a href="mailto:{{$sales->user->email}}" class="btn btn-danger fa fa-envelope"> {{$sales->user->email}}</a>
 			<div class="well">
-				<a class="fa fa-map-marker" href="/dealer-resmi-mobil/{{$sales->brand->slug}}/{{$sales->area->slug}}">
+				<a class="fa fa-map-marker" href="/dealer/{{$sales->brand->slug}}/{{$sales->area->slug}}">
 					<b> {{$sales->area->area}}</b>
 				</a>
 			</div>

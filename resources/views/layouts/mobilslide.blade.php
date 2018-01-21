@@ -1,35 +1,17 @@
-<ul class="slides">
-    <input type="radio" name="radio-btn" id="img-1" checked />
-    <li class="slide-container">
-      <div class="slide">
-        <img src="{{$mobil->depan}}" alt="{{$mobil->model}}" class="img-responsive" />
-      </div>
-      <div class="nav">
-        <label for="img-6" class="prev label">&#x2039;</label>
-        <label for="img-2" class="next label">&#x203a;</label>
-      </div>
-    </li>
+<div class="w3-content" style="max-width:100%">
+  <img class="mySlides" src="{{$mobil->depan}}" alt="{{$mobil->model}}" style="width:100%">
+  <img class="mySlides" src="{{$mobil->samping}}" alt="{{$mobil->model}}" style="width:100%">
+  <img class="mySlides" src="{{$mobil->belakang}}" alt="{{$mobil->model}}" style="width:100%">
+</div>
 
-    <input type="radio" name="radio-btn" id="img-2" />
-    <li class="slide-container">
-      <div class="slide">
-        <img src="{{$mobil->samping}}" alt="{{$mobil->model}}" class="img-responsive" />
-      </div>
-      <div class="nav">
-        <label for="img-1" class="prev label">&#x2039;</label>
-        <label for="img-3" class="next label">&#x203a;</label>
-      </div>
-    </li>
+<br>
 
-    <input type="radio" name="radio-btn" id="img-3" />
-    <li class="slide-container">
-      <div class="slide">
-        <img src="{{$mobil->belakang}}" alt="{{$mobil->model}}" class="img-responsive" />
-      </div>
-      <div class="nav">
-        <label for="img-2" class="prev label">&#x2039;</label>
-        <label for="img-4" class="next label">&#x203a;</label>
-      </div>
-    </li>
-    
-</ul>
+<div class="col-md-4 col-sm-4 col-xs-4">
+  <div class="pinImg" onclick="currentDiv(1)"><b>1</b></div>
+</div>
+<div class="col-md-4 col-sm-4 col-xs-4">
+  <div class="pinImg" onclick="currentDiv(2)"><b>2</b></div>
+</div>
+<div class="col-md-4 col-sm-4 col-xs-4">
+  <div class="pinImg" onclick="currentDiv(3)"><b>3</b></div>
+</div>

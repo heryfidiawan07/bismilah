@@ -43,18 +43,18 @@ class PesanController extends Controller
     public function store(Request $request)
     {   
         $this->validate($request, [
-                'email' => 'required|min:3|max:50',
+                //'email' => 'required|min:3|max:50',
                 'alamat' => 'required|min:3|max:100',
                 'hp' => 'required|min:3|max:13',
-                'wa' => 'required|min:3|max:13',
+                //'wa' => 'required|min:3|max:13',
                 'pesan' => 'required|min:3|max:500',
                 'g-recaptcha-response' => 'required|captcha',
             ]);
         $pesan = Pesan::create([
-                'email' => $request->email,
+                'email' => 'kirim@pesan.com',
                 'alamat' => $request->alamat,
                 'hp' => $request->hp,
-                'wa' => $request->wa,
+                'wa' => 'wa-kosong',
                 'pesan' => $request->pesan,
             ]);
         Mail::to('heryfidiawan07@gmail.com')->send(new PesanKiriman($pesan));

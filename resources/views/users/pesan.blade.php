@@ -4,7 +4,7 @@
   <div class="modal-content">
     
     <div class="modal-header">
-      <h5 class="modal-title text-center" id="exampleModalLabel">Kirim Pesan
+      <h5 class="modal-title text-center" id="exampleModalLabel">Kirim Penawaran Diskon / Promo
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -15,13 +15,6 @@
 
 		<form action="/kirim-pesan" method="post">
 			{{csrf_field()}}
-	      <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }} ">
-	          <label for="email">Email</label>
-	          <input type="email" name="email" class="form-control" value="{{old('email')}}" placeholder="Alamat email">
-	          @if($errors->has('email'))
-	              <span class="help-block"> {{$errors->first('email')}} </span>
-	          @endif
-	      </div>
 	      <div class="form-group {{ $errors->has('alamat') ? ' has-error' : '' }} ">
 	          <label for="alamat">Alamat</label>
 	          <input type="text" name="alamat" class="form-control" value="{{old('alamat')}}" placeholder="Alamat">
@@ -31,20 +24,13 @@
 	      </div>
 	      <div class="form-group {{ $errors->has('hp') ? ' has-error' : '' }} ">
 	          <label for="hp">Hp</label>
-	          <input type="text" name="hp" class="form-control" value="{{old('hp')}}" placeholder="Call / SMS">
+	          <input type="text" name="hp" class="form-control" value="{{old('hp')}}" placeholder="Telp / SMS">
 	          @if($errors->has('hp'))
 	              <span class="help-block"> {{$errors->first('hp')}} </span>
 	          @endif
 	      </div>
-	      <div class="form-group {{ $errors->has('wa') ? ' has-error' : '' }} ">
-	          <label for="wa">Whatsapp</label>
-	          <input type="text" name="wa" class="form-control" value="{{old('wa')}}" placeholder="Whatsapp">
-	          @if($errors->has('wa'))
-	              <span class="help-block"> {{$errors->first('wa')}} </span>
-	          @endif
-	      </div>
 	      <div class="form-group {{ $errors->has('pesan') ? ' has-error' : '' }} ">
-	          <label for="pesan">Pesan</label>
+	          <label for="pesan">Deskripsi</label>
 	          <textarea name="pesan" rows="5" class="form-control">{{old('pesan')}}</textarea>
 	          @if($errors->has('pesan'))
 	              <span class="help-block"> {{$errors->first('pesan')}} </span>
