@@ -27,7 +27,7 @@
 					<div class="col-md-4 mainMobil">
 						<div class="indexMobil">
 							<a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}">
-								<img src="{{$mobil->depan}}" class="img-responsive" alt="{{$mobil->slug}}" id="imgM">
+								<img src="/model/{{$mobil->depan}}" class="img-responsive" alt="{{$mobil->slug}}">
 							</a>
 						</div>
 						<div class="titleMobil text-center">

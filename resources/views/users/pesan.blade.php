@@ -4,7 +4,7 @@
   <div class="modal-content">
     
     <div class="modal-header">
-      <h5 class="modal-title text-center" id="exampleModalLabel">Kirim Penawaran Diskon / Promo
+      <h5 class="modal-title text-center" id="exampleModalLabel">Kirim Pesan / Kirim Penawaran Diskon / Promo
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

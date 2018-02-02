@@ -1,7 +1,7 @@
 <div class="w3-content" style="max-width:100%">
-  <img class="mySlides" src="{{$mobil->depan}}" alt="{{$mobil->model}}" style="width:100%">
-  <img class="mySlides" src="{{$mobil->samping}}" alt="{{$mobil->model}}" style="width:100%">
-  <img class="mySlides" src="{{$mobil->belakang}}" alt="{{$mobil->model}}" style="width:100%">
+  <img class="mySlides img-responsive" src="/model/{{$mobil->depan}}" alt="{{$mobil->model}}">
+  <img class="mySlides img-responsive" src="/model/{{$mobil->samping}}" alt="{{$mobil->model}}">
+  <img class="mySlides img-responsive" src="/model/{{$mobil->belakang}}" alt="{{$mobil->model}}">
 </div>
 
 <br>

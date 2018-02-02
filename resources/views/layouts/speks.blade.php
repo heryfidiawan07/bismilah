@@ -5,7 +5,7 @@
 		<a href="/spesifikasi/{{$spek->mobil->slug}}/{{$spek->slug}}">
 			<div class="col-md-3 col-sm-6 main">
 				<div class="index">
-					<img src="{{$spek->mobil->depan}}" id="imgH">
+					<img src="/model/{{$spek->mobil->depan}}" id="imgH">
 				</div>
 				<div class="index2">
 		      <div class="pull-left">

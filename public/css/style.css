@@ -113,9 +113,6 @@
 #imgH {
   height: auto; max-height: 150px; max-width: 100%; width: auto; text-align: center;
 }
-#imgM {
-  height: auto; max-height: 150px; max-width: 100%; width: auto; text-align: center;
-}
 hr.garis {
   height: 10px;
   border: 0;

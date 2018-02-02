@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use File;
+use Image;
 use Purifier;
 use App\Spek;
 use App\Brand;
@@ -46,10 +48,17 @@ class ArticleController extends Controller
                 'body' => 'required',
                 'brand_id' => 'required',
             ]);
+        
+        $url      = $request->img;
+        $ex = substr($url, strrpos($url, '.') + 1);
+        $img      = Image::make($url)->resize(1200, 700);
+        $fileName = str_slug($request->title).'.'.$ex;
+        $img->save(public_path("articlesImg/". $fileName));
+
     	Article::create([
     	    		'title' => $request->title,
     	    		'slug' => str_slug($request->title),
-                    'img' => $request->img,
+                    'img' => $fileName,
     	    		'body' => Purifier::clean($request->body, array('Attr.EnableID' => true)),
     	    		'brand_id' => $request->brand_id,
     	    	]);
@@ -78,10 +87,21 @@ class ArticleController extends Controller
     
     public function update(Request $request, $id){
     	$articles = Article::find($id);
+        
+        $url      = $request->img;
+        $ex = substr($url, strrpos($url, '.') + 1);
+        $img      = Image::make($url)->resize(1200, 700);
+        $fileName = str_slug($request->title).'.'.$ex;
+            $cek   = public_path("articlesImg/".$articles->img);
+            if ($articles->img != null) {
+                File::delete($cek);
+            }
+        $img->save(public_path("articlesImg/". $fileName));
+
     	$articles->update([
     	    		'title' => $request->title,
     	    		'slug' => str_slug($request->title),
-    	    		'img' => $request->img,
+    	    		'img' => $fileName,
     	    		'body' => Purifier::clean($request->body, array('Attr.EnableID' => true)),
     	    		'brand_id' => $request->brand_id,
     	    	]);
