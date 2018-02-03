@@ -51,7 +51,7 @@ class ArticleController extends Controller
         
         $url      = $request->img;
         $ex = substr($url, strrpos($url, '.') + 1);
-        $img      = Image::make($url)->resize(1200, 700);
+        $img      = Image::make($url)->resize(1200, 630);
         $fileName = str_slug($request->title).'.'.$ex;
         $img->save(public_path("articlesImg/". $fileName));
 
@@ -90,7 +90,7 @@ class ArticleController extends Controller
         
         $url      = $request->img;
         $ex = substr($url, strrpos($url, '.') + 1);
-        $img      = Image::make($url)->resize(1200, 700);
+        $img      = Image::make($url)->resize(1200, 630);
         $fileName = str_slug($request->title).'.'.$ex;
             $cek   = public_path("articlesImg/".$articles->img);
             if ($articles->img != null) {

@@ -21,7 +21,7 @@
 			<a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}">
 				<div class="col-md-4 mainMobil">
 					<div class="indexMobil">
-						<img src="{{$mobil->depan}}" class="img-responsive" alt="{{$mobil->slug}}" id="imgM">
+						<img src="/model/{{$mobil->depan}}" class="img-responsive" alt="{{$mobil->slug}}" id="imgM">
 					</div>
 					<div class="titleMobil text-center">
 						<h4><b>{{$mobil->model}}</b></h4>
@@ -33,7 +33,7 @@
 			<p class="text-center">Belum ada profil</p>
 		@endif
 
-		<div class="row"><div class="text-center">{{$mobils->links()}}</div></div>
+		<div class="row"><div class="col-md-12 text-center">{{$mobils->links()}}</div></div>
 
 		<div class="row">@include('layouts.marketings')</div>
 

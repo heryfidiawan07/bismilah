@@ -54,9 +54,9 @@ class MobilController extends Controller
         $ex1 = substr($url1, strrpos($url1, '.') + 1);
         $ex2 = substr($url2, strrpos($url2, '.') + 1);
         $ex3 = substr($url3, strrpos($url3, '.') + 1);
-        $img1  = Image::make($url1)->resize(1200, 700);
-        $img2  = Image::make($url2)->resize(1200, 700);
-        $img3  = Image::make($url3)->resize(1200, 700);
+        $img1  = Image::make($url1)->resize(1200, 630);
+        $img2  = Image::make($url2)->resize(1200, 630);
+        $img3  = Image::make($url3)->resize(1200, 630);
         $depan    = str_slug($request->model).'-1'.'.'.$ex1;
         $samping  = str_slug($request->model).'-2'.'.'.$ex2;
         $belakang = str_slug($request->model).'-3'.'.'.$ex3;
@@ -104,7 +104,7 @@ class MobilController extends Controller
         if ($request->depan != $mobil->depan) {
             $url1 = $request->depan;
             $ex1 = substr($url1, strrpos($url1, '.') + 1);
-            $img1  = Image::make($url1)->resize(1200, 700);
+            $img1  = Image::make($url1)->resize(1200, 630);
             $depan    = str_slug($request->model).'-1'.'.'.$ex1;
                 $cek1 = public_path("model/".$mobil->depan);
                 File::delete($cek1);
@@ -115,7 +115,7 @@ class MobilController extends Controller
         if ($request->samping != $mobil->samping) {
             $url2 = $request->samping;
             $ex2 = substr($url2, strrpos($url2, '.') + 1);
-            $img2  = Image::make($url2)->resize(1200, 700);
+            $img2  = Image::make($url2)->resize(1200, 630);
             $samping  = str_slug($request->model).'-2'.'.'.$ex2;
                 $cek2 = public_path("model/".$mobil->samping);
                 File::delete($cek2);
@@ -126,7 +126,7 @@ class MobilController extends Controller
         if ($request->belakang != $mobil->belakang) {
             $url3 = $request->belakang;
             $ex3 = substr($url3, strrpos($url3, '.') + 1);
-            $img3  = Image::make($url3)->resize(1200, 700);
+            $img3  = Image::make($url3)->resize(1200, 630);
             $belakang = str_slug($request->model).'-3'.'.'.$ex3;
                 $cek3 = public_path("model/".$mobil->belakang);
                 File::delete($cek3);
