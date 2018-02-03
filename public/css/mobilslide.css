@@ -1,4 +1,4 @@
-.mySlides {display:none}
+.mySlides {display:none; max-height: 400px; width: 100%;}
 .demo {cursor:pointer}
 .pinImg {
 	height: 30px; background-color: yellow; text-align: center; line-height: 30px;

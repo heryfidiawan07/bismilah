@@ -3,7 +3,7 @@
 @section('url') http://kampusmobil.com/articles/{{$article->brand->slug}}/{{$article->slug}} @stop
 @section('title') {{$article->title}} @stop
 @section('description') {{ str_limit(strip_tags($article->body), $limit = 250, $end = '...') }} @stop
-@section('image') {{$article->img}} @stop
+@section('image') http://kampusmobil.com/articlesImg/{{$article->img}} @stop
 
 @section('content')
 <div class="row">
@@ -14,7 +14,7 @@
 			<h4 class="text-center"><b>{{$article->title}}</b></h4>
 			<hr class="garis">
 			<a href="{{$article->img}}">
-				<img src="/articlesImg/{{$article->img}}" class="img-responsive" alt="{{$article->brand->brand}}">
+				<img src="/articlesImg/{{$article->img}}" class="img-responsive" alt="{{$article->brand->brand}}" style="width: 90%;">
 			</a>
 			<br>
 			<div id="showing">

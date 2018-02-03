@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use File;
+use Image;
 use Purifier;
 use App\User;
 use App\Kritik;
+use App\Partial;
 use Illuminate\Http\Request;
 use App\Mail\Saran;
 use Illuminate\Support\Facades\Mail;
@@ -20,6 +23,48 @@ class AdminController extends Controller
     public function index(){
     	return view('admin.dashboard');
     }
+
+    public function partials(){
+        $partials = Partial::all();
+        return view("partials.index", compact('partials'));
+    }
+    
+    public function partialstore(Request $request){
+        $this->validate($request, [
+                'nama' => 'required|min:3|max:20',
+                'img' => 'required',
+                'panjang' => 'required',
+                'lebar' => 'required',
+            ]);
+        $file = $request->file('img');
+        $ex       = $file->getClientOriginalExtension();
+        $fileName = $request->nama.'.'.$ex;
+        $path     = $file->getRealPath();
+        $img      = Image::make($path)->resize($request->panjang, $request->lebar);
+        $img->save(public_path("partials/". $fileName));
+        Partial::create([
+            'img' => $fileName,
+        ]);
+        
+        return back();
+    }
+    
+    public function partialupdate(Request $request, $id){
+        $partial = Partial::whereId($id)->first();
+        $file = $request->file('img');
+            $cek   = public_path("partials/".$partial->img);
+            File::delete($cek);
+        $ex       = $file->getClientOriginalExtension();
+        $fileName = $request->nama.'.'.$ex;
+        $path     = $file->getRealPath();
+        $img      = Image::make($path)->resize($request->panjang, $request->lebar);
+        $img->save(public_path("partials/". $fileName));
+        $partial->update([
+            'img' => $fileName,
+        ]);
+        return back();
+    }
+    
 
     public function createKritik(){
     	return view('kritik.create');

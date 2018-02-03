@@ -5,7 +5,7 @@
 @section('description')
 	Harga mobil terbaru, Spesifikasi lengkap, Video review, Delaer resmi terdekat dan Forum diskusi tentang mobil dari indonesia.
 @stop
-@section('image') http://kampusmobil.com/largekampusmobil.png @stop
+@section('image') http://kampusmobil.com/partials/sampul.png @stop
 @section('css')
 	<link href="/css/sliding.css" rel="stylesheet">
 @stop

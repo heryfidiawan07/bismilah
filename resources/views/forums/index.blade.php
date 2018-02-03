@@ -5,7 +5,7 @@
 @section('description')
 	Forum diskusi mobil, Berita mobil terbaru, Spesifikasi mobil atau mau tukar tambah mobil bekas anda ?
 @stop
-@section('image') http://kampusmobil.com/largekampusmobil.png @stop
+@section('image') http://kampusmobil.com/partials/forum.png @stop
 
 @section('content')
 <div class="row">

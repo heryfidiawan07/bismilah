@@ -55,14 +55,16 @@ class ArticleController extends Controller
         $fileName = str_slug($request->title).'.'.$ex;
         $img->save(public_path("articlesImg/". $fileName));
 
+        $slug = str_slug($request->title);
     	Article::create([
     	    		'title' => $request->title,
-    	    		'slug' => str_slug($request->title),
+    	    		'slug' => $slug,
                     'img' => $fileName,
     	    		'body' => Purifier::clean($request->body, array('Attr.EnableID' => true)),
     	    		'brand_id' => $request->brand_id,
     	    	]);
-    	return redirect('/articles');
+        $brand = Brand::whereId($request->brand_id)->first();
+        return redirect("/articles/{$brand->slug}/{$slug}");
     }
 
     public function show($brand, $slug){
@@ -87,25 +89,27 @@ class ArticleController extends Controller
     
     public function update(Request $request, $id){
     	$articles = Article::find($id);
-        
-        $url      = $request->img;
-        $ex = substr($url, strrpos($url, '.') + 1);
-        $img      = Image::make($url)->resize(1200, 630);
-        $fileName = str_slug($request->title).'.'.$ex;
-            $cek   = public_path("articlesImg/".$articles->img);
-            if ($articles->img != null) {
+        if ($articles->img != $request->img) {
+            $url      = $request->img;
+            $ex = substr($url, strrpos($url, '.') + 1);
+            $img      = Image::make($url)->resize(1200, 630);
+            $fileName = str_slug($request->title).'.'.$ex;
+                $cek   = public_path("articlesImg/".$articles->img);
                 File::delete($cek);
-            }
-        $img->save(public_path("articlesImg/". $fileName));
-
+            $img->save(public_path("articlesImg/". $fileName));   
+        }else {
+            $fileName = $articles->img;
+        }
+        $slug = str_slug($request->title);
     	$articles->update([
     	    		'title' => $request->title,
-    	    		'slug' => str_slug($request->title),
+    	    		'slug' => $slug,
     	    		'img' => $fileName,
     	    		'body' => Purifier::clean($request->body, array('Attr.EnableID' => true)),
     	    		'brand_id' => $request->brand_id,
     	    	]);
-    	return redirect('/articles');
+    	$brand = Brand::whereId($request->brand_id)->first();
+        return redirect("/articles/{$brand->slug}/{$slug}");
     }
     
     public function destroy($id){

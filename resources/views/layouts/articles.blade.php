@@ -5,7 +5,7 @@
 		<a href="/articles/{{$article->brand->slug}}/{{$article->slug}}">
 			<div class="col-md-3 col-sm-6 main">
 				<div class="index">
-					<img src="/articlesImg/{{$article->img}}" class="img-responsive" alt="{{$article->brand->brand}}" id="imgH">
+					<img src="/articlesImg/{{$article->img}}" class="img-responsive" alt="{{$article->brand->brand}}">
 		    </div>
 		    <div class="index3">
 			    <b>{{ str_limit($article->title, $limit = 60, $end = '...') }}</b>

@@ -8,7 +8,7 @@
 @section('description')
 	Spesifikasi lengkap mobil @foreach($speks as $spek) {{$spek->mobil->slug}} @endforeach , Forum diskusi dan marketing mobil.
 @stop
-@section('image') https://lh3.googleusercontent.com/-WL0ZJvL2woo/WQBwHGJsPdI/AAAAAAAAAkg/sehLYuEPH5MnOCIo06PD-mx6V2xLa8SQwCHM/s200/%255BUNSET%255D @stop
+@section('image') http://kampusmobil.com/partials/speks.png @stop
 
 @section('content')
 <div class="row">

@@ -5,7 +5,8 @@
 		<a href="/videos/{{$video->mobil->slug}}/{{$video->slug}}">
 			<div class="col-md-3 col-sm-6 main">
 				<div class="index">
-					<img src="https://img.youtube.com/vi/<?php $text = explode("embed/", $video->link); echo $text[1]; ?>/0.jpg" class="img-responsive" id="imgH">
+					<img class="video" src="/partials/videoindex.png">
+					<img src="https://img.youtube.com/vi/<?php $text = explode("embed/", $video->link); echo $text[1]; ?>/0.jpg" class="img-responsive">
 				</div>
 				<div class="index2">
 					<div class="pull-left">

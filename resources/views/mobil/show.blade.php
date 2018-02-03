@@ -8,7 +8,7 @@
 		{{$type->tipe}} {{$type->harga}} {{$type->transmisi}}
 	@endforeach
 @stop
-@section('image') {{$mobil->depan}} @stop
+@section('image') http://kampusmobil.com/model/{{$mobil->depan}} @stop
 @section('css')
 	<link rel="stylesheet" type="text/css" href="/css/mobilslide.css">
 @stop

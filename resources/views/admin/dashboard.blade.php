@@ -36,6 +36,9 @@
         <li class="admin">
             <a class="btn btn-success btn-lg" href="/admin/advertising">Advertising</a>
         </li>
+        <li class="admin">
+            <a class="btn btn-danger btn-lg" href="/admin/partials">Partials</a>
+        </li>
     </div>
 </div>
 @endsection

@@ -8,7 +8,7 @@
 		{{$mobil->slug}}
 	@endforeach
 @stop
-@section('image') http://kampusmobil.com/brands/{{$brand->slug}}.png @stop
+@section('image') http://kampusmobil.com/partials/{{$brand->slug}}.png @stop
 
 @section('content')
 <div class="row">

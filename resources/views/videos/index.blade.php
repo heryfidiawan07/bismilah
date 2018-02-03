@@ -11,7 +11,7 @@
 		{{$video->mobil->slug}}
 	@endforeach
 @stop
-@section('image') http://kampusmobil.com/videoicon.png @stop
+@section('image') http://kampusmobil.com/partials/videos.png @stop
 
 @section('content')
 

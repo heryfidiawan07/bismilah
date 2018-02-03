@@ -60,6 +60,10 @@ Route::get('/admin/area/{id}/delete', 'AreaController@destroy');
 Route::get('/admin/users', 'AdminController@users');
 Route::post('/admin/users/{id}/edit', 'AdminController@usersEdit');
 Route::get('/admin/users/{id}/delete', 'AdminController@usersDelete');
+//Admin Partials
+Route::get('/admin/partials', 'AdminController@partials');
+Route::post('/admin/partialstore', 'AdminController@partialstore');
+Route::post('/admin/partialupdate/{id}/edit', 'AdminController@partialupdate');
 //Mobil Admin
 Route::get('/admin/mobils', 'MobilController@create');
 Route::post('/admin/mobils', 'MobilController@store');

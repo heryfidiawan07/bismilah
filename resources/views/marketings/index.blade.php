@@ -1,26 +1,26 @@
 @extends('layouts.app')
 
-@section('url') http://kampusmobil.com/dealer-resmi-mobil/{{$brand->slug}}/{{$area->slug}} @stop
+@section('url') http://kampusmobil.com/dealer/{{$brand->slug}}/{{$area->slug}} @stop
 
 @if($sales)
 	
 	@section('title') Dealer Resmi Mobil {{$brand->brand}} {{$area->area}} @stop
 
 	@section('description')
-Harga terbaru, Paket kredit, Prace list, Promo dan discount {{$brand->slug}} terbaru {{$sales->pt}} {{$sales->alamat}} {{$sales->tentang}} 
+		Harga terbaru, Paket kredit, Prace list, Promo dan discount {{$brand->slug}} terbaru {{$sales->pt}} {{$sales->alamat}} {{$sales->tentang}} 
 	@stop
 
 	@section('image') http://kampusmobil.com/marketingImg/{{$sales->img}} @stop
 
 @else
 
-	@section('title') Dealer Resmi Mobil {{$brand->brand}} {{$area->area}} @stop
+	@section('title') Yuk daftar jadi marketing mobil {{$brand->slug}} {{$area->slug}} @stop
 
 	@section('description')
-Harga terbaru, Paket kredit, Prace list, Promo dan discount {{$brand->slug}} terbaru.
+		Dapatkan customer kamu sekarang juga, ada fitur advertisingnya juga loh ! Sekarang kamu bisa kebanjiran call in customer.
 	@stop
-
-	@section('image') http://kampusmobil.com/largekampusmobil.png @stop
+	
+	@section('image') https://lh3.googleusercontent.com/-fA4GNmqpiLo/WQBwGMc_1nI/AAAAAAAAAkQ/p2pkw2WDaJUj4pJciG3_2AeC1LW3gFNswCHM/s200/%255BUNSET%255D @stop
 
 @endif
 
@@ -44,8 +44,8 @@ Harga terbaru, Paket kredit, Prace list, Promo dan discount {{$brand->slug}} ter
 		    </div>
 		    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 		      <div class="panel-body text-center" style="height: 500px;">
-		      	<a href="<?php if(count($sales->link)) {echo $sales->link->link;} ?>" class="btn btn-success fa fa-whatsapp" style="height: 50px; line-height: 40px;"><b> WHATSAPP 0{{$sales->hp2}}</b></a>
-		      	<a href="tel://+62{{$sales->hp1}}" class="btn btn-primary fa fa-phone" style="height: 50px; line-height: 40px;"><b> TELP / SMS 0{{$sales->hp1}}</b></a>
+		      	<a href="<?php if($sales){ if(count($sales->link)) {echo $sales->link->link;}}else{echo "#";} ?>" class="btn btn-success fa fa-whatsapp" style="height: 50px; line-height: 40px;"><b> WHATSAPP @if($sales)0{{$sales->hp2}}@else Kosong @endif</b></a>
+		      	<a href="<?php if($sales){ echo "tel://+62$sales->hp1"; }else{echo "#";} ?>" class="btn btn-primary fa fa-phone" style="height: 50px; line-height: 40px;"><b> TELP / SMS @if($sales)0{{$sales->hp1}}@else Tersedia @endif</b></a>
 		      </div>
 		    </div>
 		  </div>
@@ -60,17 +60,17 @@ Harga terbaru, Paket kredit, Prace list, Promo dan discount {{$brand->slug}} ter
 		    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 		      <div class="panel-body">
 		        <div class="col-md-5">
-		      		<img src="{{asset('/marketingImg/'.$sales->img )}}" class="img-responsive text-center" alt="{{$sales->brand->slug}}">
+		      		<img src="<?php if($sales) { echo "/marketingImg/".$sales->img; }else {echo "/partials/".$brand->slug;} ?>.png" class="img-responsive text-center" alt="">
 		      	</div>
 		      	<div class="col-md-7">
 		      		<table>
 		      			<tr>
 		      				<td><b><u>Chatt via whatsapp</u> :</b></td>
-		      				<td><a href="<?php if(count($sales->link)) {echo $sales->link->link;} ?>" class="btn btn-success fa fa-whatsapp"> 0{{$sales->hp2}}</a></td>
+		      				<td><a href="<?php if($sales){ echo $sales->link->link;} ?>" class="btn btn-success fa fa-whatsapp"> @if($sales)0{{$sales->hp2}}@else - @endif</a></td>
 		      			</tr>
 		      			<tr>
 		      				<td><b><u>Telp / SMS</u> :</b></td>
-		      				<td><a href="tel://+62{{$sales->hp1}}" class="btn btn-primary fa fa-phone"> 0{{$sales->hp1}}</a></td>
+		      				<td><a href="<?php if($sales){echo 'tel://+62'.$sales->hp1;} ?>" class="btn btn-primary fa fa-phone">  @if($sales)0{{$sales->hp1}}@else - @endif</a></td>
 		      			</tr>
 		      		</table>
 						</div>
@@ -78,18 +78,20 @@ Harga terbaru, Paket kredit, Prace list, Promo dan discount {{$brand->slug}} ter
 		    </div>
 		  </div>
 		</div>
-
+		
+		@if($sales)
 		<div class="panel panel-default">
 			<div class="panel-body" id="show">@include('layouts.marketingshare')</div>
 		</div>
-		
+		@endif
+
 		<div class="panel panel-default">
 			<div class="panel-body" id="show">
 				@foreach($mobils as $mobil)
 					<div class="col-md-4 mainMobil">
 						<div class="indexMobil">
 							<a href="/profil/{{$mobil->brand->slug}}/{{$mobil->slug}}">
-								<img src="{{$mobil->depan}}" class="img-responsive" alt="{{$mobil->slug}}" id="imgM">
+								<img src="/model/{{$mobil->depan}}" class="img-responsive" alt="{{$mobil->slug}}">
 							</a>
 						</div>
 						<div class="titleMobil text-center">

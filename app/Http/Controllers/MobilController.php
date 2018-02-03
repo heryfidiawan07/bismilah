@@ -100,40 +100,64 @@ class MobilController extends Controller
                 'model' => 'required',
             ]);
         $mobil = Mobil::find($id);
-        
-        if ($request->depan != $mobil->depan) {
+        if (file_exists(public_path("model/". $mobil->depan))) {
+            if ($request->depan == $mobil->depan) {
+                $depan = $mobil->depan;
+            }else {
+                $url1 = $request->depan;
+                $ex1 = substr($url1, strrpos($url1, '.') + 1);
+                $img1  = Image::make($url1)->resize(1200, 630);
+                $depan    = str_slug($request->model).'-1'.'.'.$ex1;
+                    $cek1 = public_path("model/".$mobil->depan);
+                    File::delete($cek1);
+                $img1->save(public_path("model/". $depan));    
+            }
+        }else {
             $url1 = $request->depan;
             $ex1 = substr($url1, strrpos($url1, '.') + 1);
             $img1  = Image::make($url1)->resize(1200, 630);
             $depan    = str_slug($request->model).'-1'.'.'.$ex1;
-                $cek1 = public_path("model/".$mobil->depan);
-                File::delete($cek1);
             $img1->save(public_path("model/". $depan));
-        }else{
-            $depan = $mobil->depan;
         }
-        if ($request->samping != $mobil->samping) {
+        if (file_exists(public_path("model/". $mobil->samping))) {
+            if ($request->samping == $mobil->samping) {
+                $samping = $mobil->samping;
+            }else {
+                $url2 = $request->samping;
+                $ex2 = substr($url2, strrpos($url2, '.') + 1);
+                $img2  = Image::make($url2)->resize(1200, 630);
+                $samping  = str_slug($request->model).'-2'.'.'.$ex2;
+                    $cek2 = public_path("model/".$mobil->samping);
+                    File::delete($cek2);
+                $img2->save(public_path("model/". $samping));
+            }
+        }else {
             $url2 = $request->samping;
             $ex2 = substr($url2, strrpos($url2, '.') + 1);
             $img2  = Image::make($url2)->resize(1200, 630);
             $samping  = str_slug($request->model).'-2'.'.'.$ex2;
-                $cek2 = public_path("model/".$mobil->samping);
-                File::delete($cek2);
             $img2->save(public_path("model/". $samping));
-        }else{
-            $samping = $mobil->samping;
         }
-        if ($request->belakang != $mobil->belakang) {
+        if (file_exists(public_path("model/". $mobil->belakang))) {
+            if ($request->belakang == $mobil->belakang) {
+                $belakang = $mobil->belakang;
+            }else {
+                $url3 = $request->belakang;
+                $ex3 = substr($url3, strrpos($url3, '.') + 1);
+                $img3  = Image::make($url3)->resize(1200, 630);
+                $belakang = str_slug($request->model).'-3'.'.'.$ex3;
+                    $cek3 = public_path("model/".$mobil->belakang);
+                    File::delete($cek3);
+                $img3->save(public_path("model/". $belakang));
+            }
+        }else {
             $url3 = $request->belakang;
             $ex3 = substr($url3, strrpos($url3, '.') + 1);
             $img3  = Image::make($url3)->resize(1200, 630);
             $belakang = str_slug($request->model).'-3'.'.'.$ex3;
-                $cek3 = public_path("model/".$mobil->belakang);
-                File::delete($cek3);
             $img3->save(public_path("model/". $belakang));
-        }else{
-            $belakang = $mobil->belakang;
         }
+        
         $mobil->update([
                     'brand_id' => $request->brand_id,
                     'depan' => $depan,

@@ -1,4 +1,4 @@
-<div class="w3-content" style="max-width:100%">
+<div class="w3-content">
   <img class="mySlides img-responsive" src="/model/{{$mobil->depan}}" alt="{{$mobil->model}}">
   <img class="mySlides img-responsive" src="/model/{{$mobil->samping}}" alt="{{$mobil->model}}">
   <img class="mySlides img-responsive" src="/model/{{$mobil->belakang}}" alt="{{$mobil->model}}">
