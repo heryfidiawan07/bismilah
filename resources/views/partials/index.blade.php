@@ -28,7 +28,7 @@
 			<div class="panel panel-default">
 				<div class="panel-body">
 
-					<img src="/partials/{{$part->img}}">
+					<img src="/partials/{{$part->img}}" style="width: 100px; height: 100px;" class="img-responsive">
 					<button data-toggle="collapse" data-target="#part_{{$part->id}}" class="btn btn-success btn-sm pull-right">Edit</button>
 						<div id="part_{{$part->id}}" class="collapse">
 							<form method="post" action="/admin/partialupdate/{{$part->id}}/edit" enctype="multipart/form-data">
