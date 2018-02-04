@@ -51,7 +51,7 @@ class AdminController extends Controller
     
     public function partialupdate(Request $request, $id){
         $partial = Partial::whereId($id)->first();
-        $file = $request->file('img');
+        $file = $request->file('imgUpdate');
             $cek   = public_path("partials/".$partial->img);
             File::delete($cek);
         $ex       = $file->getClientOriginalExtension();

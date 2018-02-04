@@ -33,7 +33,9 @@
 						<div id="part_{{$part->id}}" class="collapse">
 							<form method="post" action="/admin/partialupdate/{{$part->id}}/edit" enctype="multipart/form-data">
 								{{csrf_field()}}
-								@include('layouts.upload')
+								<div class="form-group{{ $errors->has('imgUpdate') ? ' has-error' : '' }}">
+									<input type="file" name="imgUpdate" class="form-control">
+								</div>
 								<div class="form-group{{ $errors->has('nama') ? ' has-error' : '' }}">
 									<label for="nama">Nama</label>
 									<input type="text" name="nama" class="form-control" value="{{$part->img}}">
